@@ -1,0 +1,40 @@
+.windowElevenBody {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: calc(0.77vw + 9px);
+  .videoBox {
+    min-width: 25%;
+    max-width: 49%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: calc(1vw + 22.3px);
+    gap: calc(0.13vw + 13.5px);
+    height: 0;
+    padding-bottom: 20%;
+    border: 5px solid var(--bg);
+    cursor: pointer;
+    transition: opacity, border 0.5s;
+    &:hover {
+        border: 5px solid var(--borderInput);
+        opacity: 0.2;
+    }
+    @media (max-width: 1400px) {
+      min-width: 48%;
+      max-width: 100%;
+      flex-grow: 1;
+      padding-bottom: 50%;
+    }
+    @media (max-width: 800px) {
+      min-width: 100%;
+      max-width: 100%;
+      flex-grow: 1;
+      padding-bottom: 50%;
+    }
+  }
+}

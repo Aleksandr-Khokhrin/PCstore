@@ -1,0 +1,16 @@
+.primaryBtn {
+  padding: calc(0.64vw + 8.7px) calc(0.64vw + 11.7px);
+  font-size: calc(0.4vw + 13px);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  background-color: var(--bgSearchImg);
+}
+.primaryBtn:hover {
+  box-shadow: 5px 5px 0px 0px #5d0a3a;
+}
+.primaryBtn:active {
+  background-color: var(--bgActiveImg);
+  box-shadow: 5px 5px 0px 0px var(--bgActiveImg);
+}/*# sourceMappingURL=style.css.map */

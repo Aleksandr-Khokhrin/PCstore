@@ -1,0 +1,22 @@
+.productBar {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.32vw + 1.84px);
+  font-size: calc(0.64vw + 7.7px);
+  //   font-size: 10px;
+  font-weight: 700;
+  div {
+    padding: calc(0.26vw + 3px) calc(0.64vw + 3.7px);
+    // padding: 4px 6px;
+    width: min-content;
+  }
+  .discount {
+    background-color: #ff0096;
+  }
+  .top {
+    background-color: #ff003d;
+  }
+  .newProduct {
+    background-color: #009d94;
+  }
+}

@@ -1,0 +1,31 @@
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: calc(1vw + 22.3px);
+  gap: calc(0.13vw + 13.5px);
+}
+.commentBox .commentBoxTitle {
+  font-size: calc(0.13vw + 21.5px);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.24px;
+}
+.commentBox .commentBoxBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commentBox .commentBoxBody p {
+  font-size: calc(0.13vw + 17.5px);
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--bgSearchImg);
+}
+.commentBox .commentBoxBody img {
+  width: 16px;
+  height: 18px;
+}/*# sourceMappingURL=style.css.map */

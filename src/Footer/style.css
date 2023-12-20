@@ -1,0 +1,12 @@
+.mainFooter {
+  color: var(--text);
+  background: var(--bgInput);
+  padding: 0 calc(6.4vw - 3px);
+  padding-top: calc(3.2vw - 11.53px);
+}
+
+@media (max-width: 700px) {
+  .overflowSecond {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

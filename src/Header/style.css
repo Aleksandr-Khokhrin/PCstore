@@ -1,0 +1,235 @@
+.HeaderMain {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(1vw + 16px) calc(6.4vw - 3px);
+  border-bottom: 1px solid var(--bgSearchImg);
+  border-bottom: 1px solid var(--bgSearchImg);
+  background-color: var(--bg);
+}
+
+.headerLeft {
+  display: flex;
+  gap: 35px;
+}
+
+.headerRight {
+  justify-content: space-around;
+}
+
+.headerLeftLabel img {
+  margin-top: calc(1vw - 3px);
+  width: calc(7vw + 110px);
+  height: calc(1vw + 14px);
+}
+
+.headerLeftSearch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.headerLeftSearch input {
+  border: 1px solid var(--borderInput);
+  border-right: none;
+  padding: calc(0.5vw + 7px) calc(0.8vw + 11px);
+  background-color: var(--bgInput);
+}
+.headerLeftSearch input::-moz-placeholder {
+  font-size: calc(0.3vw + 13px);
+  font-weight: 400;
+  line-height: 140%;
+}
+.headerLeftSearch input::placeholder {
+  font-size: calc(0.3vw + 13px);
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.headerLeftSearch img {
+  width: 24px;
+  height: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: var(--bgSearchImg);
+  height: 100%;
+}
+.headerLeftSearch img:active {
+  background-color: var(--bgActiveImg);
+}
+
+.headerRightChild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(0.3vw + 13px);
+  font-weight: 400;
+  line-height: 140%;
+  cursor: pointer;
+}
+
+.headerRightChild img {
+  width: 30px;
+  height: 28px;
+}
+
+.headerRightChild.person img {
+  border: 1px solid var(--borderInput);
+  background: var(--bgInput);
+  padding: calc(0.5vw + 6px) calc(1vw + 14px);
+}
+
+.headerRightChild.person img {
+  width: 28px;
+}
+
+.footerForHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(6.4vw - 3px);
+  font-size: calc(0.3vw + 13px);
+  font-weight: 400;
+  line-height: 140%;
+  background-color: rgba(16, 15, 15, 0.5);
+}
+
+.footerForHeader div {
+  cursor: pointer;
+}
+
+.footerForHeader img {
+  width: 24px;
+  height: 24px;
+}
+
+.footerForHeader hr {
+  color: transparent;
+  border: 1px solid var(--bgSearchImg);
+}
+
+.mainChildForHeadFooter {
+  display: flex;
+  gap: 10px;
+  padding: 24px 42px;
+  background-color: var(--bgSearchImg);
+  position: relative;
+}
+
+.categoryList {
+  position: absolute;
+  background-color: var(--bg);
+  top: 55px;
+  left: -2px;
+  width: calc(87.44vw - 75.81px);
+  padding: 24px 42px;
+}
+
+@media (min-width: 1600px) {
+  .justcategory {
+    display: block;
+  }
+  .lastCategory {
+    display: block;
+  }
+}
+@media (max-width: 1600px) {
+  .justcategory {
+    display: none;
+  }
+  .lastCategory {
+    display: block;
+  }
+}
+@media (min-width: 1400px) {
+  .headerLeft {
+    flex-grow: 1;
+  }
+  .headerRight {
+    flex-grow: 2;
+  }
+  .headerLeftSearch input {
+    width: calc(29vw - 104px);
+  }
+}
+@media (max-width: 1400px) {
+  .headerLeftSearch input {
+    min-width: 450px;
+  }
+  .header {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .headerRight {
+    width: 100%;
+  }
+  .headerLeft {
+    width: 100%;
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1000px) {
+  .headerLeftSearch input {
+    min-width: calc(75vw - 252px);
+  }
+}
+@media (max-width: 900px) {
+  .lastCategory {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  .headerRight {
+    display: flex;
+  }
+  .childForHeadFooter {
+    display: flex;
+    gap: 10px;
+  }
+  .mainChildForHeadFooter.arrow {
+    display: none;
+  }
+  .footerForHeader {
+    background-color: var(--bg);
+  }
+}
+@media (max-width: 600px) {
+  .footerForHeader {
+    background-color: var(--bg);
+  }
+  .mainChildForHeadFooter {
+    display: none;
+  }
+  .mainChildForHeadFooter.arrow {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  .childForHeadFooter {
+    display: none;
+    gap: 10px;
+  }
+  .headerRight {
+    display: none;
+  }
+  .headerLeft {
+    align-items: center;
+  }
+  .headerLeftSearch input {
+    display: none;
+  }
+  .headerLeftSearch img {
+    background-color: var(--bg);
+  }
+}/*# sourceMappingURL=style.css.map */

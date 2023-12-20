@@ -1,0 +1,29 @@
+.serviceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: calc(2.2vw - 0.66px) 0;
+  border: 2px solid var(--borderInput);
+  background: var(--bgInput);
+  height: 100%;
+}
+.serviceBox h4 {
+  font-size: calc(0.83vw + 8px);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.24px;
+}
+.serviceBox p {
+  font-size: calc(0.83vw + 6px);
+  font-weight: 400;
+  line-height: 120%;
+}
+.serviceBox .serviceImg img {
+  height: calc(3vw + 21px);
+}
+.serviceBox .serviceArrow img {
+  height: 18px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

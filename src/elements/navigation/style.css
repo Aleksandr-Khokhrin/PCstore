@@ -1,0 +1,45 @@
+.navigationPage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: calc(0.64vw + 9.7px);
+  height: calc(3vw + 13px);
+}
+.navigationPage .navigationArrow {
+  background-color: var(--bgSearchImg);
+  padding: 13px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+.navigationPage .navigationArrow:hover {
+  box-shadow: 5px 5px 0px 0px #5d0a3a;
+}
+.navigationPage .navigationArrow:active {
+  background-color: var(--bgActiveImg);
+  box-shadow: 5px 5px 0px 0px var(--bgActiveImg);
+}
+.navigationPage .navigationArrow img {
+  width: calc(0.77vw + 11px);
+}
+.navigationPage .pagesBox {
+  display: flex;
+  gap: 8px;
+}
+.navigationPage .pagesBox .pages {
+  font-size: calc(0.77vw + 11px);
+  font-weight: 600;
+  padding: 13px 16px;
+  line-height: 100%;
+}
+.navigationPage .pagesBox .figure {
+  background: var(--bgInput);
+  border: 1px solid var(--borderInput);
+}
+
+.navAndWatch {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}/*# sourceMappingURL=style.css.map */

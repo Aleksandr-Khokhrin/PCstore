@@ -1,0 +1,21 @@
+.errorBox {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  width: 100%;
+  color: var(--bgSearchImg);
+  border: 1px solid var(--borderInput);
+  background-color: var(--bgInput);
+}
+
+.loader {
+  text-align: center;
+  padding: 2em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.loader svg path,
+.loader svg rect {
+  fill: var(--bgSearchImg);
+}

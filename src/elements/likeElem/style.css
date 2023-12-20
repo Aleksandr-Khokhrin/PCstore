@@ -1,0 +1,17 @@
+.likeBox {
+  width: calc(0.5vw + 28px);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.likeBox img {
+  width: calc(0.5vw + 28px);
+}
+.likeBox:hover .hoverImage {
+  display: inline;
+}
+.likeBox:hover .Image {
+  display: none;
+}
+.hoverImage {
+  display: none;
+}

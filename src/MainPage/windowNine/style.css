@@ -1,0 +1,23 @@
+.windowNine {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  padding-bottom: calc(5vw + 54px);
+  gap: calc(1.9vw + 13px);
+  background-color: var(--bg);
+}
+.windowNine .windowNineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.windowNine .windowNineContentBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.windowNine .windowNineContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}/*# sourceMappingURL=style.css.map */

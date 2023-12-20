@@ -1,0 +1,15 @@
+.link{
+    font-size: calc(0.4vw + 12.6px);
+    font-weight: 600;
+    line-height: 130%;
+    border-bottom: 2px solid var(--text);
+    cursor: pointer;
+    &:hover{
+        color: var(--bgSearchImg);
+        border-bottom: 2px solid var(--bgSearchImg);
+    }
+    &:active{
+        color: var(--bgActiveImg);
+        border-bottom: 2px solid var(--bgActiveImg);
+    }
+}

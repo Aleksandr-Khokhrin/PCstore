@@ -1,0 +1,67 @@
+.burger {
+	display: none;
+	justify-content: flex-end;
+    position: relative;
+}
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+    background-color: var(--bg);
+	transform: translateX(-100%);
+	transition: transform 0.5s;
+    z-index: 1;
+}
+.burgerList{
+    display: flex;
+    justify-content: space-between;
+}
+.burgerIcon img{
+    width: 25px;
+    height: 17px;
+}
+.burgerIcon.cross img {
+    width: 30px;
+    height: 30px;
+    margin-right: 60px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;  /* Добавляем переход для плавного эффекта */
+}
+.burgerIcon.cross img:hover {
+    transform: rotate(360deg);  /* Поворачиваем изображение при наведении */
+}
+
+.menu.active {
+	transform: translateX(0);
+}
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+.menu li {
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: underline;
+}
+
+.footerForHEader{
+    display: flex;
+}
+
+@media (min-width: 600px){
+    .burger {
+        display: none;
+    }
+}
+@media (max-width: 600px){
+    .burger {
+        display: flex;
+    }
+}

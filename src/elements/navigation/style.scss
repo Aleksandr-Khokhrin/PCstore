@@ -1,0 +1,44 @@
+.navigationPage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: calc(0.64vw + 9.7px);
+  height: calc(3vw + 13px);
+  .navigationArrow {
+    background-color: var(--bgSearchImg);
+    padding: 13px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    &:hover {
+      box-shadow: 5px 5px 0px 0px #5d0a3a;
+    }
+    &:active {
+      background-color: var(--bgActiveImg);
+      box-shadow: 5px 5px 0px 0px var(--bgActiveImg);
+    }
+    img {
+      width: calc(0.77vw + 11px);
+    }
+  }
+  .pagesBox {
+    display: flex;
+    gap: 8px;
+    .pages {
+      font-size: calc(0.77vw + 11px);
+      font-weight: 600;
+      padding: 13px 16px;
+      line-height: 100%;
+    }
+    .figure {
+        background: var(--bgInput);
+      border: 1px solid var(--borderInput);
+    }
+  }
+}
+.navAndWatch{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

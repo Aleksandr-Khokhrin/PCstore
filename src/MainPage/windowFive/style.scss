@@ -1,0 +1,27 @@
+.windowFive {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  padding-bottom: calc(5vw + 54px);
+  gap: calc(1.9vw + 13px);
+  background-color: var(--bg);
+  .windowFiveHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .categoryPart {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(1vw + 5.5px);
+  }
+}
+
+.NavigationPageForFiveWindow{
+  padding-right: 10px;
+}
+
+@media (max-width: 800px) {
+}
