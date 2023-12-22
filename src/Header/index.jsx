@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Burger from "./burger";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 import label from "./img/logo.svg";
@@ -14,11 +15,16 @@ import arrow from "./img/footer/arrow.svg";
 import hamburger from "./img/footer/hamburger.svg";
 import computer from "./img/footer/computer.svg";
 import settings from "./img/footer/settings.svg";
+import login from "./img/log-in-04-svgrepo-com.svg";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
   const [isCategoryListVisible, setCategoryListVisible] = useState(false);
+  const [hasToken, setHasToken] = useState(null);
 
+  useEffect(() => {
+    // Обновление состояния hasToken при изменении localStorage
+  }, []);
   useEffect(() => {
     console.log(searchInput);
   }, [searchInput]);
@@ -77,16 +83,25 @@ const Header = () => {
             </div>
           ))}
           <div className="headerRightChild person">
-            <img src={user} alt="User" />
+            {hasToken ? (
+              <Link to='/'>
+                <img src={user} alt="User" />
+              </Link>
+            ) : (
+              <Link to='/log'>
+                <img src={login} alt="login" />
+              </Link>
+            )}
           </div>
         </div>
       </div>
       <div className="footerForHeader">
-        <div className="mainChildForHeadFooter" >
+        <div className="mainChildForHeadFooter">
           <img src={hamburger} alt="Hamburger" />
           <p>Каталог</p>
         </div>
-        <div onClick={toggleCategoryList}
+        <div
+          onClick={toggleCategoryList}
           className={`mainChildForHeadFooter arrow ${
             isCategoryListVisible ? "rotate" : ""
           }`}
@@ -95,9 +110,15 @@ const Header = () => {
           <img
             src={arrow}
             alt="Arrow"
-            style={isCategoryListVisible ? { transform: "rotate(45deg)", transition: 'all 0.3s' } : {transition: 'all 0.3s'}}
+            style={
+              isCategoryListVisible
+                ? { transform: "rotate(45deg)", transition: "all 0.3s" }
+                : { transition: "all 0.3s" }
+            }
           />
-          <div className={`categoryList ${isCategoryListVisible ? "" : "none"}`}>
+          <div
+            className={`categoryList ${isCategoryListVisible ? "" : "none"}`}
+          >
             {categoryList.map((item, index) => (
               <p key={index}>{item}</p>
             ))}

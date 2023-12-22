@@ -16,54 +16,55 @@ const WindowNine = (props) => {
   const [boxCount, setBoxCount] = useState(8);
   const [pagesClick, setPagesClick] = useState(false);
   const [pagesCount, setPagesCount] = useState(0);
-  const [dataLength, setDataLength] = useState(data.length);
-  console.log(data);
+  const [dataLength, setDataLength] = useState(0);
+  // console.log(data);
 
   const myArray = [
     {
-      img: img,
-      title: "FEZOT",
-      text: "«2 компьютера в одном это удобно.»",
+      picture: img,
+      name: "FEZOT",
+      title: "«2 компьютера в одном это удобно.»",
     },
     {
-      img: img,
-      title: "az1KK",
-      text: "«… к киберпанку готов максимально»",
+      picture: img,
+      name: "az1KK",
+      title: "«… к киберпанку готов максимально»",
     },
     {
-      img: img,
-      title: "KH GAMING",
-      text: "«Чтоб у всех такие компьютеры были.»",
+      picture: img,
+      name: "KH GAMING",
+      title: "«Чтоб у всех такие компьютеры были.»",
     },
     {
-      img: img,
-      title: "Robocop",
-      text: "«2 компьютера в одном это удобно.»",
+      picture: img,
+      name: "Robocop",
+      title: "«2 компьютера в одном это удобно.»",
     },
     {
-      img: img,
-      title: "DED",
-      text: "«… к киберпанку готов максимально»",
+      picture: img,
+      name: "DED",
+      title: "«… к киберпанку готов максимально»",
     },
     {
-      img: img,
-      title: "Praded",
-      text: "«можно еще сгущёнки»",
+      picture: img,
+      name: "Praded",
+      title: "«можно еще сгущёнки»",
     },
     {
-      img: img,
-      title: "PraPraded",
-      text: "«работай и не кашляй»",
+      picture: img,
+      name: "PraPraded",
+      title: "«работай и не кашляй»",
     },
     {
-      img: img,
-      title: "Ego sin",
-      text: "«можно мне тот красивый моник?»",
+      picture: img,
+      name: "Ego sin",
+      title: "«можно мне тот красивый моник?»",
     },
   ];
 
   useEffect(() => {
     dispatch(fetchBannersClients());
+
     if (windWidth <= 1300 && 1000 < windWidth) {
       setBoxCount(5);
       setPagesClick(false);
@@ -207,7 +208,7 @@ const WindowNine = (props) => {
       <NavigationPage
         countPage={countPageHandler}
         pages={pagesClick}
-        elements={dataLength * 2 - 1}
+        elements={2 * 2 - 1}
         maxElem={2}
       />
       <div className="windowNineContentBody">

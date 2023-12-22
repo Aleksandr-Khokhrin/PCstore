@@ -75,6 +75,7 @@
   font-weight: 400;
   line-height: 140%;
   cursor: pointer;
+  border: 1px solid var(--bg);
 }
 
 .headerRightChild img {
@@ -86,6 +87,14 @@
   border: 1px solid var(--borderInput);
   background: var(--bgInput);
   padding: calc(0.5vw + 6px) calc(1vw + 14px);
+  transition: border 1s, background-color 1s;
+}
+.headerRightChild.person img:hover {
+  border: 1px solid var(--bgActiveImg);
+}
+.headerRightChild.person img:active {
+  border: 1px solid var(--borderInput);
+  background-color: var(--bgActiveImg);
 }
 
 .headerRightChild.person img {
