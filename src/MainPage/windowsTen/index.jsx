@@ -57,7 +57,7 @@ const WindowTen = (props) => {
       setBoxCount(5);
       setPagesClick(false);
     }
-  }, [windWidth, boxCount, pagesClick, props.windowWidth]);
+  }, [windWidth, boxCount, pagesClick, pagesCount, props.windowWidth]);
   const renderBoxes =
     windWidth <= 800
       ? myArray
@@ -79,7 +79,7 @@ const WindowTen = (props) => {
       <NavigationPage
         countPage={countPageHandler}
         pages={pagesClick}
-        elements={myArray.length * 2 - 1}
+        elements={myArray.length}
         maxElem={2}
         smallArray={true}
         windWidth={windWidth}

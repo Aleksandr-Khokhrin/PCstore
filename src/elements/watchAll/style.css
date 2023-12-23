@@ -1,3 +1,7 @@
+.linkWay {
+  text-decoration: none;
+}
+
 .link {
   font-size: calc(0.4vw + 12.6px);
   font-weight: 600;
@@ -10,6 +14,17 @@
   border-bottom: 2px solid var(--bgSearchImg);
 }
 .link:active {
+  color: var(--bgActiveImg);
+  border-bottom: 2px solid var(--bgActiveImg);
+}
+.link p {
+  text-decoration: none;
+}
+.link p:hover {
+  color: var(--bgSearchImg);
+  border-bottom: 2px solid var(--bgSearchImg);
+}
+.link p:active {
   color: var(--bgActiveImg);
   border-bottom: 2px solid var(--bgActiveImg);
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,50 @@
+.filterBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background: var(--bgInput);
+  border: 1px solid var(--borderInput);
+  padding: calc(2vw + 2.6px) 0;
+}
+@media (min-width: 1400px) {
+  .filterBox {
+    width: calc(12.56vw + 161px);
+  }
+}
+@media (max-width: 1400px) {
+  .filterBox {
+    width: calc(28.5vw - 5px);
+  }
+}
+@media (max-width: 800px) {
+  .filterBox {
+    width: 42.5vw;
+  }
+}
+.filterBox .filterBoxComponent {
+  padding: 0 calc(2vw + 2.6px);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.filterBox .filterBoxComponent h2 {
+  font-size: 34px;
+  font-weight: 600;
+}
+.filterBox .filterBoxComponent p {
+  font-size: 24px;
+  font-weight: 600;
+}
+.filterBox .filterBoxComponent hr {
+  border: none;
+  border-bottom: 4px solid var(--borderInput);
+}
+.filterBox .filterBoxBtn {
+  padding: 0 calc(2vw + 2.6px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.filterBox .filterBoxBtn button {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

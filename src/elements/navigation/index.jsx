@@ -11,36 +11,61 @@ const NavigationPage = (props) => {
   const [allPages, setAllPages] = useState(null);
   const [elem, setElem] = useState(1);
   const [showEllipsis, setShowEllipsis] = useState(true);
-  const [maxElems, setMaxElems] = useState(4)
+  const [maxElems, setMaxElems] = useState(4);
 
   useEffect(() => {
     if (count < 0) {
       setCount(0);
     }
-    if (props.windWidth <= 400) {
-      setElem(props.elements * 2);
+    if (props.windWidth <= 800) {
+      if (props.windWidth <= 400) {
+        setElem(props.elements * 2);
+      } else {
+        setElem(props.elements);
+      }
+      if (props.maxElem === 2) {
+        setAllPages(Math.ceil(elem / maxElems) + 1);
+        const newCount =
+          count < 0
+            ? 0
+            : count > Math.floor(elem / maxElems)
+            ? Math.floor(elem / maxElems)
+            : count;
+        console.log(newCount);
+        props.countPage(newCount);
+        setCount(newCount);
+      }else{
+        setAllPages(Math.ceil(elem / maxElems) - 1);
+        const newCount =
+          count < 0
+            ? 0
+            : count > Math.floor(elem / maxElems)
+            ? Math.floor(elem / maxElems)
+            : count;
+        console.log(newCount);
+        props.countPage(newCount);
+        setCount(newCount);
+      }
+      
     } else {
-      setElem(props.elements);
+      console.log(`${maxElems} ${props.text}`);
+      setAllPages(maxElems - 1);
     }
     if (props.maxElems) {
-      setMaxElems()
+      setMaxElems(props.maxElems);
     }
-    setAllPages(Math.ceil(elem / maxElems));
-    const newCount =
-      count < 0
-        ? 0
-        : count > Math.floor(elem / maxElems)
-        ? Math.floor(elem / 4)
-        : count;
+    const newCount = count < 0 ? 0 : count > maxElems ? maxElems : count;
     props.countPage(newCount);
     setCount(newCount);
-  }, [count, elem]);
+  }, [count, elem, maxElems]);
 
   const handlePrev = () => {
     setCount(count - 1);
   };
   const handleNext = () => {
-    setCount(count + 1);
+    if (count < allPages) {
+      setCount(count + 1);
+    }
   };
   function setEllipsisFALSE() {
     setShowEllipsis(false);
@@ -81,7 +106,7 @@ const NavigationPage = (props) => {
 
   return (
     <div>
-      {props.pages ? (
+      {props.pages || props.fullBar ? (
         <div className="navAndWatch">
           <div className="navigationPage">
             <div className="navigationArrow left" onClick={handlePrev}>
@@ -93,16 +118,17 @@ const NavigationPage = (props) => {
               <img src={arrow} alt="" />
             </div>
           </div>
-          <div className="navigationPage">
-            <WatchAll />
-          </div>
+          {!props.fullBar ? (
+            <div className="navigationPage">
+              <WatchAll page={props.page} type={props.type} />
+            </div>
+          ) : null}
         </div>
-      ) : (
-        !props.smallArray ?
+      ) : !props.smallArray ? (
         <div className="navigationPage">
-          <WatchAll />
-        </div> : null
-      )}
+          <WatchAll page={props.page} type={props.type} />
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,14 +1,14 @@
-import './style.css'
+import "./style.css";
+import { Link } from "react-router-dom";
+const WatchAll = (props) => {
+  const { page, type } = props;
+  return (
+    <Link to={`/${page}/${type}`} className="linkWay">
+      <div className="link">
+        <p>Смотреть все</p>
+      </div>
+    </Link>
+  );
+};
 
-const WatchAll = () => {
-    return (
-      <p
-        className="link"
-      >
-        Смотреть все
-      </p>
-    );
-  };
-  
-  export default WatchAll;
-  
+export default WatchAll;

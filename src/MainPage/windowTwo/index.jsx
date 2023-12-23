@@ -40,7 +40,7 @@ const WindowTwo = () => {
           Создаём компьютеры, которые будут дарить геймерам и творческим
           профессионалам удовольствие от использования.
         </p>
-        <WatchAll />
+        <WatchAll page='category' type='Игровые Сборки'/>
       </div>
       <div className="productBox">
         {renderBoxes}

@@ -1,0 +1,45 @@
+.filterBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background: var(--bgInput);
+  border: 1px solid var(--borderInput);
+  padding: calc(2vw + 2.6px) 0;
+  @media (min-width: 1400px) {
+    width: calc(12.56vw + 161px);
+  }
+  @media (max-width: 1400px) {
+    width: calc(28.5vw - 5px);
+  }
+  @media (max-width: 800px) {
+    width: calc(42.5vw);
+  }
+  .filterBoxComponent {
+    padding: 0 calc(2vw + 2.6px);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    h2 {
+      font-size: 34px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    hr{
+        border: none;
+        border-bottom: 4px solid var(--borderInput);
+    }
+  }
+ 
+  .filterBoxBtn {
+    padding: 0 calc(2vw + 2.6px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    button {
+      width: 100%;
+    }
+  }
+}

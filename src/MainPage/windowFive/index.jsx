@@ -11,112 +11,149 @@ const WindowFive = (props) => {
   const [boxCount, setBoxCount] = useState(8);
   const [pagesClick, setPagesClick] = useState(false);
   const [pagesCount, setPagesCount] = useState(0);
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+  const [lengthArray, setLemgthArray] = useState(0);
 
   const myArray = [
     {
-      title: "Компьютер 1",
-      img: IMG,
+      id: 2,
+      picture: null,
+      name: "Игровые сборки",
     },
     {
-      title: "Компьютер 2",
-      img: IMG,
+      id: 3,
+      picture: null,
+      name: "Ноутбуки",
     },
     {
-      title: "Компьютер 3",
-      img: IMG,
+      id: 4,
+      picture: "http://31.129.110.46:8000/media/None/img1.png",
+      name: "Клавиатуры",
     },
     {
-      title: "Компьютер 4",
-      img: IMG,
+      id: 5,
+      picture: null,
+      name: "Мышки",
     },
     {
-      title: "Компьютер 5",
-      img: IMG,
+      id: 6,
+      picture: "http://31.129.110.46:8000/media/None/img.png",
+      name: "Наушники",
     },
     {
-      title: "Компьютер 6",
-      img: IMG,
+      id: 7,
+      picture: null,
+      name: "Микрофоны",
     },
     {
-      title: "Компьютер 7",
-      img: IMG,
+      id: 8,
+      picture: null,
+      name: "Аксессуары",
     },
     {
-      title: "Компьютер 8",
-      img: IMG,
+      id: 9,
+      picture: null,
+      name: "Комплекты",
     },
     {
-      title: "Компьютер 9",
-      img: IMG,
+      id: 10,
+      picture: null,
+      name: "Мониторы",
     },
     {
-      title: "Компьютер 10",
-      img: IMG,
+      id: 11,
+      picture: null,
+      name: "Накопители",
     },
     {
-      title: "Компьютер 11",
-      img: IMG,
+      id: 12,
+      picture: null,
+      name: "ОЗУ",
     },
     {
-      title: "Компьютер 12",
-      img: IMG,
+      id: 13,
+      picture: null,
+      name: "UPS",
     },
     {
-      title: "Компьютер 13",
-      img: IMG,
+      id: 14,
+      picture: null,
+      name: "Блоки питания",
     },
     {
-      title: "Компьютер 14",
-      img: IMG,
+      id: 15,
+      picture: null,
+      name: "Колонки",
     },
     {
-      title: "Компьютер 15",
-      img: IMG,
+      id: 16,
+      picture: null,
+      name: "Веб-камеры",
     },
     {
-      title: "Компьютер 16",
-      img: IMG,
+      id: 17,
+      picture: null,
+      name: "Игровые геймпады",
     },
     {
-      title: "Компьютер 17",
-      img: IMG,
+      id: 18,
+      picture: null,
+      name: "Кулера",
     },
     {
-      title: "Компьютер 18",
-      img: IMG,
+      id: 19,
+      picture: "http://31.129.110.46:8000/media/None/img_1.png",
+      name: "Корпуса",
     },
   ];
+  const pageClickHandler = (elem) => {
+    setPagesClick(elem);
+  };
+  const setBoxCountHandler = (elem) => {
+    setBoxCount(elem);
+  };
+  useEffect(() => {
+    setLemgthArray(myArray.length);
+  }, [myArray.length]);
 
+  useEffect(() => {
+    setA(pagesCount * boxCount);
+    console.log(pagesCount * boxCount, pagesCount * boxCount + boxCount);
+    setB(pagesCount * boxCount + boxCount);
+    console.log(lengthArray);
+  }, [boxCount, pagesCount, a, b, lengthArray]);
 
   useEffect(() => {
     if (windWidth <= 1300 && 800 < windWidth) {
-      setBoxCount(6);
-      setPagesClick(false);
+      pageClickHandler(false);
+      setBoxCountHandler(6);
     } else if (windWidth <= 800) {
-      setPagesClick(true);
-      setBoxCount(4);
+      pageClickHandler(true);
+      setBoxCountHandler(4);
     } else {
-      setBoxCount(8);
-      setPagesClick(false);
+      pageClickHandler(false);
+      setBoxCountHandler(8);
     }
     setWindWidth(props.windowWidth);
-  }, [windWidth, boxCount, pagesClick, props.windowWidth]);
-
+  }, [windWidth, pagesClick, props.windowWidth]);
   const renderBoxes =
     windWidth <= 800
-      ? myArray
-          .slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
-          .map((item, index) => {
-            return <CategoryBox key={index} title={item.title} img={IMG} />;
-          })
-      :  myArray.slice(0, boxCount).map((item, index) => {
-          return <CategoryBox key={index} title={item.title} img={IMG} />;
+      ? myArray.slice(pagesCount * boxCount, pagesCount * boxCount + boxCount).map((item, index) => {
+          return <CategoryBox key={index} title={item.name} img={IMG} />;
+        })
+      : windWidth <= 1300 && windWidth > 800
+      ? myArray.slice(a, b).map((item, index) => {
+          return <CategoryBox key={index} title={item.name} img={IMG} />;
+        })
+      : myArray.slice(a, b).map((item, index) => {
+          return <CategoryBox key={index} title={item.name} img={IMG} />;
         });
 
   const countPageHandler = (elem) => {
+    console.log(elem);
     setPagesCount(elem);
   };
-  
 
   return (
     <div className="windowFive">
@@ -127,6 +164,9 @@ const WindowFive = (props) => {
             countPage={countPageHandler}
             pages={pagesClick}
             elements={myArray.length}
+            fullBar={true}
+            maxElems={Math.ceil(myArray.length / boxCount)}
+            text="ПЕРиФеРИЯ"
           />
         </div>
       </div>

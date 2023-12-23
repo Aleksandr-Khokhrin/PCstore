@@ -17,7 +17,7 @@ import computer from "./img/footer/computer.svg";
 import settings from "./img/footer/settings.svg";
 import login from "./img/log-in-04-svgrepo-com.svg";
 
-const Header = () => {
+const Header = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const [isCategoryListVisible, setCategoryListVisible] = useState(false);
   const [hasToken, setHasToken] = useState(null);
@@ -83,7 +83,7 @@ const Header = () => {
             </div>
           ))}
           <div className="headerRightChild person">
-            {hasToken ? (
+            {props.isAuth ? (
               <Link to='/'>
                 <img src={user} alt="User" />
               </Link>

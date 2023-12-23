@@ -56,6 +56,8 @@ const WindowSix = (props) => {
             pages={pagesClick}
             elements={myArray.length}
             windWidth={windWidth}
+            page='best' 
+            type='Лучшие предложения'
           />
         </div>
       </div>

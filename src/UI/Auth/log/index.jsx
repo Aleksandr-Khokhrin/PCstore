@@ -6,7 +6,7 @@ import "../style.css";
 import PrimaryBtn from "../../../elements/btns/primary";
 import SecondaryBtn from "../../../elements/btns/secondary";
 
-const Log = () => {
+const Log = (props) => {
   const {
     handleSubmit,
     register,
@@ -17,9 +17,10 @@ const Log = () => {
   const onSubmit = (data) => {
     console.log(data);
     setIsAuth(true)
-  };
+};
 
-  if (isAuth) {
+if (isAuth) {
+    props.isAuth(isAuth)
     return <Navigate to="/" />;
   }
   return (
