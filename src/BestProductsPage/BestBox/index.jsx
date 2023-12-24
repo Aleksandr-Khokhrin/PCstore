@@ -17,63 +17,63 @@ const FilterForBestBox = () => {
   ];
   const checkboxHeaders = [
     {
-      title: "Phyton",
+      title: "Наушники",
       sum: 12,
     },
     {
-      title: "Java Script",
+      title: "Компьютеры",
       sum: 52,
     },
     {
-      title: "C#",
+      title: "Ручная собака",
       sum: 291,
     },
     {
-      title: "Phyton",
+      title: "Звездолёт",
       sum: 12,
     },
     {
-      title: "Java Script",
+      title: "Реки",
       sum: 52,
     },
     {
-      title: "C#",
+      title: "Сабзавотлар",
       sum: 291,
     },
     {
-      title: "Phyton",
+      title: "Наручники",
       sum: 12,
     },
     {
-      title: "Java Script",
+      title: "Блейзеры",
       sum: 52,
     },
     {
-      title: "C#",
+      title: "Никаноры",
       sum: 291,
     },
     {
-      title: "Phyton",
+      title: "Кукрыниксы",
       sum: 12,
     },
     {
-      title: "Java Script",
+      title: "Пороги автомобилей",
       sum: 52,
     },
     {
-      title: "C#",
+      title: "Мешки с пылью",
       sum: 291,
     },
     {
-      title: "Phyton",
+      title: "Имена",
       sum: 12,
     },
     {
-      title: "Java Script",
+      title: "Рога навозных жуков",
       sum: 52,
     },
     {
-      title: "C#",
+      title: "Ябрь",
       sum: 291,
     },
   ];
