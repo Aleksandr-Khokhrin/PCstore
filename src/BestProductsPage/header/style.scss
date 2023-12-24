@@ -1,0 +1,58 @@
+.filterPageHeader {
+  display: flex;
+  gap: 24px;
+  .filterPageHeaderLeft {
+      min-width: calc(12.56vw + 161px);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--borderInput);
+    //   background: var(--bgInput);
+    .FPHLup {
+      display: flex;
+      gap: 6px;
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+        color: var(--textSpan);
+      }
+    }
+    .FPHLdown {
+      p {
+        font-size: calc(0.77vw + 19px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+      }
+    }
+   
+  }
+  .filterPageHeaderRight {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--borderInput);
+    background: var(--bgInput);
+    .FPHRright {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+    .FPHRleft {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+  }
+}

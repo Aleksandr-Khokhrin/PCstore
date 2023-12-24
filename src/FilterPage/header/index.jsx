@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 import FilterList from "../../elements/filterList";
-
 
 const FilterHeader = () => {
   const { productName } = useParams();
@@ -19,17 +19,19 @@ const FilterHeader = () => {
     <div className="filterPageHeader">
       <div className="filterPageHeaderLeft">
         <div className="FPHLup">
-          <p style={{ opacity: "0.5" }}>Главная / </p>{" "}
+          <Link style={{textDecoration: "none" }} to="/">
+            <p style={{ opacity: "0.5"}}>Главная / </p>{" "}
+          </Link>
           <p style={{ color: "var(--text)" }}> {productName}</p>
         </div>
         <div className="FPHLdown">
-          <p>Игровые сборки</p>
+          <p>{productName}</p>
         </div>
       </div>
       <div className="filterPageHeaderRight">
         <div className="FPHRleft">
           <p>Сортировка товара </p>
-          <FilterList categories={categories} unknown="Выберите категорию"/>
+          <FilterList categories={categories} unknown="Выберите категорию" />
         </div>
         <div className="FPHRright">
           <p>Товаров на странице: </p>

@@ -30,7 +30,7 @@ const Header = (props) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     setHasToken(!!token);
-  }, [localStorage.getItem("token")]); 
+  }, [localStorage.getItem("token")]);
   useEffect(() => {
     // console.log(searchInput);
   }, [searchInput]);
@@ -65,7 +65,7 @@ const Header = (props) => {
   const deleteToken = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh");
-    props.isAuthDelete(false)
+    props.isAuthDelete(false);
     setHasToken(false);
   };
 
@@ -92,7 +92,7 @@ const Header = (props) => {
         <div className="headerLeft">
           <Burger />
           <div className="headerLeftLabel">
-            <img src={label} alt="Logo"/>
+            <img src={label} alt="Logo" />
           </div>
           <div className="headerLeftSearch">
             <input
@@ -111,19 +111,10 @@ const Header = (props) => {
             </div>
           ))}
           <div className="headerRightChild person">
-            { props.isAuth  ? (
+            {props.isAuth ? (
               <Link to="/">
                 <img src={user} alt="User" />
-                <button
-                  onClick={deleteToken}
-                  style={{
-                    background: "var(--bg)",
-                    position: "absolute",
-                    right: "5em",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                >
+                <button onClick={deleteToken} className="exitBtn">
                   exit
                 </button>
               </Link>
@@ -189,15 +180,24 @@ const Header = (props) => {
             <p>Новости</p>
           </div>
           <div className="lastCategory">
-            <p>Скидки</p>
+            <Link style={{ textDecoration: "none" }} to="/best/Скидки">
+              <p>Скидки</p>
+            </Link>
             <hr />
           </div>
           <div className="lastCategory">
-            <p>Хит продаж</p>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/best/Лучшие предложения"
+            >
+              <p>Хит продаж</p>
+            </Link>
             <hr />
           </div>
           <div className="lastCategory">
-            <p>Новинки</p>
+            <Link style={{ textDecoration: "none" }} to="/best/Новинки">
+              <p>Новинки</p>
+            </Link>
             <hr />
           </div>
         </div>
