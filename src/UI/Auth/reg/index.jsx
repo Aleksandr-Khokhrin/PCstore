@@ -1,33 +1,58 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRegister, selectIsAuth } from "../../../redux/slices/auth";
+import { Link, useNavigate } from "react-router-dom";
 import "../style.css";
 import PrimaryBtn from "../../../elements/btns/primary";
 import SecondaryBtn from "../../../elements/btns/secondary";
 
 const Reg = () => {
-  const { handleSubmit, register, formState: { errors } } = useForm();
-  const [isAuth, setIsAuth] = useState(false)
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setIsAuth(true)
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors, isValid },
+  } = useForm({
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+    },
+    mode: "onChange",
+  });
+  
+  const onSubmit = async (values) => {
+    try {
+      const data = await dispatch(fetchRegister(values));
+  
+      if (!data || !data.payload) {
+        return alert('failedLog');
+      }
+  
+     
+      if (data) {
+        navigate('/log');
+      }
+    } catch (error) {
+      console.error('An error occurred during authentication:', error);
+    }
   };
-  if (isAuth) {
-    return <Navigate to="/" />;
-  }
   return (
     <div className="auth">
       <form onSubmit={handleSubmit(onSubmit)}>
         <h3 className="titleH">Регистрация</h3>
         <div className="authInputs">
           <div className="authInputs">
-            <label htmlFor="userName">Имя пользователя:</label>
+            <label htmlFor="username">Имя пользователя:</label>
             <input
               type="text"
-              name="userName"
-              {...register("userName", {
+              name="username"
+              {...register("username", {
                 required: "Укажите имя пользователя",
               })}
             />

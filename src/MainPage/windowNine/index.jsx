@@ -17,7 +17,7 @@ const WindowNine = (props) => {
   const [pagesClick, setPagesClick] = useState(false);
   const [pagesCount, setPagesCount] = useState(0);
   const [dataLength, setDataLength] = useState(0);
-  console.log(data);
+  // console.log(data);
 
   const myArray = [
     {

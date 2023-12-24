@@ -31,7 +31,7 @@ const NavigationPage = (props) => {
             : count > Math.floor(elem / maxElems)
             ? Math.floor(elem / maxElems)
             : count;
-        console.log(newCount);
+        // console.log(newCount);
         props.countPage(newCount);
         setCount(newCount);
       }else{
@@ -42,13 +42,13 @@ const NavigationPage = (props) => {
             : count > Math.floor(elem / maxElems)
             ? Math.floor(elem / maxElems)
             : count;
-        console.log(newCount);
+        // console.log(newCount);
         props.countPage(newCount);
         setCount(newCount);
       }
       
     } else {
-      console.log(`${maxElems} ${props.text}`);
+      // console.log(`${maxElems} ${props.text}`);
       setAllPages(maxElems - 1);
     }
     if (props.maxElems) {

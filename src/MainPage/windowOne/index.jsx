@@ -69,7 +69,7 @@ const WindowOne = () => {
   } else {
     currentItemBefore = dataBanners.items[dataBanners.items.length - 1];
   }
-  console.log(currentItem)
+  // console.log(currentItem)
   const handlePrev = () => {
     setIndex((prevIndex) =>
       prevIndex === 0 ? dataBanners.items.length - 1 : prevIndex - 1

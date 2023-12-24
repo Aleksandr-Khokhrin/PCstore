@@ -30,18 +30,20 @@ const Log = (props) => {
       const data = await dispatch(fetchAuth(values));
   
       if (!data || !data.payload) {
+        props.isAuth(false); 
         return alert('failedLog');
       }
   
+      if ('refresh' in data.payload) {
+        window.localStorage.setItem('refresh', data.payload.refresh);
+      }
       if ('access' in data.payload) {
         window.localStorage.setItem('token', data.payload.access);
-        props.isAuth(true); // Assuming you want to set isAuth to true
-        console.log('acsess')
+        props.isAuth(true); 
         navigate('/');
       }
     } catch (error) {
       console.error('An error occurred during authentication:', error);
-      // Handle the error accordingly, e.g., display an error message
     }
   };
   

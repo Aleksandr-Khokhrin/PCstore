@@ -31,13 +31,14 @@ const WindowEleven = (props) => {
     }
   }, [windWidth, boxCount, pagesClick, props.windowWidth, videos.status]);
 
-  console.log(videos);
+  // console.log(videos);
   // console.log(videos.videos.status === "error")
   const renderBoxes =
     videos.videos.items && videos.videos.status !== "error" ? (
       videos.videos.items.slice(0, boxCount).map((item, index) => {
         return (
           <a
+            key={index}
             href={item.video_url}
             className="videoBox"
             style={{ backgroundImage: `url(${item.picture})` }}

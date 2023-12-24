@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import './mainStyles/style.css'
 import './mainStyles/colors.css'
@@ -9,21 +9,28 @@ import CategoryPage from "./FilterPage";
 import BestPage from "./BestProductsPage";
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
+import TokenRefresh from "./UI/Auth/tokenRefresh";
 function App() {
   const [isAuth, setIsAuth] = useState(false)
   const [category, setCategory] = useState('')
   const [bestProduct, setBestProduct] = useState('')
-  
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setIsAuth(true)
+    }
+  }, [])
+
   const isAuthHandler = (elem) => {
-    console.log(elem)
+    // console.log(`это App ${elem}`)
     setIsAuth(elem)
   }
   return (
     <div>
-      <Header isAuth={isAuth} />
+      <TokenRefresh />
+      <Header isAuth={isAuth} isAuthDelete={isAuthHandler} />
       <div className="mainBody">
         <Routes>
-          <Route path='/' element={<MainPage  />} />
+          <Route path='/' element={<MainPage />} />
           <Route path='/log' element={<Log isAuth={isAuthHandler} />} />
           <Route path='/reg' element={<Reg isAuth={isAuthHandler} />} />
           <Route path={`/category/:productName`} element={<CategoryPage category={category} />} />

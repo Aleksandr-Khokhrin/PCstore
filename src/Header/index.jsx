@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Burger from "./burger";
 import { Link } from "react-router-dom";
+import { selectIsAuth } from "../redux/slices/auth";
+import { useSelector } from "react-redux";
 import "./style.css";
 
 import label from "./img/logo.svg";
@@ -22,15 +24,15 @@ const Header = (props) => {
   const [isCategoryListVisible, setCategoryListVisible] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const [isAuth, setIsAuth] = useState();
-  const [hasToken, setHasToken] = useState(false);
+  const [hasToken, setHasToken] = useState(!!localStorage.getItem("token"));
+  const isAuth = useSelector(selectIsAuth);
+
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setHasToken(true);
-    }
-  }, [hasToken, props.isAuth]);
+    const token = localStorage.getItem("token");
+    setHasToken(!!token);
+  }, [localStorage.getItem("token")]); 
   useEffect(() => {
-    console.log(searchInput);
+    // console.log(searchInput);
   }, [searchInput]);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -62,7 +64,9 @@ const Header = (props) => {
 
   const deleteToken = () => {
     localStorage.removeItem("token");
-    setHasToken(false); // Обновляем состояние hasToken после удаления токена
+    localStorage.removeItem("refresh");
+    props.isAuthDelete(false)
+    setHasToken(false);
   };
 
   const categoryList = [
@@ -78,13 +82,17 @@ const Header = (props) => {
     "Новинки",
   ];
 
+  if (isAuth) {
+    const token = localStorage.getItem("token");
+    setHasToken(!!token);
+  }
   return (
     <div className="HeaderMain">
       <div className="header">
         <div className="headerLeft">
           <Burger />
           <div className="headerLeftLabel">
-            <img src={label} alt="Logo" />
+            <img src={label} alt="Logo"/>
           </div>
           <div className="headerLeftSearch">
             <input
@@ -103,7 +111,7 @@ const Header = (props) => {
             </div>
           ))}
           <div className="headerRightChild person">
-            {hasToken ? (
+            { props.isAuth  ? (
               <Link to="/">
                 <img src={user} alt="User" />
                 <button

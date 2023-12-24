@@ -13,6 +13,10 @@ export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (param
     const { data } = await axios.post('/users/new/', params);
     return data;
 })
+export const fetchTokenRefresh = createAsyncThunk('auth/fetchTokenRefresh', async (params) => {
+    const { data } = await axios.post('/users/token/refresh/', params);
+    return data;
+})
 
 const initialState = {
     data: null,
@@ -64,6 +68,19 @@ const authSlice = createSlice({
                 state.data = action.payload
             })
             .addCase(fetchRegister.rejected, (state) => {
+                state.status = 'error';
+                state.data = null
+            })
+
+            .addCase(fetchTokenRefresh.pending, (state) => {
+                state.status = 'loading';
+                state.data = null
+            })
+            .addCase(fetchTokenRefresh.fulfilled, (state, action) => {
+                state.status = 'loaded';
+                state.data = action.payload
+            })
+            .addCase(fetchTokenRefresh.rejected, (state) => {
                 state.status = 'error';
                 state.data = null
             })
