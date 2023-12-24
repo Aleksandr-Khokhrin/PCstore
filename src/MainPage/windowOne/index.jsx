@@ -20,9 +20,10 @@ const WindowOne = () => {
   useEffect(() => {
     dispatch(fetchBannersSlider());
   }, []);
+  
 
   // const data = dataBanners.items
-  // const data = [
+  // const dataBanners = [
   //   {
   //     title: "NVIDIA GEFORCE RTX 4060/4060TI",
   //     content:
@@ -68,7 +69,7 @@ const WindowOne = () => {
   } else {
     currentItemBefore = dataBanners.items[dataBanners.items.length - 1];
   }
-
+  console.log(currentItem)
   const handlePrev = () => {
     setIndex((prevIndex) =>
       prevIndex === 0 ? dataBanners.items.length - 1 : prevIndex - 1
@@ -100,9 +101,17 @@ const WindowOne = () => {
             <h3 className="titleH">{currentItem?.title}</h3>
             <p className="titleP">{currentItem?.text}</p>
             <div className="contentBtnForWindowOne">
-              <PrimaryBtn text={currentItem?.buttons[0].text} />
-              <SecondaryBtn text={currentItem?.buttons[1].text} />
-            </div>
+              {
+                currentItem?.buttons[0] ? 
+                <PrimaryBtn text={currentItem?.buttons[0]?.text} />
+                : null
+              }
+              {
+                currentItem?.buttons[1] ? 
+                <SecondaryBtn text={currentItem?.buttons[1]?.text} />
+                : null
+              }
+              </div>
           </div>
           <div className="navigation">
             <div className="arrow left" onClick={handlePrev}>

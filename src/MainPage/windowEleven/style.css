@@ -4,6 +4,11 @@
   flex-wrap: wrap-reverse;
   gap: calc(0.77vw + 9px);
 }
+@media (max-width: 800px) {
+  .windowElevenBody {
+    justify-content: center;
+  }
+}
 .windowElevenBody .videoBox {
   min-width: 25%;
   max-width: 49%;
@@ -26,6 +31,10 @@
   border: 5px solid var(--borderInput);
   opacity: 0.2;
 }
+.windowElevenBody .videoBox:active {
+  border: 5px solid var(--bgSearchImg);
+  opacity: 0.5;
+}
 @media (max-width: 1400px) {
   .windowElevenBody .videoBox {
     min-width: 48%;
@@ -36,8 +45,8 @@
 }
 @media (max-width: 800px) {
   .windowElevenBody .videoBox {
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 80%;
+    max-width: 80%;
     flex-grow: 1;
     padding-bottom: 50%;
   }

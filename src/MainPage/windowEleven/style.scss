@@ -3,6 +3,9 @@
   justify-content: space-between;
   flex-wrap: wrap-reverse;
   gap: calc(0.77vw + 9px);
+  @media(max-width: 800px){
+    justify-content: center;
+  }
   .videoBox {
     min-width: 25%;
     max-width: 49%;
@@ -24,6 +27,10 @@
         border: 5px solid var(--borderInput);
         opacity: 0.2;
     }
+    &:active {
+        border: 5px solid var(--bgSearchImg);
+        opacity: 0.5;
+    }
     @media (max-width: 1400px) {
       min-width: 48%;
       max-width: 100%;
@@ -31,8 +38,8 @@
       padding-bottom: 50%;
     }
     @media (max-width: 800px) {
-      min-width: 100%;
-      max-width: 100%;
+      min-width: 80%;
+      max-width: 80%;
       flex-grow: 1;
       padding-bottom: 50%;
     }

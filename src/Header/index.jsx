@@ -20,14 +20,29 @@ import login from "./img/log-in-04-svgrepo-com.svg";
 const Header = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const [isCategoryListVisible, setCategoryListVisible] = useState(false);
-  const [hasToken, setHasToken] = useState(null);
-
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [isAuth, setIsAuth] = useState();
+  const [hasToken, setHasToken] = useState(false);
   useEffect(() => {
-    // Обновление состояния hasToken при изменении localStorage
-  }, []);
+    if (localStorage.getItem("token")) {
+      setHasToken(true);
+    }
+  }, [hasToken, props.isAuth]);
   useEffect(() => {
     console.log(searchInput);
   }, [searchInput]);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos, visible]);
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
 
   const handleSearchChange = (event) => {
     setSearchInput(event.target.value);
@@ -44,6 +59,11 @@ const Header = (props) => {
     { img: phone, text: "Контакты" },
     { img: language, text: "Язык" },
   ];
+
+  const deleteToken = () => {
+    localStorage.removeItem("token");
+    setHasToken(false); // Обновляем состояние hasToken после удаления токена
+  };
 
   const categoryList = [
     "Купить компьютер",
@@ -83,81 +103,95 @@ const Header = (props) => {
             </div>
           ))}
           <div className="headerRightChild person">
-            {props.isAuth ? (
-              <Link to='/'>
+            {hasToken ? (
+              <Link to="/">
                 <img src={user} alt="User" />
+                <button
+                  onClick={deleteToken}
+                  style={{
+                    background: "var(--bg)",
+                    position: "absolute",
+                    right: "5em",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  exit
+                </button>
               </Link>
             ) : (
-              <Link to='/log'>
+              <Link to="/log">
                 <img src={login} alt="login" />
               </Link>
             )}
           </div>
         </div>
       </div>
-      <div className="footerForHeader">
-        <div className="mainChildForHeadFooter">
-          <img src={hamburger} alt="Hamburger" />
-          <p>Каталог</p>
-        </div>
-        <div
-          onClick={toggleCategoryList}
-          className={`mainChildForHeadFooter arrow ${
-            isCategoryListVisible ? "rotate" : ""
-          }`}
-        >
-          <p>Каталог товаров</p>
-          <img
-            src={arrow}
-            alt="Arrow"
-            style={
-              isCategoryListVisible
-                ? { transform: "rotate(45deg)", transition: "all 0.3s" }
-                : { transition: "all 0.3s" }
-            }
-          />
-          <div
-            className={`categoryList ${isCategoryListVisible ? "" : "none"}`}
-          >
-            {categoryList.map((item, index) => (
-              <p key={index}>{item}</p>
-            ))}
+      <div className={`${visible ? "visible" : "hiddenFooter"}`}>
+        <div className="footerForHeader">
+          <div className="mainChildForHeadFooter">
+            <img src={hamburger} alt="Hamburger" />
+            <p>Каталог</p>
           </div>
-        </div>
-        <div className="childForHeadFooter">
-          <img src={computer} alt="Computer" />
-          <p>Купить компьютер</p>
-        </div>
-        <div className="childForHeadFooter">
-          <img src={settings} alt="Settings" />
-          <p>Конфигуратор</p>
-        </div>
-        <div className="justcategory">
-          <p>Услуги</p>
-        </div>
-        <div className="justcategory">
-          <p>Поддержка</p>
-        </div>
-        <div className="justcategory">
-          <p>О компании</p>
-        </div>
-        <div className="justcategory">
-          <p>Проекты</p>
-        </div>
-        <div className="justcategory">
-          <p>Новости</p>
-        </div>
-        <div className="lastCategory">
-          <p>Скидки</p>
-          <hr />
-        </div>
-        <div className="lastCategory">
-          <p>Хит продаж</p>
-          <hr />
-        </div>
-        <div className="lastCategory">
-          <p>Новинки</p>
-          <hr />
+          <div
+            onClick={toggleCategoryList}
+            className={`mainChildForHeadFooter arrow ${
+              isCategoryListVisible ? "rotate" : ""
+            }`}
+          >
+            <p>Каталог товаров</p>
+            <img
+              src={arrow}
+              alt="Arrow"
+              style={
+                isCategoryListVisible
+                  ? { transform: "rotate(45deg)", transition: "all 0.3s" }
+                  : { transition: "all 0.3s" }
+              }
+            />
+            <div
+              className={`categoryList ${isCategoryListVisible ? "" : "none"}`}
+            >
+              {categoryList.map((item, index) => (
+                <p key={index}>{item}</p>
+              ))}
+            </div>
+          </div>
+          <div className="childForHeadFooter">
+            <img src={computer} alt="Computer" />
+            <p>Купить компьютер</p>
+          </div>
+          <div className="childForHeadFooter">
+            <img src={settings} alt="Settings" />
+            <p>Конфигуратор</p>
+          </div>
+          <div className="justcategory">
+            <p>Услуги</p>
+          </div>
+          <div className="justcategory">
+            <p>Поддержка</p>
+          </div>
+          <div className="justcategory">
+            <p>О компании</p>
+          </div>
+          <div className="justcategory">
+            <p>Проекты</p>
+          </div>
+          <div className="justcategory">
+            <p>Новости</p>
+          </div>
+          <div className="lastCategory">
+            <p>Скидки</p>
+            <hr />
+          </div>
+          <div className="lastCategory">
+            <p>Хит продаж</p>
+            <hr />
+          </div>
+          <div className="lastCategory">
+            <p>Новинки</p>
+            <hr />
+          </div>
         </div>
       </div>
     </div>

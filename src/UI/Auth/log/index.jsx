@@ -1,27 +1,54 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAuth, selectIsAuth } from "../../../redux/slices/auth";
+import { Link, useNavigate } from "react-router-dom";
 import "../style.css";
 import PrimaryBtn from "../../../elements/btns/primary";
 import SecondaryBtn from "../../../elements/btns/secondary";
 
 const Log = (props) => {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+  const navigate = useNavigate();
+
   const {
-    handleSubmit,
     register,
-    formState: { errors }
-  } = useForm();
-  const [isAuth, setIsAuth] = useState(false)
+    handleSubmit,
+    setError,
+    formState: { errors, isValid },
+  } = useForm({
+    defaultValues: {
+      username: "",
+      password: "",
+    },
+    mode: "onChange",
+  });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setIsAuth(true)
-};
+  const onSubmit = async (values) => {
+    try {
+      const data = await dispatch(fetchAuth(values));
+  
+      if (!data || !data.payload) {
+        return alert('failedLog');
+      }
+  
+      if ('access' in data.payload) {
+        window.localStorage.setItem('token', data.payload.access);
+        props.isAuth(true); // Assuming you want to set isAuth to true
+        console.log('acsess')
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('An error occurred during authentication:', error);
+      // Handle the error accordingly, e.g., display an error message
+    }
+  };
+  
 
-if (isAuth) {
-    props.isAuth(isAuth)
-    return <Navigate to="/" />;
+  if (isAuth) {
+    props.isAuth(isAuth);
+    navigate('/');
   }
   return (
     <div className="auth">
@@ -29,11 +56,11 @@ if (isAuth) {
         <h3 className="titleH">Авторизация</h3>
         <div className="authInputs">
           <div className="authInputs">
-            <label htmlFor="userName">Имя пользователя:</label>
+            <label htmlFor="username">Имя пользователя:</label>
             <input
               type="text"
-              name="userName"
-              {...register("userName", { required: "Укажите почту" })}
+              name="username"
+              {...register("username", { required: "Укажите почту" })}
             />
           </div>
           <div className="authInputs">

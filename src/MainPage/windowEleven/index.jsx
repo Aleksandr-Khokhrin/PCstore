@@ -31,21 +31,25 @@ const WindowEleven = (props) => {
     }
   }, [windWidth, boxCount, pagesClick, props.windowWidth, videos.status]);
 
+  console.log(videos);
   // console.log(videos.videos.status === "error")
-  const renderBoxes = 
-  videos.videos.items && videos.videos.status !== "error" ? videos.videos.items.slice(0, boxCount).map((item, index) => {
+  const renderBoxes =
+    videos.videos.items && videos.videos.status !== "error" ? (
+      videos.videos.items.slice(0, boxCount).map((item, index) => {
         return (
-          <div
+          <a
+            href={item.video_url}
             className="videoBox"
             style={{ backgroundImage: `url(${item.picture})` }}
           >
-            asdfasdfasdf
             {/* <h3>{item.title}</h3> */}
             {/* <a href={item.url}></a> */}
-          </div>
+          </a>
         );
       })
-    : <ErrorBox/>;
+    ) : (
+      <ErrorBox />
+    );
 
   const countPageHandler = (elem) => {
     setPagesCount(elem);

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .HeaderMain {
   position: fixed;
   display: flex;
@@ -128,10 +129,24 @@
 
 .mainChildForHeadFooter {
   display: flex;
+  width: auto;
   gap: 10px;
   padding: 24px 42px;
   background-color: var(--bgSearchImg);
   position: relative;
+}
+
+.visible {
+  opacity: 1;
+  max-height: 200px; /* Подставьте желаемую высоту */
+  transition: opacity 0.5s ease-in-out, max-height 1s ease-in-out;
+}
+
+.hiddenFooter {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out, max-height 1s ease-in-out;
 }
 
 .categoryList {

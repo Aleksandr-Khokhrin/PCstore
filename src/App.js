@@ -13,6 +13,7 @@ function App() {
   const [isAuth, setIsAuth] = useState(false)
   const [category, setCategory] = useState('')
   const [bestProduct, setBestProduct] = useState('')
+  
   const isAuthHandler = (elem) => {
     console.log(elem)
     setIsAuth(elem)
