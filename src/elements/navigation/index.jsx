@@ -24,7 +24,9 @@ const NavigationPage = (props) => {
         setElem(props.elements);
       }
       if (props.maxElem === 2) {
-        setAllPages(Math.ceil(elem / maxElems) + 1);
+        setAllPages(Math.ceil(elem / maxElems));
+        console.log("I'm here", count);
+        console.log(props.maxElem === 2);
         const newCount =
           count < 0
             ? 0
@@ -34,36 +36,34 @@ const NavigationPage = (props) => {
         // console.log(newCount);
         props.countPage(newCount);
         setCount(newCount);
-      }else{
-        setAllPages(Math.ceil(elem / maxElems) - 1);
+      } else {
+        setAllPages(Math.ceil(elem / maxElems));
         const newCount =
           count < 0
             ? 0
-            : count > Math.floor(elem / maxElems)
-            ? Math.floor(elem / maxElems)
+            : count > Math.ceil(elem / maxElems)
+            ? Math.ceil(elem / maxElems)
             : count;
         // console.log(newCount);
         props.countPage(newCount);
         setCount(newCount);
       }
-      
     } else {
-      // console.log(`${maxElems} ${props.text}`);
-      setAllPages(maxElems - 1);
+      setAllPages(maxElems);
+      const newCount = count < 0 ? 0 : count > maxElems ? maxElems : count;
+      props.countPage(newCount);
+      setCount(newCount);
     }
     if (props.maxElems) {
       setMaxElems(props.maxElems);
     }
-    const newCount = count < 0 ? 0 : count > maxElems ? maxElems : count;
-    props.countPage(newCount);
-    setCount(newCount);
   }, [count, elem, maxElems]);
 
   const handlePrev = () => {
     setCount(count - 1);
   };
   const handleNext = () => {
-    if (count < allPages) {
+    if (count + 1 < allPages) {
       setCount(count + 1);
     }
   };

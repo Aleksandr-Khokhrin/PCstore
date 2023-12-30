@@ -5,6 +5,7 @@ import { fetchVideos } from "../../redux/slices/videos";
 
 import NavigationPage from "../../elements/navigation";
 import ErrorBox from "../../elements/errorBox";
+import VideoBox from "../../elements/VideoBox";
 import "./style.css";
 
 const WindowEleven = (props) => {
@@ -33,24 +34,15 @@ const WindowEleven = (props) => {
 
   // console.log(videos);
   // console.log(videos.videos.status === "error")
-  const renderBoxes =
-    videos.videos.items && videos.videos.status !== "error" ? (
-      videos.videos.items.slice(0, boxCount).map((item, index) => {
-        return (
-          <a
-            key={index}
-            href={item.video_url}
-            className="videoBox"
-            style={{ backgroundImage: `url(${item.picture})` }}
-          >
-            {/* <h3>{item.title}</h3> */}
-            {/* <a href={item.url}></a> */}
-          </a>
-        );
-      })
-    ) : (
-      <ErrorBox />
-    );
+ const renderBoxes =
+  videos.videos.items && videos.videos.status !== "error" ? (
+    videos.videos.items.slice(0, boxCount).map((item, index) => (
+      <VideoBox key={index} item={item} index={index} />
+    ))
+  ) : (
+    <ErrorBox />
+  );
+
 
   const countPageHandler = (elem) => {
     setPagesCount(elem);

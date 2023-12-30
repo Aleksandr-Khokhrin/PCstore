@@ -23,7 +23,7 @@ const WindowTwelve = () => {
           </div>
         </div>
         <div className="windowTwelveBodyChild">
-          <StarBar active={false} sum={3}/>
+          <StarBar active={true} sum={3}/>
           <p className="textWinTW">95% покупателей купили бы здесь снова</p>
         </div>
         <div className="windowTwelveBodyChild">

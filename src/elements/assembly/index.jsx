@@ -10,20 +10,21 @@ import equalizer from "./img/equalizer.svg";
 const Assembly = (props) => {
   const [like, setLike] = useState(false);
   const [discount, setDiscount] = useState(8);
+  const { item } = props;
   const [top, setTop] = useState(true);
   const [newProd, setNewProd] = useState(true);
   const [existence, setExistence] = useState(true);
   const [prodTehno, setProdTexno] = useState(true);
-
+  
   useEffect(() => {
     // console.log(`родительский лайк ${like}`);
+    setExistence(item?.in_stock)
     setProdTexno(props.prodTehno);
-  }, [like, prodTehno]);
+  }, [like, prodTehno, item]);
 
   const onClickFromChildHandler = (data) => {
     setLike(data);
   };
-
   return (
     <div className="product">
       <div className="productImg">
@@ -31,7 +32,7 @@ const Assembly = (props) => {
 
         {prodTehno ? (
           <>
-            <StarBar active={false} sum={2}/>
+            <StarBar active={false} sum={item?.avg_rating} />
             <div className="likeElem">
               <LikeElem onClickFromChild={onClickFromChildHandler} />
               <div className="equalaizer">
@@ -42,37 +43,42 @@ const Assembly = (props) => {
         ) : null}
         {discount !== null || top || newProd ? (
           <div className="productBarBox">
-            <ProductBar discount={discount} top={top} newProd={newProd} />
+            <ProductBar
+              data={props.data}
+              discount={item?.discount}
+              top={item?.hot}
+              newProd={newProd}
+            />
           </div>
         ) : null}
       </div>
       <div className="productInfo">
-        <p className="productInfoTile">Сборка #12</p>
+        <p className="productInfoTile">{item?.title}</p>
         {prodTehno ? (
           <div className="productTehno">
             <div className="cpuInfo">
-              <p>CPU:</p>
-              <p>Intel Core i9 12900K</p>
+              <p>{item?.char.titles[0]}:</p>
+              <p>{item?.char.values[0]}</p>
             </div>
             <hr />
             <div className="cpuInfo">
-              <p>GPU:</p>
-              <p>RTX 4080 16GB</p>
+              <p>{item?.char.titles[1]}:</p>
+              <p>{item?.char.values[1]}</p>
             </div>
             <hr />
             <div className="cpuInfo">
-              <p>RAM:</p>
-              <p>32GB/1TB</p>
+              <p>{item?.char.titles[2]}:</p>
+              <p>{item?.char.values[2]}</p>
             </div>
           </div>
         ) : null}
-          {prodTehno ? (
-            existence ? (
-              <div className="existence">• В наличии</div>
-            ) : (
-              <div className="unExistence">• Нет в наличии</div>
-            )
-          ) : null}
+        {prodTehno ? (
+          existence ? (
+            <div className="existence">• В наличии</div>
+          ) : (
+            <div className="unExistence">• Нет в наличии</div>
+          )
+        ) : null}
         <div className="productCost">
           <div className="priceWithDiscountBox">
             {discount ? (
@@ -80,11 +86,11 @@ const Assembly = (props) => {
             ) : (
               <p className="priceTitle">Цена:</p>
             )}
-            <p className="priceWithDiscount">25 178 000 сум</p>
+            <p className="priceWithDiscount">{item?.price_discount}</p>
           </div>
           {discount ? (
             <div>
-              <p className="price">29 578 000 сум</p>
+              <p className="price">{item?.price}</p>
             </div>
           ) : null}
         </div>

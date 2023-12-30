@@ -208,7 +208,8 @@ const WindowNine = (props) => {
       <NavigationPage
         countPage={countPageHandler}
         pages={pagesClick}
-        elements={2 * 2 - 1}
+        elements={data.length}
+        windWidth={windWidth}
         maxElem={2}
       />
       <div className="windowNineContentBody">

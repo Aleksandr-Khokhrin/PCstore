@@ -29,7 +29,6 @@ const bannersSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            //Получение статей
             .addCase(fetchBannersSlider.pending, (state) => {
                 state.banners.items = [];
                 state.banners.status = 'loading';

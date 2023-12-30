@@ -1,13 +1,21 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../redux/slices/products";
 
 import WatchAll from "../../elements/watchAll";
 import Assembly from "../../elements/assembly";
 import "./style.css";
 
 const WindowTwo = () => {
+  const myArray = useSelector((state) => state.products.products.items);
+  const dispatch = useDispatch()
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [boxCount, setBoxCount] = useState(4);
 
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [])
+  console.log(myArray)
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
@@ -26,11 +34,11 @@ const WindowTwo = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [windowWidth, boxCount]);
-  const myArray = [0, 1, 2, 3, 4, 5, 6]
 
-  const renderBoxes = myArray.slice(0, boxCount).map((item, index) => {
-    return <Assembly key={index} prodTehno={true}/>;
-  });
+  const renderBoxes = myArray.slice(0, boxCount).map((item, index) => (
+    item.category === 'Игровые сборки' ? <Assembly key={index} item={item} prodTehno={true} /> : null
+  ));
+  
 
   return (
     <div className="windowTwo">
