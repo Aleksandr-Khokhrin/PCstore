@@ -4,6 +4,7 @@ import { videosReducer } from './slices/videos'
 import { bannersReducer } from "./slices/banners";
 import { categoriesReducer } from "./slices/categories";
 import { productsReducer } from "./slices/products";
+import { offersReducer } from "./slices/offersProducts";
 const store = configureStore({
     reducer: {
         videos: videosReducer,
@@ -11,6 +12,7 @@ const store = configureStore({
         auth: authReducer,
         categories: categoriesReducer,
         products: productsReducer,
+        offers: offersReducer,
         // categories: categoriesReducer,
     }
 });

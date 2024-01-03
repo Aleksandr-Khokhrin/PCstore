@@ -15,6 +15,7 @@
 
 .contentBtnForWindowOne {
   display: flex;
+  justify-content: start;
   gap: calc(0.5vw + 10px);
 }
 .contentBtnForWindowOne button {
@@ -70,8 +71,8 @@
 }
 .navigation .arrow {
   background-color: var(--bgSearchImg);
-  width: calc(3vw + 13px);
-  height: calc(3vw + 13px);
+  width: calc(2.56vw + 31px);
+  height: calc(2.56vw + 31px);
   display: flex;
   align-items: center;
   justify-content: center;

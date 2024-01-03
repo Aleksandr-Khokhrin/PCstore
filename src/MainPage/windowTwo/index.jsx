@@ -13,9 +13,8 @@ const WindowTwo = () => {
   const [boxCount, setBoxCount] = useState(4);
 
   useEffect(() => {
-    dispatch(fetchProducts())
+    dispatch(fetchProducts(['игровые сборки']))
   }, [])
-  console.log(myArray)
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };

@@ -127,6 +127,10 @@
   padding: 24px 42px;
   background-color: var(--bgSearchImg);
   position: relative;
+  img{
+    width: 14px;
+    height: 16px;
+  }
 }
 .visible {
   opacity: 1;
@@ -144,9 +148,9 @@
 .categoryList {
   position: absolute;
   background-color: var(--bg);
-  top: 55px;
+  top: 52px;
   left: 0;
-  width: 100%;
+  width: 99%;
   max-height: 60vh; /* Ограничиваем высоту */
   overflow-y: auto; /* Добавляем внутренний скролл при необходимости */
   border: 2px solid var(--borderInput);

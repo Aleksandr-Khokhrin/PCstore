@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import LikeElem from "../likeElem";
 import StarBar from "../starBar/indes";
 import ProductBar from "../productBar";
+import PrimaryBtn from '../btns/primary/index'
 
 import "./style.css";
 import img from "./img/img 1.png";
@@ -79,7 +80,7 @@ const Assembly = (props) => {
             <div className="unExistence">• Нет в наличии</div>
           )
         ) : null}
-        <div className="productCost">
+        <div className="productCost" style={ prodTehno ? {flexWrap: 'wrap-reverse'} : null}>
           <div className="priceWithDiscountBox">
             {discount ? (
               <p className="priceTitle">Цена со скидкой:</p>
@@ -96,8 +97,7 @@ const Assembly = (props) => {
         </div>
         {prodTehno ? (
           <div className="contentBtnForWindowOne">
-            <button className="searchPC">Купить</button>
-            <button className="config">В корзину</button>
+            <PrimaryBtn text='Купить'/>
           </div>
         ) : null}
       </div>

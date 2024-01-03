@@ -1,4 +1,5 @@
 .linkWay {
+  display: flex;
   text-decoration: none;
 }
 
