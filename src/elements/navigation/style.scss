@@ -4,6 +4,9 @@
   align-items: center;
   gap: calc(0.64vw + 9.7px);
   height: calc(3vw + 13px);
+  @media(max-width: 800px){
+    justify-content: space-between;
+  }
   .navigationArrow {
     background-color: var(--bgSearchImg);
     padding: 13px 15px;
@@ -41,4 +44,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+.navigationPage.linkNav{
+  justify-content: flex-end;
 }

@@ -63,10 +63,24 @@ const WindowTen = (props) => {
       ? myArray
           .slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
           .map((item, index) => {
-            return <ServiceBox key={index} img={item.img} title={item.title} text={item.text} />;
+            return (
+              <ServiceBox
+                key={index}
+                img={item.img}
+                title={item.title}
+                text={item.text}
+              />
+            );
           })
       : myArray.slice(0, boxCount).map((item, index) => {
-        return <ServiceBox key={index} img={item.img} title={item.title} text={item.text} />;
+          return (
+            <ServiceBox
+              key={index}
+              img={item.img}
+              title={item.title}
+              text={item.text}
+            />
+          );
         });
 
   const countPageHandler = (elem) => {
@@ -80,13 +94,9 @@ const WindowTen = (props) => {
         countPage={countPageHandler}
         pages={pagesClick}
         elements={myArray.length}
-        maxElem={2}
-        smallArray={true}
-        windWidth={windWidth}
+        maxElems={Math.ceil(myArray.length / boxCount)}
       />
-      <div className="windowTenBody">
-        {renderBoxes}
-      </div>
+      <div className="windowTenBody">{renderBoxes}</div>
     </div>
   );
 };

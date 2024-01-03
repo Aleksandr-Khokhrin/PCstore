@@ -138,17 +138,44 @@
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.5s ease-in-out, max-height 1s ease-in-out;
+  transition: opacity 0.3s ease-in-out, max-height 1s ease-in-out;
 }
 
 .categoryList {
   position: absolute;
   background-color: var(--bg);
   top: 55px;
-  left: -2px;
-  width: calc(87.44vw - 75.81px);
-  padding: 24px 42px;
+  left: 0;
+  width: 100%;
+  max-height: 60vh; /* Ограничиваем высоту */
+  overflow-y: auto; /* Добавляем внутренний скролл при необходимости */
+  border: 2px solid var(--borderInput);
+  
+  .categoryName {
+    transition: color 0.5s,  background-color 0.5s;
+    &:hover{
+      p{
+        color: var(--bgSearchImg)
+      }
+    }
+    &:active{
+      background-color: var(--bgSearchImg);
+      p{
+        color: var(--text)
+      }
+    }
+    p {
+      padding: 20px 25px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+    }
+    hr {
+      border: 1px solid var(--borderInput);
+    }
+  }
 }
+
 
 .exitBtn {
   background: var(--bg);
@@ -160,9 +187,9 @@
   border: 1px solid var(--borderInput);
   padding: 2px 5px;
   transition: color 0.3s, border 0.3s;
-  &:hover{
+  &:hover {
     color: var(--bgSearchImg);
-    border: 1px solid var(--bgSearchImg)
+    border: 1px solid var(--bgSearchImg);
   }
 }
 @media (min-width: 1600px) {

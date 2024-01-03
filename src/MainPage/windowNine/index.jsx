@@ -209,8 +209,7 @@ const WindowNine = (props) => {
         countPage={countPageHandler}
         pages={pagesClick}
         elements={data.length}
-        windWidth={windWidth}
-        maxElem={2}
+        maxElems={Math.ceil(data.length / boxCount)}
       />
       <div className="windowNineContentBody">
         <div className="windowNineContent">{renderBoxes}</div>

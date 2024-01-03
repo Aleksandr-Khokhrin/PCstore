@@ -119,7 +119,7 @@ const NavigationPage = (props) => {
             </div>
           </div>
           {!props.fullBar ? (
-            <div className="navigationPage">
+            <div className="navigationPage linkNav">
               <WatchAll page={props.page} type={props.type} />
             </div>
           ) : null}

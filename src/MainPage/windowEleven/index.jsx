@@ -19,7 +19,6 @@ const WindowEleven = (props) => {
   useEffect(() => {
     dispatch(fetchVideos());
     setWindWidth(props.windowWidth);
-
     if (windWidth <= 1400 && 800 < windWidth) {
       setBoxCount(3);
       setPagesClick(false);
@@ -32,17 +31,16 @@ const WindowEleven = (props) => {
     }
   }, [windWidth, boxCount, pagesClick, props.windowWidth, videos.status]);
 
-  // console.log(videos);
-  // console.log(videos.videos.status === "error")
- const renderBoxes =
-  videos.videos.items && videos.videos.status !== "error" ? (
-    videos.videos.items.slice(0, boxCount).map((item, index) => (
-      <VideoBox key={index} item={item} index={index} />
-    ))
-  ) : (
-    <ErrorBox />
-  );
-
+  const renderBoxes =
+    videos.videos.items && videos.videos.status !== "error" ? (
+      videos.videos.items
+        .slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
+        .map((item, index) => (
+          <VideoBox key={index} item={item} index={index} />
+        ))
+    ) : (
+      <ErrorBox />
+    );
 
   const countPageHandler = (elem) => {
     setPagesCount(elem);
@@ -54,11 +52,9 @@ const WindowEleven = (props) => {
       <NavigationPage
         countPage={countPageHandler}
         pages={pagesClick}
-        elements={3 * 2 - 1}
-        // elements={myArray.length * 2 - 1}
-        maxElem={2}
+        elements={videos.videos.items?.length}
+        maxElems={Math.ceil(videos.videos.items?.length / boxCount)}
         smallArray={true}
-        windWidth={windWidth}
       />
       <div className="windowElevenBody">{renderBoxes}</div>
     </div>
