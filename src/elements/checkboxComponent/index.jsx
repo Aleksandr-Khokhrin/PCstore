@@ -24,7 +24,7 @@ const CheckboxComponent = ({ headers }) => {
   return (
     <div className="checkBox">
       {headers.map((header, index) => (
-        <div className="checkBoxComp">
+        <div key={index} className="checkBoxComp">
           <div className="checkBoxTitle">
             <label key={index}>
               <input

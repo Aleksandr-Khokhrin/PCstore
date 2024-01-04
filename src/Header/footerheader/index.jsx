@@ -75,8 +75,8 @@ const FooterHeader = () => {
             className={`categoryList ${isCategoryListVisible ? "" : "none"}`}
           >
             {myArray.map((item, index) => (
-              <div className="categoryName">
-                <p key={index}>{item.name}</p>
+              <div key={index} className="categoryName">
+                <p>{item.name}</p>
                 <hr />
               </div>
             ))}

@@ -49,27 +49,57 @@
     transition: opacity 0.5s;
     cursor: auto;
     z-index: 2;
+    transition: color 1s;
     &.activeInput {
-      opacity: 0.4;
+      color: var(--bgActiveImg);
     }
   }
   .dropdown-list {
-    width: 250.5px;
+    width: 314.3px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     position: absolute;
-    border: 2px solid var(--borderInput);
-    border-top: 1px solid var(--bgSearchImg);
+    border: 2px solid var(--bgActiveImg);
+    border-top: none;
     background: var(--bgInput);
-    padding: 16px 32px;
     z-index: 3;
-    p {
-      transition: color 0.7s;
-      cursor: pointer;
-      &:hover {
-        color: var(--bgActiveImg);
+    max-height: 33vh;
+    overflow: auto;
+    div {
+      hr {
+        border: 1px solid var(--bgActiveImg);
       }
+    }
+    div {
+      p {
+        padding: 15px 32px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 140%;
+        cursor: pointer;
+        transition: color 0.7s;
+        &:hover {
+          color: var(--bgActiveImg);
+        }
+      }
+    }
+    /* Общие стили для скроллбара */
+    &::-webkit-scrollbar {
+      width: 5px; /* ширина скроллбара */
+    }
+    /* Стили для бегунка скроллбара */
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--bgActiveImg); /* цвет бегунка */
+      border-radius: 6px; /* радиус углов бегунка */
+    }
+    /* Стили для трека скроллбара (фон, по которому двигается бегунок) */
+    &::-webkit-scrollbar-track {
+      background-color: var(--borderInput); /* цвет фона трека */
+    }
+    /* Если нужно, можно добавить стили для углов бегунка */
+    &::-webkit-scrollbar-corner {
+      background-color: #f1f1f1; /* цвет фона углов */
     }
   }
 }

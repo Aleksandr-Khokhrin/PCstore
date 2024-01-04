@@ -1,0 +1,69 @@
+@charset "UTF-8";
+.priceRangeBox {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.priceRangeBox .priceRangeBoxInput {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.priceRangeBox .priceRangeBoxInput .priceBox {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+}
+.priceRangeBox .priceRangeBoxInput .priceBox input[type=number] {
+  -moz-appearance: textfield;
+}
+.priceRangeBox .priceRangeBoxInput .priceBox input[type=number]::-webkit-inner-spin-button,
+.priceRangeBox .priceRangeBoxInput .priceBox input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.priceRangeBox .priceRangeBoxInput .priceBox input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+.priceRangeBox .priceRangeBoxInput .priceBox input {
+  padding: 16px 24px;
+  background-color: var(--bgInput);
+  border: 1px solid var(--borderInput);
+  box-sizing: border-box; /* Добавьте это свойство */
+  width: calc(100% - 1px); /* Вычтите padding*2 из общей ширины */
+}
+
+/* Изменение цвета бегунка слайдера */
+.rc-slider-handle {
+  background-color: var(--bgSearchImg) !important;
+  border: 2px solid var(--bgSearchImg) !important;
+  border-radius: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin-top: -10px !important;
+}
+
+/* Изменение цвета дорожки слайдера */
+.rc-slider-rail {
+  background-color: var(--borderInput);
+}
+
+/* Изменение цвета активной части дорожки слайдера */
+.rc-slider-track.rc-slider-track-1 {
+  background-color: var(--bgSearchImg) !important;
+}
+
+/* Изменение цвета области между бегунками в случае range слайдера */
+.rc-slider-track.rc-slider-track-2 {
+  background-color: var(--bgSearchImg) !important;
+}
+
+/* Изменение цвета области между бегунками при наведении на слайдер */
+.rc-slider:hover .rc-slider-track.rc-slider-track-2 {
+  background-color: var(--bgSearchImg) !important;
+}/*# sourceMappingURL=style.css.map */

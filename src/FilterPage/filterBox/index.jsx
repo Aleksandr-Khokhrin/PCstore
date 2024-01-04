@@ -4,6 +4,7 @@ import PrimaryBtn from "../../elements/btns/primary";
 import SecondaryBtn from "../../elements/btns/secondary";
 import FilterList from "../../elements/filterList";
 import CheckboxComponent from "../../elements/checkboxComponent";
+import PriceRange from "../../elements/priceRange";
 const FilterBox = () => {
   const categoryList = [
     "первая",
@@ -15,6 +16,16 @@ const FilterBox = () => {
     "седьмая",
     "восьмая",
   ];
+  const category = ["Case", "CPU", "MB", "HDD", "GPU", "PSU", "SSD"];
+
+  const filterElems = category.map((item, index) => {
+    return (
+      <div key={index} className="filterBoxComponent">
+        <p>{item}</p>
+        <FilterList categories={categoryList} unknown="Выберите со списка" />
+      </div>
+    );
+  });
   const checkboxHeaders = [
     {
       title: "Phyton",
@@ -43,33 +54,13 @@ const FilterBox = () => {
         <hr />
       </div>
       <div className="filterBoxComponent">
-        <p>Case</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
+        <p>Цена (Сум)</p>
+        <PriceRange start={10} end={1000}/>
       </div>
       <div className="filterBoxComponent">
-        <p>CPU</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
+        <hr />
       </div>
-      <div className="filterBoxComponent">
-        <p>MB</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
-      </div>
-      <div className="filterBoxComponent">
-        <p>HDD</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
-      </div>
-      <div className="filterBoxComponent">
-        <p>GPU</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
-      </div>
-      <div className="filterBoxComponent">
-        <p>PSU</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
-      </div>
-      <div className="filterBoxComponent">
-        <p>SSD</p>
-        <FilterList categories={categoryList} unknown="Выберите со списка" />
-      </div>
+      {filterElems}
       <div className="filterBoxBtn">
         <PrimaryBtn text="Применить фильтр" />
         <SecondaryBtn text="Сбросить фильтр" />

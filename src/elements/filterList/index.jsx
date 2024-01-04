@@ -30,11 +30,22 @@ const FilterList = (props) => {
       </div>
       {isDropdownOpen && (
         <div className="dropdown-list">
-          {props.categories.map((category, index) => (
-            <p key={index} onClick={() => handleCategoryClick(category)}>
-              {category}
-            </p>
-          ))}
+          {props.categories.map((category, index) =>
+            index + 1 < props.categories.length ? (
+              <div>
+                <p key={index} onClick={() => handleCategoryClick(category)}>
+                  {category}
+                </p>
+                <hr />
+              </div>
+            ) : (
+              <div>
+                <p key={index} onClick={() => handleCategoryClick(category)}>
+                  {category}
+                </p>
+              </div>
+            )
+          )}
         </div>
       )}
     </div>
