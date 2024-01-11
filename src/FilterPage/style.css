@@ -6,4 +6,18 @@
   padding-top: 40px;
   gap: calc(1.9vw + 13px);
   background-color: var(--bg);
+}
+.filterPage .filterBody {
+  display: flex;
+  gap: 25px;
+}
+.filterPage .filterBody .filterBodyLeft {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6vw - 66px);
+}
+@media (max-width: 1400px) {
+  .filterPage .filterBody .filterBodyLeft {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

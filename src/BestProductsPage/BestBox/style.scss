@@ -1,30 +1,31 @@
 .filterBox {
-  display: flex;
   flex-direction: column;
   gap: 32px;
+  width: calc(19vw + 33px);
   background: var(--bgInput);
   border: 1px solid var(--borderInput);
   padding: calc(2vw + 2.6px) 0;
   @media (min-width: 1400px) {
-    width: calc(12.56vw + 161px);
+    display: flex;
   }
   @media (max-width: 1400px) {
+    display: none;
     width: calc(28.5vw - 5px);
   }
-  @media (max-width: 800px) {
-    width: calc(42.5vw);
-  }
+  // @media (max-width: 800px) {
+  //   width: calc(42.5vw);
+  // }
   .filterBoxComponent {
     padding: 0 calc(2vw + 2.6px);
     display: flex;
     flex-direction: column;
     gap: 26px;
     h2 {
-      font-size: 34px;
+      font-size: calc(1.5vw + 15px);
       font-weight: 600;
     }
     p {
-      font-size: 24px;
+      font-size: calc(0.77vw + 9px);
       font-weight: 600;
     }
     hr{

@@ -5,6 +5,12 @@
   font-family: "Manrope", sans-serif;
 }
 
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 textarea:active,
 textarea:hover,
 textarea:focus {

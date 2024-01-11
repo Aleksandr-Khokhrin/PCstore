@@ -1,0 +1,12 @@
+.bestOffersBox {
+  display: flex;
+  .productBoxForSix{
+    display: flex;
+  }
+  h3 {
+    font-size: calc(1.15vw + 12px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
+}

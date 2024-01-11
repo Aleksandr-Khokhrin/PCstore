@@ -37,9 +37,9 @@ const WindowFive = (props) => {
 
   useEffect(() => {
     setA(pagesCount * boxCount);
-    console.log(pagesCount * boxCount, pagesCount * boxCount + boxCount);
+    // console.log(pagesCount * boxCount, pagesCount * boxCount + boxCount);
     setB(pagesCount * boxCount + boxCount);
-    console.log(lengthArray);
+    // console.log(lengthArray);
   }, [boxCount, pagesCount, a, b, lengthArray]);
 
   useEffect(() => {
@@ -71,6 +71,7 @@ const WindowFive = (props) => {
   const countPageHandler = (elem) => {
     // console.log(elem);
     setPagesCount(elem);
+    
   };
 
   return (

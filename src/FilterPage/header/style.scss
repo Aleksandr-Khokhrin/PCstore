@@ -1,17 +1,19 @@
 .filterPageHeader {
   display: flex;
   gap: 24px;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
   .filterPageHeaderLeft {
-      min-width: calc(12.56vw + 161px);
+    min-width: calc(19vw + 33px);
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--borderInput);
-    //   background: var(--bgInput);
     .FPHLup {
       display: flex;
       gap: 6px;
       p {
-        font-size: 16px;
+        font-size: calc(0.4vw + 12.6px);
         font-weight: 400;
         line-height: 140%;
         color: var(--textSpan);
@@ -19,13 +21,12 @@
     }
     .FPHLdown {
       p {
-        font-size: calc(0.77vw + 19px);
+        font-size: calc(0.9vw + 17px);
         font-style: normal;
         font-weight: 600;
         line-height: 120%;
       }
     }
-   
   }
   .filterPageHeaderRight {
     display: flex;
@@ -34,22 +35,65 @@
     padding: 24px 32px;
     border-bottom: 1px solid var(--borderInput);
     background: var(--bgInput);
+    @media (max-width: 1000px) {
+      width: auto;
+    }
+    @media (max-width: 400px) {
+      padding: 12px 12px;
+    }
+    .filterSmallLeft {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      p {
+        font-size: calc(0.4vw + 12.6px);
+        font-weight: 400;
+        line-height: 140%;
+      }
+      img {
+        width: calc(1vw + 12.5px);
+      }
+      @media (max-width: 1400px) {
+        display: flex;
+      }
+    }
     .FPHRright {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 10px;
       p {
-        font-size: 20px;
+        font-size: calc(0.4vw + 12.6px);
         font-weight: 400;
         line-height: 140%;
+      }
+      .numPage {
+        
+        span {
+          user-select: none;
+          cursor: pointer;
+          outline: 'none';
+          opacity: 0.5;
+          &:active {
+            color: var(--text);
+            opacity: 1;
+          }
+        }
+      }
+      @media (max-width: 1400px) {
+        display: none;
       }
     }
     .FPHRleft {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 10px;
+      .FPHRleftP {
+        @media (max-width: 800px) {
+          display: none;
+        }
+      }
       p {
-        font-size: 20px;
+        font-size: calc(0.4vw + 12.6px);
         font-weight: 400;
         line-height: 140%;
       }

@@ -1,4 +1,7 @@
 .product {
+  display:  flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid var(--borderInput);
   background: var(--bgInput);
   padding-bottom: calc(1.1vw + 20px);
@@ -11,7 +14,6 @@
   @media (max-width: 800px) {
     width: calc(42.5vw);
   }
- 
 }
 .productImg {
   position: relative;
@@ -20,8 +22,14 @@
     top: calc(1.7vw + 6px);
     right: calc(0.9vw + 9px);
   }
-  .mainImg {
+  .productImgMain {
+    display: flex;
+    justify-content: center;
     width: 100%;
+    .mainImg {
+      width: 60%;
+      margin-top: 20px;
+    }
   }
 }
 .equalaizer {

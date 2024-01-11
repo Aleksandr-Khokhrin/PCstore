@@ -3,27 +3,33 @@ import "./style.css";
 
 import FilterHeader from "./header";
 import FilterBox from "./filterBox";
-// import YourProductComponent from "./YourProductComponent"; // Замените на ваш компонент с товарами
-
+import BestOffers from "./BestOffers";
+import FilterContent from "./FilterContent";
 const CategoryPage = () => {
+  const [pageNum, setPageNum] = useState(12)
   useEffect(() => {
     // После монтирования компонента, прокрутите страницу вверх
     window.scrollTo(0, 0);
-
     // Или используйте scrollIntoView
     // document.documentElement.scrollIntoView();
   }, []);
-  
+  const pageNumHandler = (elem) => {
+    // console.log(elem)
+    setPageNum(elem)
+  }
+
   return (
     <div className="paddingTop">
       <div className="filterPage">
-        <FilterHeader />
+        <FilterHeader pageNum={pageNumHandler} />
         <div>
           <div className="filterBody">
-            <FilterBox />
+            <div className="filterBodyLeft">
+              <FilterBox />
+              <BestOffers column={true} small={true}/>
+            </div>
             <div className="filterBodyPProducts">
-              {/* Вставьте свои компоненты или контент здесь */}
-              {/* <YourProductComponent /> */}
+              <FilterContent pageNum={pageNum} />
             </div>
           </div>
         </div>

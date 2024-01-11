@@ -2,8 +2,13 @@
   display: flex;
   gap: 24px;
 }
+@media (max-width: 1000px) {
+  .filterPageHeader {
+    flex-direction: column;
+  }
+}
 .filterPageHeader .filterPageHeaderLeft {
-  min-width: calc(12.56vw + 161px);
+  min-width: calc(19vw + 33px);
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--borderInput);
@@ -13,13 +18,13 @@
   gap: 6px;
 }
 .filterPageHeader .filterPageHeaderLeft .FPHLup p {
-  font-size: 16px;
+  font-size: calc(0.4vw + 12.6px);
   font-weight: 400;
   line-height: 140%;
   color: var(--textSpan);
 }
 .filterPageHeader .filterPageHeaderLeft .FPHLdown p {
-  font-size: calc(0.77vw + 19px);
+  font-size: calc(0.9vw + 17px);
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -32,23 +37,73 @@
   border-bottom: 1px solid var(--borderInput);
   background: var(--bgInput);
 }
+@media (max-width: 1000px) {
+  .filterPageHeader .filterPageHeaderRight {
+    width: auto;
+  }
+}
+@media (max-width: 400px) {
+  .filterPageHeader .filterPageHeaderRight {
+    padding: 12px 12px;
+  }
+}
+.filterPageHeader .filterPageHeaderRight .filterSmallLeft {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+.filterPageHeader .filterPageHeaderRight .filterSmallLeft p {
+  font-size: calc(0.4vw + 12.6px);
+  font-weight: 400;
+  line-height: 140%;
+}
+.filterPageHeader .filterPageHeaderRight .filterSmallLeft img {
+  width: calc(1vw + 12.5px);
+}
+@media (max-width: 1400px) {
+  .filterPageHeader .filterPageHeaderRight .filterSmallLeft {
+    display: flex;
+  }
+}
 .filterPageHeader .filterPageHeaderRight .FPHRright {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
 }
 .filterPageHeader .filterPageHeaderRight .FPHRright p {
-  font-size: 20px;
+  font-size: calc(0.4vw + 12.6px);
   font-weight: 400;
   line-height: 140%;
+}
+.filterPageHeader .filterPageHeaderRight .FPHRright .numPage span {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  outline: "none";
+  opacity: 0.5;
+}
+.filterPageHeader .filterPageHeaderRight .FPHRright .numPage span:active {
+  color: var(--text);
+  opacity: 1;
+}
+@media (max-width: 1400px) {
+  .filterPageHeader .filterPageHeaderRight .FPHRright {
+    display: none;
+  }
 }
 .filterPageHeader .filterPageHeaderRight .FPHRleft {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
+}
+@media (max-width: 800px) {
+  .filterPageHeader .filterPageHeaderRight .FPHRleft .FPHRleftP {
+    display: none;
+  }
 }
 .filterPageHeader .filterPageHeaderRight .FPHRleft p {
-  font-size: 20px;
+  font-size: calc(0.4vw + 12.6px);
   font-weight: 400;
   line-height: 140%;
 }/*# sourceMappingURL=style.css.map */

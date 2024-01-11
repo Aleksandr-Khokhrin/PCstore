@@ -16,7 +16,7 @@ const WindowSix = (props) => {
   useEffect(()=>{
     dispatch(fetchOffers())
   }, [])
-  console.log(data[0]?.products)
+  // console.log(data[0]?.products)
   useEffect(() => {
     setWindWidth(props.windowWidth);
 

@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 import FilterList from "../../elements/filterList";
+import img from "./filter.svg";
 
-const FilterHeader = () => {
+const FilterHeader = (props) => {
   const { productName } = useParams();
-  const [pageNum, setPageNum] = useState(24);
+  const [pageNum, setPageNum] = useState(12);
   const pageArray = [12, 24, 36, 48];
   const categories = [
     "по умолчанию",
@@ -15,12 +16,18 @@ const FilterHeader = () => {
     "новинки",
     "лучшие предложения",
   ];
+  useEffect(() => {
+    props.pageNum(pageNum)
+  }, [pageNum])
+  const clickPaheHandler = (e) => {
+    setPageNum(e.target.textContent)
+  }
   return (
     <div className="filterPageHeader">
       <div className="filterPageHeaderLeft">
         <div className="FPHLup">
-          <Link style={{textDecoration: "none" }} to="/">
-            <p style={{ opacity: "0.5"}}>Главная / </p>{" "}
+          <Link style={{ textDecoration: "none" }} to="/">
+            <p style={{ opacity: "0.5" }}>Главная / </p>{" "}
           </Link>
           <p style={{ color: "var(--text)" }}> {productName}</p>
         </div>
@@ -29,19 +36,23 @@ const FilterHeader = () => {
         </div>
       </div>
       <div className="filterPageHeaderRight">
+        <div className="filterSmallLeft">
+          <img src={img} alt="" />
+          <p>Фильтр</p>
+        </div>
         <div className="FPHRleft">
-          <p>Сортировка товара </p>
-          <FilterList categories={categories} unknown="Выберите категорию" />
+          <p className="FPHRleftP">Сортировка товара</p>
+          <FilterList sizeStop={true} categories={categories} unknown="По умолчанию" />
         </div>
         <div className="FPHRright">
-          <p>Товаров на странице: </p>
+          <p>Товаров на странице</p>
           <p>
             {pageArray.map((elem, index) => (
-              <span key={index}>
-                {elem === pageNum ? (
-                  <span style={{ color: "var(--text)" }}>{elem}</span>
+              <span className="numPage" key={index}>
+                {elem == pageNum ? (
+                  <span style={{ color: "var(--text)", opacity: '1' }} onClick={clickPaheHandler}>{elem}</span>
                 ) : (
-                  <span style={{ color: "var(--textSpan)", opacity: "0.5" }}>
+                  <span style={{ color: "var(--textSpan)" }} onClick={clickPaheHandler}>
                     {elem}
                   </span>
                 )}

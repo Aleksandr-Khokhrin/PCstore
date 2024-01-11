@@ -1,0 +1,10 @@
+.filterBodyBox{
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.3vw + 15.4px);
+    .filterBodyBoxMain{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vw;
+    }
+}

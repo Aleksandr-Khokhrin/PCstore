@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./style.css";
@@ -18,6 +18,12 @@ const PriceRange = (props) => {
   const [maxValue, setMaxValue] = useState(
     parseInt(getQueryString("maxval")) || end
   );
+  useEffect(() => {
+    // console.log(`start ${start}`);
+    // console.log(`end ${end}`);
+    // console.log(`minValue ${minValue}`);
+    // console.log(`maxValue ${maxValue}`);
+  }, [start, end, maxValue, minValue]);
 
   const handleSliderChange = (values) => {
     setMinValue(values[0]);
