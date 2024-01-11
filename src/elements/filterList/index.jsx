@@ -12,7 +12,7 @@ const FilterList = (props) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [windowWidth]);
+  }, [windowWidth, isDropdownOpen]);
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
@@ -26,6 +26,7 @@ const FilterList = (props) => {
     <div
       className={`category-dropdown`}
       style={
+        props.burger ? { width: "80%"} :
         props.sizeStop && windowWidth < 800
           ? { width: "200px" }
           : props.sizeStop && windowWidth < 1400
@@ -36,6 +37,7 @@ const FilterList = (props) => {
       <div
         className={`category-dropdown-div ${isDropdownOpen ? "open" : ""}`}
         style={
+          // props.burger ? { gap: "5px" } :
           props.sizeStop && windowWidth < 800
             ? { width: "200px" }
             : props.sizeStop && windowWidth < 1400
@@ -50,7 +52,8 @@ const FilterList = (props) => {
           readOnly
           className={`${isDropdownOpen ? "activeInput" : ""}`}
           style={
-            props.sizeStop && windowWidth < 1400
+            props.burger ? { fontSize: '15px', padding: "16px 22px" } :
+            props.sizeStop && windowWidth && !props.burger < 1400
               ? {fontSize: "16px" }
               : { padding: "16px 32px" }
           }
@@ -66,6 +69,7 @@ const FilterList = (props) => {
         <div
           className="dropdown-list"
           style={
+            props.burger ? { width: "100%"} :
             props.sizeStop && windowWidth < 800
               ? { width: "200px" }
               : props.sizeStop && windowWidth < 1400

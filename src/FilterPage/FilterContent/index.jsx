@@ -21,16 +21,14 @@ const FilterContent = (props) => {
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
-    setBoxCount(props.pageNum)
+    
+    setBoxCount(Number(props.pageNum))
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [windowWidth, boxCount, props.pageNum]);
-
+  }, [windowWidth, boxCount, pagesCount, props.pageNum]);
   const renderBoxes = myArray
     .slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
     .map((item, index) =>
@@ -38,8 +36,13 @@ const FilterContent = (props) => {
         <Assembly key={index} item={item} prodTehno={true} />
       ) : null
     );
+
+    const pagesHandler = (elem) => {
+      setPagesCount(elem);
+    }
   const countPageHandler = (elem) => {
-    setPagesCount(elem);
+    pagesHandler(elem)
+    // setPagesCount(elem);
     scroll.scrollToTop({
       duration: 2800, // Длительность анимации в миллисекундах
       smooth: 'easeInOutQuart', // Тип анимации (по вашему выбору)

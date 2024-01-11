@@ -5,6 +5,8 @@ import SecondaryBtn from "../../elements/btns/secondary";
 import FilterList from "../../elements/filterList";
 import CheckboxComponent from "../../elements/checkboxComponent";
 import PriceRange from "../../elements/priceRange";
+
+
 const FilterBox = () => {
   const categoryList = [
     "первая",

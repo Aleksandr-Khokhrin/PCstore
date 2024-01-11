@@ -45,10 +45,19 @@
       display: none;
       align-items: center;
       gap: 10px;
+
       p {
+        user-select: none;
+        cursor: pointer;
         font-size: calc(0.4vw + 12.6px);
         font-weight: 400;
         line-height: 140%;
+        &:hover {
+          color: var(--bgSearchImg);
+        }
+        &:active {
+          color: var(--bgActiveImg);
+        }
       }
       img {
         width: calc(1vw + 12.5px);
@@ -67,11 +76,10 @@
         line-height: 140%;
       }
       .numPage {
-        
         span {
           user-select: none;
           cursor: pointer;
-          outline: 'none';
+          outline: "none";
           opacity: 0.5;
           &:active {
             color: var(--text);

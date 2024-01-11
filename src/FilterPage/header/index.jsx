@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 import FilterList from "../../elements/filterList";
+import FilterBurger from "../filterburger";
 import img from "./filter.svg";
 
 const FilterHeader = (props) => {
@@ -36,10 +37,7 @@ const FilterHeader = (props) => {
         </div>
       </div>
       <div className="filterPageHeaderRight">
-        <div className="filterSmallLeft">
-          <img src={img} alt="" />
-          <p>Фильтр</p>
-        </div>
+        <FilterBurger/>
         <div className="FPHRleft">
           <p className="FPHRleftP">Сортировка товара</p>
           <FilterList sizeStop={true} categories={categories} unknown="По умолчанию" />

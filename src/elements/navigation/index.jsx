@@ -25,8 +25,8 @@ const NavigationPage = (props) => {
       }
       if (props.maxElem === 2) {
         setAllPages(Math.ceil(elem / maxElems));
-        console.log("I'm here", count);
-        console.log(props.maxElem === 2);
+        // console.log("I'm here", count);
+        // console.log(props.maxElem === 2);
         const newCount =
           count < 0
             ? 0
@@ -56,8 +56,11 @@ const NavigationPage = (props) => {
     }
     if (props.maxElems) {
       setMaxElems(props.maxElems);
+      const newCount = count < 0 ? 0 : count > maxElems ? maxElems : count;
+      setCount(newCount);
+      props.countPage(newCount);
     }
-  }, [count, elem, maxElems]);
+  }, [count, elem, maxElems, props.maxElems]);
 
   const handlePrev = () => {
     setCount(count - 1);
@@ -93,7 +96,10 @@ const NavigationPage = (props) => {
         {index + 1}
       </p>
     ) : allPages >= 4 &&
-      (count + 2 === index || (count - 2 === index && (count > allPages - 4 && (count < 3 || count > allPages - 4)))) ? (
+      (count + 2 === index ||
+        (count - 2 === index &&
+          count > allPages - 4 &&
+          (count < 3 || count > allPages - 4))) ? (
       <p key={index} className="pages">
         ...
       </p>
@@ -105,8 +111,7 @@ const NavigationPage = (props) => {
   });
 
   return props.page === "filter" ? (
-    <div className="navigationPage"
-    style={{justifyContent: 'space-between'}}>
+    <div className="navigationPage" style={{ justifyContent: "space-between" }}>
       <div className="navigationArrow left" onClick={handlePrev}>
         <img src={arrowleft} alt="" />
       </div>
