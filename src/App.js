@@ -4,9 +4,9 @@ import './mainStyles/style.css'
 import './mainStyles/colors.css'
 import Header from "./Header/index";
 import Footer from "./Footer/index";
-import MainPage from "./MainPage";
-import CategoryPage from "./FilterPage";
-import BestPage from "./BestProductsPage";
+import MainPage from "./pages/MainPage";
+import CategoryPage from './pages/FilterPage'
+import BestPage from './pages/BestProductsPage'
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
 import TokenRefresh from "./UI/Auth/tokenRefresh";

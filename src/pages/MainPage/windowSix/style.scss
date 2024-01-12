@@ -1,0 +1,35 @@
+.windowSix {
+  .productBoxForSix {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: calc(1vw + 4px);
+  }
+  @media (max-width: 400px) {
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(175vw - 320px);
+    }
+    .productImg {
+      display: flex;
+      justify-content: center;
+      .mainImg {
+        width: 60%;
+      }
+    }
+    .productInfo {
+      display: flex;
+      align-items: center;
+    }
+    .priceWithDiscountBox {
+      justify-content: center;
+      width: 80%;
+    }
+    .productCost {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}

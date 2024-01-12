@@ -1,0 +1,61 @@
+.windowTwelve {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  padding-bottom: calc(5vw + 54px);
+  gap: calc(1.9vw + 13px);
+  background-color: var(--bg);
+}
+.windowTwelve .windowTwelveBody {
+  display: flex;
+}
+@media (max-width: 1400px) {
+  .windowTwelve .windowTwelveBody {
+    flex-wrap: wrap;
+  }
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  flex-grow: 1;
+  padding: calc(1.35vw + 21px) calc(0.5vw + 32px);
+  border: 1px solid var(--borderInput);
+}
+@media (max-width: 1400px) {
+  .windowTwelve .windowTwelveBody .windowTwelveBodyChild {
+    width: 30%;
+    flex-grow: 1;
+  }
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild .secondBoxTwelve {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild .secondBoxTwelve p {
+  padding-bottom: 5px;
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild .footerImgTw img {
+  width: 16px;
+  height: 16px;
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild .titleWinTW {
+  font-size: calc(0.4vw + 26px);
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--bgSearchImg);
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild .bigText {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 120%; /* 76.8px */
+  text-transform: uppercase;
+}
+.windowTwelve .windowTwelveBody .windowTwelveBodyChild .textWinTW {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--textSpan);
+}/*# sourceMappingURL=style.css.map */

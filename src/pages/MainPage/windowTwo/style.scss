@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Terminator Genisys";
+  src: url("../../../font/Terminator_Genisys.ttf") format("truetype");
+}
+
+.windowTwo {
+  padding: calc(5vw + 54px) calc(6.4vw - 3px);
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: calc(1.7vw + 20px);
+}
+.filterBodyBox.windowTwo{
+  padding: 0;
+}
+.pBoxFowWIndowTwo {
+  display: flex;
+  .titleP {
+    width: calc(20vw + 251px);
+  }
+}
+
+.productBox {
+  display: flex;
+  justify-content: center;
+  gap: calc(1vw + 4.3px);
+}
+
+
+@media (min-width: 600px) {
+  .pBoxFowWIndowTwo {
+    justify-content: space-between;
+    align-items: center;
+    .link {
+      align-self: flex-end;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .pBoxFowWIndowTwo {
+    flex-direction: column;
+    gap: 22px;
+    .link {
+      align-self: flex-end;
+    }
+  }
+}

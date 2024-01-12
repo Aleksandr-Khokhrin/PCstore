@@ -59,9 +59,11 @@ const Header = (props) => {
       <div className="header">
         <div className="headerLeft">
           <Burger />
-          <div className="headerLeftLabel">
-            <img src={label} alt="Logo" />
-          </div>
+          <Link to="/">
+            <div className="headerLeftLabel">
+              <img src={label} alt="Logo" />
+            </div>
+          </Link>
           <div className="headerLeftSearch">
             <input
               type="text"

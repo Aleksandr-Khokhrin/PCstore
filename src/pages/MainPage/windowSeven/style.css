@@ -1,0 +1,35 @@
+.windowSeven {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  padding-bottom: calc(5vw + 54px);
+  gap: calc(1.9vw + 13px);
+  background-color: var(--bg);
+}
+.windowSeven p {
+  font-size: calc(0.77vw + 19px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+.windowSeven .categoryForSevenBox {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+.windowSeven .boxCat {
+  width: 100%;
+}
+.windowSeven .categoryForSeven {
+  display: flex;
+  gap: calc(0.77vw + 9px);
+  margin-bottom: 5px;
+}
+.windowSeven .categoryForSeven .serviceBox {
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .windowSeven .categoryForSeven {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=style.css.map */
