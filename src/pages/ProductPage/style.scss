@@ -1,0 +1,9 @@
+.productPageBox {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.8vw + 17px);
+  padding: 0 calc(6.4vw - 3px);
+  background: var(--bg);
+  padding-top: 30vh;
+ 
+}

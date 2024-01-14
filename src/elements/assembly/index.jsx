@@ -1,5 +1,6 @@
 // assembly.js
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import LikeElem from "../likeElem";
 import StarBar from "../starBar/indes";
 import ProductBar from "../productBar";
@@ -56,7 +57,9 @@ const Assembly = (props) => {
         ) : null}
       </div>
       <div className="productInfo">
-        <p className="productInfoTile">{item?.title}</p>
+        <Link to={`/product/${props.item.id}`} style={{textDecoration: 'none'}}>
+          <p className="productInfoTile">{item?.title}</p>
+        </Link>
         {prodTehno ? (
           <div className="productTehno">
             <div className="cpuInfo">

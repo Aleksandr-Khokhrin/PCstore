@@ -61,6 +61,10 @@
     font-weight: 600;
     line-height: 100%;
     letter-spacing: 0.24px;
+    transition: color 1s;
+    &:hover{
+      color: var(--bgSearchImg);
+    }
   }
   .productTehno {
     display: flex;

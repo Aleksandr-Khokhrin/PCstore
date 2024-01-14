@@ -1,0 +1,23 @@
+.headerForProduct {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.8vw + 17px);
+  font-size: calc(0.9vw + 17px);
+  font-weight: 600;
+  line-height: 120%;
+}
+.headerForProduct .linkBoxForProduct {
+  display: flex;
+  gap: 12px;
+  font-size: calc(0.26vw + 11px);
+  font-weight: 400;
+  line-height: 140%;
+}
+.headerForProduct .linkBoxForProduct .LinkForProdict {
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+}
+.headerForProduct .linkBoxForProduct .LinkForProdict p {
+  opacity: 0.5;
+}/*# sourceMappingURL=style.css.map */

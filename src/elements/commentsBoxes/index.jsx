@@ -1,7 +1,7 @@
 import './style.css'
 
 import arrow from '../../Header/img/footer/arrow-right.svg'
-import imgBG from '../../MainPage/windowNine/img.jpg'
+// import imgBG from '../../MainPage/windowNine/img.jpg'
 const CommentBox = (props) => {
     return (
         <div className='commentBox' style={{backgroundImage: `url(${props.img})`, height: props.height, flexBasis: props.flexBasis}}>

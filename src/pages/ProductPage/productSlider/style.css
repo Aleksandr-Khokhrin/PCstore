@@ -1,0 +1,141 @@
+.SliderBox {
+  display: flex;
+  flex-direction: column;
+  gap: calc(1vw + 4.5px);
+  width: calc(41.7vw + 170px);
+  /* Slider */
+}
+.SliderBox .firstSlider {
+  border: 2px solid var(--borderInput);
+}
+.SliderBox .firstSlider .mainImg {
+  height: calc(23.7vw + 155px);
+}
+.SliderBox .firstSlider .mainImg img {
+  width: 100%;
+  height: calc(23.7vw + 155px);
+}
+.SliderBox .secondSlider {
+  display: flex;
+  justify-content: start;
+  padding: 0 50px;
+}
+.SliderBox .secondSlider .slick-prev {
+  display: none;
+  height: 100%;
+  width: 40px;
+  background-color: var(--bgSearchImg);
+  transition: background-color 0.5s;
+}
+.SliderBox .secondSlider .slick-prev:hover {
+  background-color: var(--bgActiveImg);
+}
+.SliderBox .secondSlider .slick-next {
+  display: none;
+  height: 100%;
+  width: 40px;
+  background-color: var(--bgSearchImg);
+  transition: background-color 0.5s;
+}
+.SliderBox .secondSlider .slick-next:hover {
+  background-color: var(--bgActiveImg);
+}
+.SliderBox .secondSlider .smallImg {
+  width: calc(3vw + 59px);
+  height: calc(3vw + 59px);
+  display: flex;
+  justify-content: center;
+  border: 2px solid var(--bg);
+}
+.SliderBox .secondSlider .smallImg .active {
+  border: 2px solid var(--text);
+}
+.SliderBox .secondSlider .smallImg img {
+  border: 2px solid var(--borderInput);
+  transition: border 1s;
+  width: calc(3vw + 59px);
+  height: calc(3vw + 59px);
+  cursor: pointer;
+}
+.SliderBox .secondSlider .smallImg img:hover {
+  border: 2px solid var(--text);
+  opacity: 0.5;
+}
+.SliderBox .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.SliderBox .slick-list {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+}
+.SliderBox .slick-list:focus {
+  outline: none;
+}
+.SliderBox .slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+.SliderBox .slick-slider .slick-track,
+.SliderBox .slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+.SliderBox .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.SliderBox .slick-track:before, .SliderBox .slick-track:after {
+  display: table;
+  content: "";
+}
+.SliderBox .slick-track:after {
+  clear: both;
+}
+.SliderBox .slick-track.slick-loading {
+  visibility: hidden;
+}
+.SliderBox .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  width: auto;
+  height: auto;
+}
+.SliderBox .slick-slide img {
+  display: block;
+}
+.SliderBox .slick-slide.slick-loading img {
+  display: none;
+}
+.SliderBox .slick-slide.dragging img {
+  pointer-events: none;
+}
+.SliderBox [dir=rtl] .slick-slide {
+  float: right;
+}
+.SliderBox .slick-initialized .slick-slide {
+  display: block;
+}
+.SliderBox .slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.SliderBox .slick-arrow.slick-hidden {
+  display: none;
+}
+.SliderBox .slick-prev {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

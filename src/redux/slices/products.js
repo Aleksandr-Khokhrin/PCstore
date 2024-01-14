@@ -6,6 +6,10 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async (v
     const { data } = await axios.get(`products/?category=${value[0]}${value[1] ? `&qty=${value[1]}` : ''}`);
     return data;
 })
+export const fetchProduct = createAsyncThunk('products/fetchProduct', async (id) => {
+    const { data } = await axios.get(`products/?${id}`);
+    return data;
+})
 
 // export const fetchTags = createAsyncThunk('posts/fetchTags', async () => {
 //     const { data } = await axios.get('/tags');
@@ -20,6 +24,10 @@ const initialState = {
         items: [],
         status: 'loading',
     },
+    selectedProduct: {
+        item: [],
+        status: 'loading',
+    },
 }
 
 const productsSlice = createSlice({
@@ -28,6 +36,7 @@ const productsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
+            //Получение всех продуктов
             .addCase(fetchProducts.pending, (state) => {
                 state.products.items = [];
                 state.products.status = 'loading';
@@ -40,23 +49,23 @@ const productsSlice = createSlice({
                 state.products.items = [];
                 state.products.status = 'error';
             })
-            // //Получение тегов
-            // .addCase(fetchTags.pending, (state) => {
-            //     state.tags.items = [];
-            //     state.tags.status = 'loading';
-            // })
-            // .addCase(fetchTags.fulfilled, (state, action) => {
-            //     state.tags.items = action.payload;
-            //     state.tags.status = 'loaded';
-            // })
-            // .addCase(fetchTags.rejected, (state) => {
-            //     state.tags.items = [];
-            //     state.tags.status = 'error';
-            // })
-            // //Удаление статьи
-            // .addCase(fetchRemovePost.pending, (state, action) => {
-            //     state.posts.items = state.posts.items.filter(obj => obj._id !== action.meta.arg)
-            // })
+            //Получение одного продукта
+            .addCase(fetchProduct.pending, (state) => {
+                state.selectedProduct.item = [];
+                state.selectedProduct.status = 'loading';
+            })
+            .addCase(fetchProduct.fulfilled, (state, action) => {
+                state.selectedProduct.item = action.payload;
+                state.selectedProduct.status = 'loaded';
+            })
+            .addCase(fetchProduct.rejected, (state) => {
+                state.selectedProduct.item = [];
+                state.selectedProduct.status = 'error';
+            })
+        // //Удаление статьи
+        // .addCase(fetchRemovePost.pending, (state, action) => {
+        //     state.posts.items = state.posts.items.filter(obj => obj._id !== action.meta.arg)
+        // })
     },
 });
 

@@ -11,17 +11,18 @@ import WindowNine from "./windowNine";
 import WindowTen from "./windowsTen";
 import WindowEleven from "./windowEleven";
 import WindowTwelve from "./windowTwelve";
-const MainPage = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-        window.removeEventListener("resize", handleResize);
-    }
-  }, [windowWidth]);
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+const MainPage = (props) => {
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { windowWidth } = props
+  // useEffect(() => {
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //       window.removeEventListener("resize", handleResize);
+  //   }
+  // }, [windowWidth]);
+  // const handleResize = () => {
+  //   setWindowWidth(window.innerWidth);
+  // };
   return (
     <div>
       <WindowOne />
