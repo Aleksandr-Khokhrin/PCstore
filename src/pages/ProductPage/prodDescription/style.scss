@@ -193,11 +193,21 @@
     justify-content: center;
     height: calc(3vw + 59px);
     @media (max-width: 1300px) {
-        width: calc(41.7vw + 170px);
-        margin: 0 auto;
-      }
+      width: calc(41.7vw + 170px);
+      padding: calc(0.64vw + 28px);
+      height: auto;
+    }
+    @media (max-width: 670px) {
+      padding: calc(0.64vw + 28px) 0;
+
+      flex-direction: column;
+      align-items: flex-start;
+    }
     div {
       display: flex;
+      @media (max-width: 670px) {
+        margin-left: calc(0.64vw + 28px);
+      }
     }
     p {
       font-size: calc(0.4vw + 13px);
