@@ -5,13 +5,13 @@
   width: calc(41.7vw + 170px);
 
   .firstSlider{
-
     border: 2px solid var(--borderInput);
+    height: calc(23.7vw + 155px);
     .mainImg {
       height: calc(23.7vw + 155px);
       img {
-        width: 100%;
         height: calc(23.7vw + 155px);
+        width: 100%;
       }
     }
   }

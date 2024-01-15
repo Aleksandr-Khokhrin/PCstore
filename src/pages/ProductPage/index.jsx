@@ -2,9 +2,15 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../redux/slices/products";
-import ProductHeader from "./productHeader";
 
+import StarBar from "../../elements/starBar/indes";
+import Equalizer from "../../elements/equalaizer";
+
+
+import ProductHeader from "./productHeader";
+import ProdDescription from "./prodDescription";
 import ProductSlider from "./productSlider";
+
 import "./style.css";
 
 const ProductPage = () => {
@@ -23,9 +29,13 @@ const ProductPage = () => {
       style={{ background: "var(--bg)", paddingTop: "30vh" }}
     >
       <ProductHeader />
+      <div className="hideProductBox">
+        <StarBar active={true} sum={4}/>
+        <Equalizer row={true}/>
+      </div>
       <div className="productPageBody">
         <ProductSlider />
-        
+        <ProdDescription />
       </div>
       {id}
     </div>

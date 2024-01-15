@@ -7,13 +7,14 @@
 }
 .SliderBox .firstSlider {
   border: 2px solid var(--borderInput);
+  height: calc(23.7vw + 155px);
 }
 .SliderBox .firstSlider .mainImg {
   height: calc(23.7vw + 155px);
 }
 .SliderBox .firstSlider .mainImg img {
-  width: 100%;
   height: calc(23.7vw + 155px);
+  width: 100%;
 }
 .SliderBox .secondSlider {
   display: flex;

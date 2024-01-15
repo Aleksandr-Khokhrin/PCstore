@@ -5,4 +5,29 @@
   padding: 0 calc(6.4vw - 3px);
   background: var(--bg);
   padding-top: 30vh;
+}
+@media (max-width: 1300px) {
+  .productPageBox {
+    align-items: center;
+  }
+}
+.productPageBox .hideProductBox {
+  display: none;
+  justify-content: space-between;
+}
+@media (max-width: 1400px) {
+  .productPageBox .hideProductBox {
+    display: flex;
+    width: calc(41.7vw + 170px);
+  }
+}
+.productPageBox .productPageBody {
+  display: flex;
+  gap: calc(1vw + 4.3px);
+}
+@media (max-width: 1300px) {
+  .productPageBox .productPageBody {
+    flex-direction: column;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */

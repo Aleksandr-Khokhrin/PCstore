@@ -1,0 +1,227 @@
+.prodDescriptionBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: calc(1vw + 4.5px);
+}
+@media (max-width: 1300px) {
+  .prodDescriptionBox {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+}
+.prodDescriptionBox .prodDescriptionFirst {
+  padding: 0 calc(0.64vw + 28px);
+  border: 1px solid var(--borderInput);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(0.4vw + 11px);
+  height: calc(23.7vw + 155px);
+  background-color: var(--bgInput);
+}
+@media (max-width: 1300px) {
+  .prodDescriptionBox .prodDescriptionFirst {
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: calc(0.64vw + 28px);
+    height: auto;
+  }
+}
+@media (min-width: 880px) and (max-width: 1300px) {
+  .prodDescriptionBox .prodDescriptionFirst {
+    gap: calc(43vw - 357px);
+  }
+}
+@media (max-width: 880px) {
+  .prodDescriptionBox .prodDescriptionFirst {
+    flex-direction: column;
+    padding: calc(0.64vw + 28px);
+    height: auto;
+  }
+}
+@media (max-width: 1300px) {
+  .prodDescriptionBox .prodDescriptionFirst {
+    padding: calc(0.64vw + 28px);
+    height: auto;
+  }
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp {
+  display: flex;
+  justify-content: space-between;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2.2vw - 19px);
+}
+@media (max-width: 1300px) {
+  .prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst {
+    gap: calc(0.4vw + 11px);
+  }
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .existence {
+  font-size: calc(0.5vw + 10px);
+  font-weight: 400;
+  line-height: 100%;
+  color: #00df74;
+}
+@media (max-width: 1300px) {
+  .prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .existence {
+    margin-top: calc(0.64vw + 17px);
+  }
+}
+@media (max-width: 880px) {
+  .prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .existence {
+    margin-top: 0;
+  }
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .unExistence {
+  font-size: calc(0.5vw + 10px);
+  font-weight: 400;
+  line-height: 100%;
+  color: #df0000;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .productCost {
+  display: flex;
+  gap: 25px;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .productCost .productCostPrice {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4vw + 11px);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .productCost .productCostPrice .priceTitle {
+  font-size: calc(0.26vw + 15px);
+  font-weight: 400;
+  line-height: 100%;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .productCost .priceWithDiscount {
+  font-size: calc(0.64vw + 22px);
+  font-weight: 600;
+  line-height: 100%;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .productCost .price {
+  font-size: calc(0.4vw + 12.6px);
+  font-weight: 400;
+  line-height: 100%;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .benefitBox {
+  display: flex;
+  gap: calc(0.64vw + 6px);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .benefitBox p {
+  padding: calc(0.26vw + 7px) calc(0.5vw + 14px);
+  font-size: calc(0.5vw + 10px);
+  font-weight: 700;
+  line-height: 100%;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .benefitBox .pers {
+  background-color: var(--bgSearchImg);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .descFirst .benefitBox .persSum {
+  background-color: #009d52;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstUp .prodEqualizer {
+  padding-top: calc(0.64vw + 17px);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4vw + 11px);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd {
+  display: flex;
+  gap: calc(4vw + 6px);
+}
+@media (max-width: 600px) {
+  .prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd {
+    gap: 18px;
+    flex-direction: column;
+  }
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productCountBox {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4vw + 11px);
+  font-size: calc(0.4vw + 13px);
+  font-weight: 400;
+  line-height: 100%;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productCountBox .productCountBtnBox {
+  display: flex;
+  gap: 8px;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productCountBox .productCountBtnBox .productCountBtn {
+  padding: 15px 18px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  background-color: var(--bgSearchImg);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productCountBox .productCountBtnBox .productCountBtn:hover {
+  box-shadow: 5px 5px 0px 0px #5d0a3a;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productCountBox .productCountBtnBox .productCountBtn:active {
+  background-color: var(--bgActiveImg);
+  box-shadow: 5px 5px 0px 0px var(--bgActiveImg);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productCountBox .productCountBtnBox .productCountBtnSum {
+  padding: 15px 27px;
+  border: 1px solid var(--borderInput);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productColorBox {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4vw + 11px);
+  font-size: calc(0.4vw + 13px);
+  font-weight: 400;
+  line-height: 100%;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productColorBox .productColorBtnBox {
+  display: flex;
+  gap: 8px;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productColorBox .productColorBtnBox .productColorBtn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--borderInput);
+  transition: border 0.5s;
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productColorBox .productColorBtnBox .productColorBtn:hover {
+  border: 2px solid var(--text);
+}
+@media (max-width: 880px) {
+  .prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productColorBox .productColorBtnBox .productColorBtn {
+    width: 44px;
+    height: 44px;
+  }
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .countAndColorProd .productColorBox .productColorBtnBox .activeColorBtn {
+  border: 2px solid var(--bgSearchImg);
+}
+.prodDescriptionBox .prodDescriptionFirst .prodDescriptionFirstDown .productBtnBox {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.prodDescriptionBox .prodDescriptionSecond {
+  border: 1px solid var(--borderInput);
+  background-color: var(--bgInput);
+  display: flex;
+  gap: calc(0.8vw + 9px);
+  align-items: center;
+  justify-content: center;
+  height: calc(3vw + 59px);
+}
+@media (max-width: 1300px) {
+  .prodDescriptionBox .prodDescriptionSecond {
+    width: calc(41.7vw + 170px);
+    margin: 0 auto;
+  }
+}
+.prodDescriptionBox .prodDescriptionSecond div {
+  display: flex;
+}
+.prodDescriptionBox .prodDescriptionSecond p {
+  font-size: calc(0.4vw + 13px);
+}/*# sourceMappingURL=style.css.map */
