@@ -46,7 +46,7 @@ function App() {
           <Route path='/reg' element={<Reg isAuth={isAuthHandler} />} />
           <Route path={`/category/:productName`} element={<CategoryPage category={category} />} />
           <Route path={`/best/:productName`} element={<BestPage bestProduct={bestProduct} />} />
-          <Route path={`/product/:id`}  element={<ProductPage />} />
+          <Route path={`/product/:id`}  element={<ProductPage windowWidth={windowWidth}/>} />
         </Routes>
       </div>
       <Footer />

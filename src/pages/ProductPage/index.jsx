@@ -7,13 +7,16 @@ import StarBar from "../../elements/starBar/indes";
 import Equalizer from "../../elements/equalaizer";
 
 
+import WindowSix from "../MainPage/windowSix";
+import Aditionally from "./aditionaly";
 import ProductHeader from "./productHeader";
 import ProdDescription from "./prodDescription";
 import ProductSlider from "./productSlider";
 
 import "./style.css";
 
-const ProductPage = () => {
+const ProductPage = (props) => {
+  const { windowWidth } = props
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products);
@@ -37,7 +40,9 @@ const ProductPage = () => {
         <ProductSlider />
         <ProdDescription />
       </div>
-      {id}
+      <Aditionally />
+      <WindowSix bestOffers={true} windowWidth={windowWidth}/>
+      {/* {id} */}
     </div>
   );
 };

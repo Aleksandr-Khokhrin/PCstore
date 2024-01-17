@@ -6,16 +6,16 @@ import NavigationPage from "../../../elements/navigation";
 
 import "./style.css";
 const WindowSix = (props) => {
-  const dispatch = useDispatch()
-  const data = useSelector((state) => state.offers.offers.items)
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.offers.offers.items);
   const [windWidth, setWindWidth] = useState(0);
   const [boxCount, setBoxCount] = useState(8);
   const [pagesClick, setPagesClick] = useState(false);
   const [pagesCount, setPagesCount] = useState(0);
 
-  useEffect(()=>{
-    dispatch(fetchOffers())
-  }, [])
+  useEffect(() => {
+    dispatch(fetchOffers());
+  }, []);
   // console.log(data[0]?.products)
   useEffect(() => {
     setWindWidth(props.windowWidth);
@@ -36,12 +36,12 @@ const WindowSix = (props) => {
   }, [windWidth, boxCount, pagesClick, props.windowWidth]);
 
   // const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-  const myArray = data[0]
+  const myArray = data[0];
 
   const renderBoxes =
     windWidth <= 800
-      ? 
-      data[0]?.products.slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
+      ? data[0]?.products
+          .slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
           .map((item, index) => {
             return <Assembly key={index} item={item} prodTehno={false} />;
           })
@@ -55,8 +55,13 @@ const WindowSix = (props) => {
 
   return (
     <div className="windowFive windowSix">
-      <div className="windowFiveHeader">
-        <h3 className="titleH">Лучшие предложения</h3>
+      <div className="windowFiveHeader" style={props.bestOffers ? {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'} : null}>
+        {props.bestOffers ? (
+          <p className="bestOffers">Лучшие предложения</p>
+        ) : (
+          <h3 className="titleH">Лучшие предложения</h3>
+        )}
+
         <div className="NavigationPageForFiveWindow">
           <NavigationPage
             countPage={countPageHandler}
