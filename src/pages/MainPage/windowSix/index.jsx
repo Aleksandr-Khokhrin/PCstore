@@ -54,7 +54,7 @@ const WindowSix = (props) => {
   };
 
   return (
-    <div className="windowFive windowSix">
+    <div className="windowFive windowSix" style={props.bestOffers ? {padding: '0'} : null}>
       <div className="windowFiveHeader" style={props.bestOffers ? {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'} : null}>
         {props.bestOffers ? (
           <p className="bestOffers">Лучшие предложения</p>
@@ -69,6 +69,7 @@ const WindowSix = (props) => {
             elements={data[0]?.products.length}
             windWidth={windWidth}
             page="best"
+            fullBar={props.fullBar ? false : true}
             type="Лучшие предложения"
           />
         </div>

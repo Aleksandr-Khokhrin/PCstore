@@ -5,6 +5,7 @@ import { fetchProduct } from "../../redux/slices/products";
 
 import StarBar from "../../elements/starBar/indes";
 import Equalizer from "../../elements/equalaizer";
+import InterestProd from "./InterestingProd";
 
 
 import WindowSix from "../MainPage/windowSix";
@@ -40,8 +41,9 @@ const ProductPage = (props) => {
         <ProductSlider />
         <ProdDescription />
       </div>
-      <Aditionally />
-      <WindowSix bestOffers={true} windowWidth={windowWidth}/>
+      <Aditionally windowWidth={windowWidth}/>
+      <InterestProd fullBar={true} bestOffers={true} windowWidth={windowWidth}/>
+      <WindowSix fullBar={true} bestOffers={true} windowWidth={windowWidth}/>
       {/* {id} */}
     </div>
   );

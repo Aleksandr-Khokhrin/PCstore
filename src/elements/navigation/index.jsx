@@ -123,7 +123,7 @@ const NavigationPage = (props) => {
     </div>
   ) : (
     <div>
-      {props.pages || props.fullBar ? (
+      {props.pages && props.fullBar ? (
         <div className="navAndWatch">
           <div className="navigationPage">
             <div className="navigationArrow left" onClick={handlePrev}>

@@ -1,0 +1,40 @@
+.commentProductBox {
+  padding: calc(1.4vw + 15px) 0;
+  border-bottom: 1px solid var(--borderInput);
+  .commentHeader {
+    display: flex;
+    gap: calc(0.9vw + 9px);
+    .commentImg {
+      img {
+        width: calc(2vw + 31px);
+      }
+    }
+    .commentAutorBox {
+      .commentAutor {
+        font-size: calc(0.64vw + 12px);
+        font-weight: 600;
+        line-height: 120%; /* 28.8px */
+        letter-spacing: 0.24px;
+        padding-bottom: calc(0.4vw + 9px);
+      }
+    }
+  }
+  .commentText {
+    font-size: calc(0.64vw + 12px);
+    font-weight: 400;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: 0.24px;
+  }
+}
+
+.commentText.low {
+  @media (min-width: 640px) {
+    display: none;
+  }
+}
+.commentText.high {
+  margin-top: 24px;
+  @media (max-width: 640px) {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+.categoryBodyBox {
+  display: flex;
+  flex-direction: column;
+  .specChild {
+    padding: calc(0.5vw + 18px) calc(1.4vw + 15px);
+    display: flex;
+    @media (max-width: 640px) {
+      flex-direction: column;
+    }
+    p {
+      width: 50%;
+      font-size: calc(0.4vw + 13px);
+      font-weight: 400;
+      line-height: 140%;
+      @media (max-width: 640px) {
+        width: 100%;
+      }
+    }
+    .specChildName {
+      color: var(--textGrey);
+    }
+  }
+}

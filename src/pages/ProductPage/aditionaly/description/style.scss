@@ -1,0 +1,21 @@
+.categoryBodyBox {
+  display: flex;
+  flex-direction: column;
+  .descChild {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vw + 12px);
+    p {
+      font-size: calc(0.4vw + 13px);
+      font-weight: 400;
+      line-height: 140%;
+      color: var(--textSpan);
+    }
+    .descChildName {
+      font-size: calc(0.64vw + 12px);
+      font-weight: 600;
+      line-height: 140%;
+      color: var(--text);
+    }
+  }
+}

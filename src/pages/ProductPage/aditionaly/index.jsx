@@ -1,8 +1,20 @@
 import { useState } from "react";
+
+import Specifications from "./specifications";
+import ReviewBox from "./reviews";
+import Description from "./description";
+
+import arrow from "../../../Header/img/footer/arrow-right.svg";
 import "./style.css";
 
-const Aditionally = () => {
+const Aditionally = (props) => {
   const [activeTab, setActiveTab] = useState("specifications");
+  const [specificationsVisible, setSpecificationsVisible] = useState(true);
+  const [descriptionVisible, setDescriptionVisible] = useState(false);
+  const [reviewsVisible, setReviewsVisible] = useState(false);
+  const [active, setActive] = useState(false);
+
+  const { windowWidth } = props;
   const specificationsArray = [
     ["Тип наушников", "Полноразмерные"],
     ["Режим работы", "2.4 ГГц, Провод"],
@@ -38,79 +50,202 @@ const Aditionally = () => {
     ],
   ];
   const reviewsArray = [
-    ["Тип наушников", "Полноразмерные"],
-    ["Режим работы", "2.4 ГГц, Провод"],
-    ["Тип звучания", "DTS®: пространственный звук X®"],
-    ["Размер динамиков (мм)", "50 мм"],
-    ["Подсветка", "Нет"],
-    ["Вес", "272 г"],
+    [4.83, 5],
+    [0, 32.1, 20.5, 16.5, 60.5],
+    [
+      [
+        "Sherzod Alimov",
+        5,
+        "Отличные наушники за свои деньги! Хорошая шумоизоляция. Крутой дизайн.",
+      ],
+      [
+        "Iroda Aminova",
+        5,
+        "Talabalar uchun moʻljallangan ajoyib noutbuk ekaan narxlari ham ajoyiib sizlarga tavsiyaam chegirmasi bor vaqti zakas qilib qolinglaang yutasizlaar",
+      ],
+      [
+        "Alayskiy Brat",
+        4,
+        "This product is very nice. I've been looking for this product for two years and now I've found it",
+      ],
+      [
+        "Margarita",
+        3,
+        "Прекрассный коллектив и конкурсы интересные. Зовите меня еще в следующий раз... только больше пить не предлагайте.",
+      ],
+      ["Boris Elsin", 4, "Я устал и я ухожу, но наушники берите. Вещъ."],
+      [
+        "Марио",
+        5,
+        "Я пытался пройти последний уровень и постоянно спотыкался об черепашку. С этим товаром у меня все пошло как надо",
+      ],
+    ],
   ];
 
   const clickCategoryHandler = (tab) => {
     setActiveTab(tab);
+    setSpecificationsVisible(tab === "specifications");
+    setDescriptionVisible(tab === "description");
+    setReviewsVisible(tab === "reviews");
+  };
+  const clickMobCategoryHandler = (tab) => {
+    setActiveTab(tab);
+    if (active !== tab) {
+      setActive(tab);
+      setSpecificationsVisible(tab === "specifications");
+      setDescriptionVisible(tab === "description");
+      setReviewsVisible(tab === "reviews");
+    } else {
+      setActive("");
+      setSpecificationsVisible(false);
+      setDescriptionVisible(false);
+      setReviewsVisible(false);
+    }
   };
 
   return (
-    <div className="aditionallyBox">
-      <div className="categoryNameBox">
-        {["specifications", "description", "reviews"].map((tab) => (
-          <div
-            key={tab}
-            className={`categoryName ${
-              activeTab === tab ? "categoryNameActive" : ""
-            }`}
-            onClick={() => clickCategoryHandler(tab)}
-          >
-            {tab === "specifications" && "Характеристики"}
-            {tab === "description" && "Описание"}
-            {tab === "reviews" && "Отзывы"}
+    <div className="mainContainerForAditionall">
+      {windowWidth > 640 && (
+        <div className="aditionallyBox">
+          <div className="categoryNameBox">
+            {["specifications", "description", "reviews"].map((tab) => (
+              <div key={tab}>
+                <div
+                  className={`categoryName ${
+                    activeTab === tab ? "categoryNameActive" : ""
+                  }`}
+                  onClick={() => clickCategoryHandler(tab)}
+                >
+                  {tab === "specifications" && "Характеристики"}
+                  {tab === "description" && "Описание"}
+                  {tab === "reviews" && "Отзывы"}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      {activeTab === "specifications" && (
-        <div className="categoryBodyBox">
-          {specificationsArray.map((elem, i) => {
-            return (
-              <div
-                className="specChild"
+          {activeTab === "specifications" && (
+            <Specifications info={specificationsArray} />
+          )}
+          {activeTab === "description" && (
+            <Description info={descriptionArray} />
+          )}
+          {activeTab === "reviews" && <ReviewBox info={reviewsArray} />}
+        </div>
+      )}
+      {windowWidth <= 640 && (
+        <div className="aditionallyBox">
+          <div className="mobileBox">
+            <div
+              className="mobileBoxTitle"
+              onClick={() => clickMobCategoryHandler("specifications")}
+              style={
+                specificationsVisible
+                  ? { border: "2px solid var(--bgActiveImg)" }
+                  : {transition: "border 1.5s"}
+              }
+            >
+              <p
                 style={
-                  i + 1 < specificationsArray.length
-                    ? { borderBottom: "1px solid var(--borderInput)" }
-                    : null
+                  specificationsVisible
+                    ? { color: "var(--bgActiveImg)", transition: "color 0.5s" }
+                    : {transition: "color 1.5s"}
                 }
               >
-                <p className="specChildName">{elem[0]}</p>
-                <p>{elem[1]}</p>
+                Характеристики
+              </p>
+              <div>
+                <img
+                  style={
+                    specificationsVisible
+                      ? { transform: "rotate(90deg)", transition: "transform 1.5s" }
+                      : {transition: "transform 1.5s"}
+                  }
+                  src={arrow}
+                  alt=""
+                />
               </div>
-            );
-          })}
-        </div>
-      )}
-      {activeTab === "description" && (
-        <div
-          className="categoryBodyBox description"
-          style={{ padding: "calc(1.4vw + 15px)", gap: 'calc(1.4vw + 15px)' }}
-        >
-          {descriptionArray.map((elem, i) => {
-            return (
-              <div className="descChild">
-                <p className="descChildName">{elem[0]}</p>
-                <p>{elem[1]}</p>
+            </div>
+            {specificationsVisible && (
+              <div className="mobileBoxContent">
+                <Specifications info={specificationsArray} />
               </div>
-            );
-          })}
-        </div>
-      )}
-      {activeTab === "reviews" && (
-        <div className="categoryBodyBox">
-          {reviewsArray.map((elem, i) => {
-            return (
-              <div className="revChild">
-                <p className="revChildName">{elem[0]}</p>
-                <p>{elem[1]}</p>
+            )}
+          </div>
+          <div className="mobileBox">
+            <div
+              className="mobileBoxTitle"
+              onClick={() => clickMobCategoryHandler("description")}
+              style={
+                descriptionVisible
+                  ? { border: "2px solid var(--bgActiveImg)" }
+                  : {transition: "border 1.5s"}
+              }
+            >
+              <p
+                style={
+                  descriptionVisible
+                    ? { color: "var(--bgActiveImg)", transition: "color 0.5s" }
+                    : {transition: "color 1.5s"}
+                }
+              >
+                Описание
+              </p>
+              <div>
+                <img
+                  style={
+                    descriptionVisible
+                      ? { transform: "rotate(90deg)", transition: "transform 1.5s" }
+                      : {transition: "transform 1.5s"}
+                  }
+                  src={arrow}
+                  alt=""
+                />
               </div>
-            );
-          })}
+            </div>
+            {descriptionVisible && (
+              <div className="mobileBoxContent">
+                <Description info={descriptionArray} />
+              </div>
+            )}
+          </div>
+          <div className="mobileBox">
+            <div
+              className="mobileBoxTitle"
+              onClick={() => clickMobCategoryHandler("reviews")}
+              style={
+                reviewsVisible
+                  ? { border: "2px solid var(--bgActiveImg)" }
+                  : {transition: "border 1.5s"}
+              }
+            >
+              <p
+                style={
+                  reviewsVisible
+                    ? { color: "var(--bgActiveImg)", transition: "color 0.5s" }
+                    : {transition: "color 1.5s"}
+                }
+              >
+                Отзывы
+              </p>
+              <div>
+                <img
+                  style={
+                    reviewsVisible
+                      ? { transform: "rotate(90deg)", transition: "transform 1.5s" }
+                      : {transition: "transform 1.5s"}
+                  }
+                  
+                  src={arrow}
+                  alt=""
+                />
+              </div>
+            </div>
+            {reviewsVisible && (
+              <div className="mobileBoxContent">
+                <ReviewBox info={reviewsArray} />
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

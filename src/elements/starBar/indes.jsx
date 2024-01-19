@@ -43,12 +43,12 @@ const StarBar = (props) => {
           key={index}
           src={
             first && index < sumActive?
-            starActive
+            starHover
             : active 
               ? hoveredIndex !== null && index <= hoveredIndex
-                ? starHover
-                : index <= activeIndex
                 ? starActive
+                : index <= activeIndex
+                ? starHover
                 : starDefault
               : starDefault
           }

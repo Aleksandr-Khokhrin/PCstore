@@ -1,0 +1,85 @@
+.categoryBodyBox {
+  display: flex;
+  flex-direction: column;
+  padding: calc(1.4vw + 15px);
+}
+.categoryBodyBox .categoryBodyHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--borderInput);
+  gap: calc(2vw + 13px);
+  padding: calc(2.7vw + 10px) calc(1.4vw + 15px);
+  margin-bottom: calc(1vw - 3.7px);
+}
+.categoryBodyBox .categoryBodyHeader .evaluationBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(0.5vw + 8px);
+}
+@media (max-width: 640px) {
+  .categoryBodyBox .categoryBodyHeader .evaluationBox {
+    align-items: flex-start;
+  }
+}
+.categoryBodyBox .categoryBodyHeader .evaluationBox .evaluation {
+  font-size: calc(2.8vw + 10px);
+  font-weight: 600;
+  line-height: 140%;
+}
+.categoryBodyBox .categoryBodyHeader .evaluationBox .evaluationText {
+  font-size: calc(0.64vw + 12px);
+  font-weight: 400;
+  line-height: 140%;
+  opacity: 0.4;
+}
+.categoryBodyBox .categoryBodyHeader .ratingBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+@media (max-width: 1300px) {
+  .categoryBodyBox .categoryBodyHeader .ratingBox {
+    flex-direction: column;
+    align-items: center;
+    gap: calc(0.9vw + 9px);
+  }
+}
+.categoryBodyBox .categoryBodyHeader .ratingBox .ratingChild {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.9vw + 9px);
+  width: 15%;
+}
+@media (max-width: 1300px) {
+  .categoryBodyBox .categoryBodyHeader .ratingBox .ratingChild {
+    width: calc(30.3vw + 106px);
+  }
+}
+@media (max-width: 641px) {
+  .categoryBodyBox .categoryBodyHeader .ratingBox .ratingChild {
+    width: 100%;
+  }
+}
+.categoryBodyBox .categoryBodyHeader .ratingBox .ratingChild .ratingInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(0.64vw + 12px);
+  font-weight: 400;
+  line-height: 140%;
+  opacity: 0.7;
+}
+.categoryBodyBox .categoryBodyHeader .ratingBox .ratingChild hr {
+  height: 6px;
+  background-color: var(--text);
+  border: none;
+}
+.categoryBodyBox .ratingBoxBtn {
+  width: 50%;
+}
+@media (max-width: 641px) {
+  .categoryBodyBox .ratingBoxBtn {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
