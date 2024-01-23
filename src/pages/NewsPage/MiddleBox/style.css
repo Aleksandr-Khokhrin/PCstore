@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.middleBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(1.4vw + 15px);
+}
+.middleBox .middleButton {
+  position: relative;
+}
+.middleBox .middleButton div {
+  background-color: var(--bgInput);
+  width: calc(3.6vw + 41px);
+  height: calc(3.6vw + 41px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: calc(-0.64vw - 28px);
+  animation: rotate 2s linear infinite;
+}
+.middleBox .middleButton div img {
+  width: calc(0.8vw + 10px);
+  transform: rotate(45deg);
+}
+.middleBox .middleWords {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -40px;
+}
+.middleBox .middleWords p {
+  font-size: calc(0.5vw + 14px);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.24px;
+}
+.middleBox .middleWords p:nth-child(2) {
+  margin-right: calc(-6.4vw - 7px);
+}
+@media (max-width: 800px) {
+  .middleBox .middleWords {
+    margin-top: calc(-3.5vw - 51px);
+  }
+  .middleBox .middleWords p:nth-child(2),
+  .middleBox .middleWords p:nth-child(3) {
+    display: none;
+  }
+}
+@keyframes rotate {
+  0% {
+    box-shadow: 0 0 0 0 var(--bgSearchImg);
+  }
+  50% {
+    box-shadow: 0 0 0 1px var(--bgSearchImg); /* Измените значение 10px на толщину желаемого бордера */
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--bgSearchImg);
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,64 @@
+.middleBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(1.4vw + 15px);
+
+  .middleButton {
+    position: relative;
+
+    div {
+      background-color: var(--bgInput);
+      width: calc(3.6vw + 41px);
+      height: calc(3.6vw + 41px);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      margin-bottom: calc(-0.64vw - 28px);
+      animation: rotate 2s linear infinite;
+
+      img {
+        width: calc(0.8vw + 10px);
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .middleWords {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -40px;
+
+    p {
+      font-size: calc(0.5vw + 14px);
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: 0.24px;
+    }
+
+    p:nth-child(2) {
+      margin-right: calc(-6.4vw - 7px);
+    }
+
+    @media (max-width: 800px) {
+      p:nth-child(2),
+      p:nth-child(3) {
+        display: none;
+      }
+
+      margin-top: calc(-3.5vw - 51px);
+    }
+  }
+  @keyframes rotate {
+    0% {
+      box-shadow: 0 0 0 0 var(--bgSearchImg);
+    }
+    50% {
+      box-shadow: 0 0 0 1px var(--bgSearchImg); /* Измените значение 10px на толщину желаемого бордера */
+    }
+    100% {
+      box-shadow: 0 0 0 0 var(--bgSearchImg);
+    }
+  }
+}

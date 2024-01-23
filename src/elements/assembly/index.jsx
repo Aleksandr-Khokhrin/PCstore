@@ -18,6 +18,8 @@ const Assembly = (props) => {
   const [existence, setExistence] = useState(true);
   const [prodTehno, setProdTexno] = useState(true);
 
+  console.log(item)
+
   useEffect(() => {
     // console.log(`родительский лайк ${like}`);
     setExistence(item?.in_stock);
@@ -63,18 +65,18 @@ const Assembly = (props) => {
         {prodTehno ? (
           <div className="productTehno">
             <div className="cpuInfo">
-              <p>{item?.char.titles[0]}:</p>
-              <p>{item?.char.values[0]}</p>
+              <p>{item?.char[0].title}:</p>
+              <p>{item?.char[0].value}</p>
             </div>
             <hr />
             <div className="cpuInfo">
-              <p>{item?.char.titles[1]}:</p>
-              <p>{item?.char.values[1]}</p>
+              <p>{item?.char[1].title}:</p>
+              <p>{item?.char[1].value}</p>
             </div>
             <hr />
             <div className="cpuInfo">
-              <p>{item?.char.titles[2]}:</p>
-              <p>{item?.char.values[2]}</p>
+              <p>{item?.char[2].title}:</p>
+              <p>{item?.char[2].value}</p>
             </div>
           </div>
         ) : null}
@@ -105,7 +107,7 @@ const Assembly = (props) => {
         </div>
         {prodTehno ? (
           <div className="contentBtnForWindowOne">
-            <PrimaryBtn text="Купить" />
+            <PrimaryBtn text="в Корзину" />
           </div>
         ) : null}
       </div>

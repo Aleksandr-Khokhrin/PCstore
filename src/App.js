@@ -8,6 +8,7 @@ import MainPage from "./pages/MainPage";
 import CategoryPage from './pages/FilterPage';
 import BestPage from './pages/BestProductsPage';
 import ProductPage from "./pages/ProductPage";
+import NewsPage from './pages/NewsPage/index'
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
 import TokenRefresh from "./UI/Auth/tokenRefresh";
@@ -47,6 +48,7 @@ function App() {
           <Route path={`/category/:productName`} element={<CategoryPage category={category} />} />
           <Route path={`/best/:productName`} element={<BestPage bestProduct={bestProduct} />} />
           <Route path={`/product/:id`}  element={<ProductPage windowWidth={windowWidth}/>} />
+          <Route path={`/news`}  element={<NewsPage windowWidth={windowWidth}/>} />
         </Routes>
       </div>
       <Footer />

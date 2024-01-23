@@ -123,12 +123,12 @@ const ProdDescription = () => {
       </div>
       <div className="prodDescriptionSecond">
         <div>
-          <p>Производитель:</p>
-          <p style={{ fontWeight: "700" }}>Hyper X</p>
+          <p>Производитель: </p>
+          <p style={{ fontWeight: "700" }}> Hyper X</p>
         </div>
         <div>
-          <p>Артикул:</p>
-          <p style={{ fontWeight: "700" }}>hyperx-cloud-ii-red</p>
+          <p>Артикул: </p>
+          <p style={{ fontWeight: "700" }}> hyperx-cloud-ii-red</p>
         </div>
       </div>
     </div>

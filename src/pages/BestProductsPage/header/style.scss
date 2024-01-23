@@ -1,7 +1,7 @@
 .filterPageHeader {
   display: flex;
   gap: 24px;
-  .filterPageHeaderLeft {
+  .BestPageHeaderLeft {
       min-width: calc(12.56vw + 161px);
     display: flex;
     flex-direction: column;
@@ -27,32 +27,5 @@
     }
    
   }
-  .filterPageHeaderRight {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 24px 32px;
-    border-bottom: 1px solid var(--borderInput);
-    background: var(--bgInput);
-    .FPHRright {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      p {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 140%;
-      }
-    }
-    .FPHRleft {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      p {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 140%;
-      }
-    }
-  }
+  
 }

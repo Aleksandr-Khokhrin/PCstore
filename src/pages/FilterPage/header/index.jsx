@@ -5,6 +5,7 @@ import "./style.css";
 
 import FilterList from "../../../elements/filterList";
 import FilterBurger from "../filterburger";
+
 import img from "./filter.svg";
 
 const FilterHeader = (props) => {

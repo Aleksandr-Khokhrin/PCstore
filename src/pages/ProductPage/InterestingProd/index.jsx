@@ -7,15 +7,14 @@ import Assembly from "../../../elements/assembly";
 import "./style.css";
 
 const InterestProd = () => {
-  const myArray = useSelector((state) => state.products.products.items);
+  const myArray = useSelector((state) => state.products.products.items.products);
   const dispatch = useDispatch();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [boxCount, setBoxCount] = useState(4);
   const [pagesClick, setPagesClick] = useState(false);
   const [pagesCount, setPagesCount] = useState(0);
-
   useEffect(() => {
-    dispatch(fetchProducts(["игровые сборки"]));
-  }, []);
+    dispatch(fetchProducts(['игровые сборки']))
+  }, [])
   const pagesHandler = (elem) => {
     setPagesCount(elem);
   };
@@ -23,13 +22,11 @@ const InterestProd = () => {
     pagesHandler(elem);
     // setPagesCount(elem);
   };
-
-  const renderBoxes = myArray
-    .slice(0, 4)
-    .map((item, index) =>
-      item.category === "Игровые сборки" ? (
+  
+  const renderBoxes = myArray?.slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
+    .map((item, index) =>(
         <Assembly key={index} item={item} prodTehno={true} />
-      ) : null
+      )
     );
 
   return (
@@ -41,12 +38,11 @@ const InterestProd = () => {
         </div>
         <div
           className="paginationPageForFilter"
-          style={{ paddingTop: "calc(2vw + 12.6px)" }}
         >
           {myArray?.length ? (
             <NavigationPage
               countPage={countPageHandler}
-              maxElems={Math.ceil(myArray?.length / 3)}
+              maxElems={Math.ceil(myArray?.length / 4)}
               pages={pagesClick}
               elements={myArray?.length}
               page="filter"

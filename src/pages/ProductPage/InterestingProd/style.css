@@ -3,6 +3,7 @@
 }
 .interestProd .windowTwo {
   padding: 0;
+  gap: 1em;
 }
 .interestProd .windowTwo .interestProdTitle {
   font-size: calc(1.15vw + 12px);

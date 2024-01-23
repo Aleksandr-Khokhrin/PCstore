@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../FilterPage/style.css";
 
-
-const BestHeader = () => {
+import BestBurger from "../BestBurger";
+const BestHeader = (props) => {
   const { productName } = useParams();
   return (
     <div className="filterPageHeader">
@@ -18,6 +18,7 @@ const BestHeader = () => {
         <div className="FPHLdown" style={{marginBottom: '15px'}}>
           <p>{productName}</p>
         </div>
+        <BestBurger checkboxHeaders={props.checkboxHeaders}/>
       </div>
     </div>
   );

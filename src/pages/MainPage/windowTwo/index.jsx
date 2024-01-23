@@ -7,7 +7,7 @@ import Assembly from "../../../elements/assembly";
 import "./style.css";
 
 const WindowTwo = () => {
-  const myArray = useSelector((state) => state.products.products.items);
+  const myArray = useSelector((state) => state.products.products.items.products);
   const dispatch = useDispatch()
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [boxCount, setBoxCount] = useState(4);
@@ -18,7 +18,6 @@ const WindowTwo = () => {
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
@@ -34,8 +33,8 @@ const WindowTwo = () => {
     };
   }, [windowWidth, boxCount]);
 
-  const renderBoxes = myArray.slice(0, boxCount).map((item, index) => (
-    item.category === 'Игровые сборки' ? <Assembly key={index} item={item} prodTehno={true} /> : null
+  const renderBoxes = myArray?.slice(0, boxCount).map((item, index) => (
+    <Assembly key={index} item={item} prodTehno={true} />
   ));
   
 

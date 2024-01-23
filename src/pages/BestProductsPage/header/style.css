@@ -2,53 +2,25 @@
   display: flex;
   gap: 24px;
 }
-.filterPageHeader .filterPageHeaderLeft {
+.filterPageHeader .BestPageHeaderLeft {
   min-width: calc(12.56vw + 161px);
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--borderInput);
 }
-.filterPageHeader .filterPageHeaderLeft .FPHLup {
+.filterPageHeader .BestPageHeaderLeft .FPHLup {
   display: flex;
   gap: 6px;
 }
-.filterPageHeader .filterPageHeaderLeft .FPHLup p {
+.filterPageHeader .BestPageHeaderLeft .FPHLup p {
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
   color: var(--textSpan);
 }
-.filterPageHeader .filterPageHeaderLeft .FPHLdown p {
+.filterPageHeader .BestPageHeaderLeft .FPHLdown p {
   font-size: calc(0.77vw + 19px);
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
-}
-.filterPageHeader .filterPageHeaderRight {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 24px 32px;
-  border-bottom: 1px solid var(--borderInput);
-  background: var(--bgInput);
-}
-.filterPageHeader .filterPageHeaderRight .FPHRright {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-.filterPageHeader .filterPageHeaderRight .FPHRright p {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 140%;
-}
-.filterPageHeader .filterPageHeaderRight .FPHRleft {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-.filterPageHeader .filterPageHeaderRight .FPHRleft p {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 140%;
 }/*# sourceMappingURL=style.css.map */

@@ -4,12 +4,23 @@
   gap: calc(0.8vw + 17px);
   padding: 0 calc(6.4vw - 3px);
   background: var(--bg);
-  padding-top: 30vh;
+  padding-top: calc(3.8vw + 166px);
   padding-bottom: calc(5.13vw + 54px);
+}
+@media (max-width: 1400px) {
+  .productPageBox {
+    padding-top: calc(3.75vw + 237.5px);
+  }
 }
 @media (max-width: 1300px) {
   .productPageBox {
     align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .productPageBox {
+    padding-top: calc(8.3vw + 100px);
+    gap: 2em;
   }
 }
 .productPageBox .hideProductBox {

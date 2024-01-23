@@ -192,14 +192,15 @@
     align-items: center;
     justify-content: center;
     height: calc(3vw + 59px);
+    width: 100%;
+    margin: 0 auto;
     @media (max-width: 1300px) {
       width: calc(41.7vw + 170px);
-      padding: calc(0.64vw + 28px);
+      padding: calc(0.64vw + 28px) 0;
       height: auto;
     }
     @media (max-width: 670px) {
       padding: calc(0.64vw + 28px) 0;
-
       flex-direction: column;
       align-items: flex-start;
     }
