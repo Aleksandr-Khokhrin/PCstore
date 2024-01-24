@@ -8,7 +8,8 @@ import MainPage from "./pages/MainPage";
 import CategoryPage from './pages/FilterPage';
 import BestPage from './pages/BestProductsPage';
 import ProductPage from "./pages/ProductPage";
-import NewsPage from './pages/NewsPage/index'
+import NewsPage from './pages/NewsPage/index';
+import OneNews from "./pages/NewsPage/OneNews";
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
 import TokenRefresh from "./UI/Auth/tokenRefresh";
@@ -20,7 +21,7 @@ function App() {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
-        window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleResize);
     }
   }, [windowWidth]);
   const handleResize = () => {
@@ -47,8 +48,9 @@ function App() {
           <Route path='/reg' element={<Reg isAuth={isAuthHandler} />} />
           <Route path={`/category/:productName`} element={<CategoryPage category={category} />} />
           <Route path={`/best/:productName`} element={<BestPage bestProduct={bestProduct} />} />
-          <Route path={`/product/:id`}  element={<ProductPage windowWidth={windowWidth}/>} />
-          <Route path={`/news`}  element={<NewsPage windowWidth={windowWidth}/>} />
+          <Route path={`/product/:id`} element={<ProductPage windowWidth={windowWidth} />} />
+          <Route path={`/news`} element={<NewsPage windowWidth={windowWidth} />} />
+          <Route path={`/news/:id`} element={<OneNews windowWidth={windowWidth} />} />
         </Routes>
       </div>
       <Footer />

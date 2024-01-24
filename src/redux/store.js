@@ -5,6 +5,7 @@ import { bannersReducer } from "./slices/banners";
 import { categoriesReducer } from "./slices/categories";
 import { productsReducer } from "./slices/products";
 import { offersReducer } from "./slices/offersProducts";
+import { newsReducer } from "./slices/news";
 const store = configureStore({
     reducer: {
         videos: videosReducer,
@@ -13,6 +14,7 @@ const store = configureStore({
         categories: categoriesReducer,
         products: productsReducer,
         offers: offersReducer,
+        news: newsReducer,
         // categories: categoriesReducer,
     }
 });

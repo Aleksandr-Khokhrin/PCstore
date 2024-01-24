@@ -1,0 +1,42 @@
+.newsListBox {
+  display: flex;
+  flex-direction: column;
+  width: 402px;
+}
+@media (max-width: 1100px) {
+  .newsListBox {
+    width: 100%;
+  }
+}
+.newsListBox .ANewsBoxHeader {
+  width: 100%;
+  border-bottom: 1px solid var(--bgSearchImg);
+  padding-bottom: calc(0.9vw + 17px);
+}
+.newsListBox .ANewsBoxHeader h3 {
+  color: var(--textSpan);
+  font-size: calc(0.9vw + 17px);
+  font-weight: 600;
+  line-height: 120%;
+}
+.newsListBox .renderListBox {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 24px;
+}
+.newsListBox .renderListBox .moreNews .secondaryBtn {
+  width: 100%;
+}
+.newsListBox .renderListBox .oneNewsForList {
+  padding: calc(1.3vw + 15px);
+  border: 2px solid var(--borderInput);
+  background: var(--bgInput);
+  width: 100%;
+}
+.newsListBox .renderListBox .oneNewsForList h4 {
+  font-size: calc(0.26vw + 19px);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.24px;
+}/*# sourceMappingURL=style.css.map */

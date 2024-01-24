@@ -5,7 +5,6 @@
   padding-top: calc(1.4vw + 15px);
   .newsArray {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: calc(1vw);
     .newsSmallBox {

@@ -6,7 +6,6 @@
 }
 .newsBlock .newsArray {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1vw;
 }
