@@ -6,17 +6,12 @@ import "./style.css";
 import PrimaryBtn from "../../../elements/btns/primary";
 import SecondaryBtn from "../../../elements/btns/secondary";
 
-const ProdDescription = () => {
+const ProdDescription = (props) => {
+  const { data } = props;
   const [wrap, setWrap] = useState(true);
-  const [existence, setProdTexno] = useState(true);
-  const [discount, setDiscount] = useState(8);
   const [prodCount, setProdCount] = useState(1);
   const [prodColor, setProdColor] = useState(null);
   const [activeColor, setActiveColor] = useState(null);
-  let disc = 2940960;
-  let sum = 3342000;
-  let persSum = sum - disc;
-  let pers = 100 - Math.round((disc * 100) / sum);
 
   const windowWidth = window.innerWidth;
   useEffect(() => {
@@ -42,38 +37,41 @@ const ProdDescription = () => {
     );
   };
 
-  const colors = ["white", "black", "red"];
+  const colors = Array.isArray(data.colors) ? data.colors : [];
+  // const colors = ["white", "black", "red"];
 
   return (
     <div className="prodDescriptionBox">
       <div className="prodDescriptionFirst">
         <div className="prodDescriptionFirstUp">
           <div className="descFirst">
-            {existence ? (
+            {data.in_stock ? (
               <div className="existence">• В наличии</div>
             ) : (
               <div className="unExistence">• Нет в наличии</div>
             )}
-            <StarBar active={true} sum={4} />
+            <StarBar active={true} sum={data.avg_rating} />
 
             <div className="productCost">
               <div className="productCostPrice">
-                {discount ? (
+                {data.discount ? (
                   <p className="priceTitle">Цена со скидкой:</p>
                 ) : (
                   <p className="priceTitle">Цена:</p>
                 )}
-                <p className="priceWithDiscount">{disc} сум</p>
+                <p className="priceWithDiscount">{data.price_discount} сум</p>
               </div>
-              {discount ? (
+              {data.discount ? (
                 <div>
-                  <p className="price">{sum} сум</p>
+                  <p className="price">{data.price} сум</p>
                 </div>
               ) : null}
             </div>
             <div className="benefitBox">
-              <p className="pers">{pers}%</p>
-              <p className="persSum">Экономия {persSum} сум</p>
+              <p className="pers">{data.discount}%</p>
+              <p className="persSum">
+                Экономия {data.price - data.price_discount} сум
+              </p>
             </div>
           </div>
           {wrap ? (
@@ -96,24 +94,26 @@ const ProdDescription = () => {
                 </div>
               </div>
             </div>
-            <div className="productColorBox">
-              <p>Цвет: {prodColor !== null ? prodColor : ""}</p>
-              <div className="productColorBtnBox">
-                {colors.map((elem, i) => {
-                  return (
-                    <div
-                      key={i}
-                      data-name={elem}
-                      className={`productColorBtn ${
-                        activeColor === elem ? "activeColorBtn" : ""
-                      }`}
-                      style={{ background: elem }}
-                      onClick={prodColorHandler}
-                    ></div>
-                  );
-                })}
+            {colors.length !== 0 ? (
+              <div className="productColorBox">
+                <p>Цвет: {prodColor !== null ? prodColor : ""}</p>
+                <div className="productColorBtnBox">
+                  {colors.map((elem, i) => {
+                    return (
+                      <div
+                        key={i}
+                        data-name={elem}
+                        className={`productColorBtn ${
+                          activeColor === elem ? "activeColorBtn" : ""
+                        }`}
+                        style={{ background: elem }}
+                        onClick={prodColorHandler}
+                      ></div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ) : null}
           </div>
           <div className="productBtnBox">
             <SecondaryBtn text="Купить в один клик" />
@@ -124,11 +124,11 @@ const ProdDescription = () => {
       <div className="prodDescriptionSecond">
         <div>
           <p>Производитель: </p>
-          <p style={{ fontWeight: "700" }}> Hyper X</p>
+          <p style={{ fontWeight: "700" }}> {data.brand} </p>
         </div>
         <div>
           <p>Артикул: </p>
-          <p style={{ fontWeight: "700" }}> hyperx-cloud-ii-red</p>
+          <p style={{ fontWeight: "700" }}>{data.articul}</p>
         </div>
       </div>
     </div>

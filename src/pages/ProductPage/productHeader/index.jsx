@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import './style.css'
 
-const ProductHeader = () => {
+const ProductHeader = (props) => {
     return (
         <div className="headerForProduct">
         <div className="linkBoxForProduct">
@@ -15,12 +15,12 @@ const ProductHeader = () => {
             <p>/</p>
           </Link>
           <p style={{ color: "var(--text)" }}>
-            ASUS TUF Gaming F15 FX506HC-HN011 Graphite Black ® + (Худи) подарок
+            {props.data.title}
           </p>
         </div>
         <div className="FPHLdown">
           <p>
-            ASUS TUF Gaming F15 FX506HC-HN011 Graphite Black ® + (Худи) подарок
+            {props.data.title}
           </p>
         </div>
       </div>

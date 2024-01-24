@@ -13,7 +13,6 @@ const WindowSix = (props) => {
   const [pagesClick, setPagesClick] = useState(false);
   const [pagesCount, setPagesCount] = useState(0);
 
-  console.log(data)
 
   useEffect(() => {
     dispatch(fetchOffers());

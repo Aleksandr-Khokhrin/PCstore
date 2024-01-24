@@ -18,7 +18,6 @@ const Assembly = (props) => {
   const [existence, setExistence] = useState(true);
   const [prodTehno, setProdTexno] = useState(true);
 
-  console.log(item)
 
   useEffect(() => {
     // console.log(`родительский лайк ${like}`);

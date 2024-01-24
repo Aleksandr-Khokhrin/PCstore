@@ -1,9 +1,15 @@
 .SliderBox {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: calc(1vw + 4.5px);
   width: calc(41.7vw + 170px);
   /* Slider */
+}
+.SliderBox .barForSlider {
+  position: absolute;
+  top: calc(1.3vw + 7px);
+  z-index: 2;
 }
 .SliderBox .firstSlider {
   border: 2px solid var(--borderInput);

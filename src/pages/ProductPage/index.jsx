@@ -19,23 +19,24 @@ const ProductPage = (props) => {
   const { windowWidth } = props;
   const { id } = useParams();
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.products);
+  const product = useSelector((state) => state.products.selectedProduct.item);
   useEffect(() => {
     dispatch(fetchProduct(id));
     window.scrollTo(0, 0);
   }, [dispatch, id]);
+  console.log(product)
   // console.log(product);
 
   return (
     <div className="productPageBox">
-      <ProductHeader />
+      <ProductHeader data={product}/>
       <div className="productPageBody">
         <div className="hideProductBox">
-          <StarBar active={true} sum={4} />
+          <StarBar active={true} sum={product.avg_rating} />
           <Equalizer row={true} />
         </div>
-        <ProductSlider />
-        <ProdDescription />
+        <ProductSlider  data={product}/>
+        <ProdDescription data={product}/>
       </div>
       <Aditionally windowWidth={windowWidth} />
       <InterestProd
