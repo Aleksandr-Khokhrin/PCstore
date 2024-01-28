@@ -54,7 +54,7 @@ const FilterBurger = () => {
   };
 
   return (
-    <div className="filterSmallLeft filterBox">
+    <div className="filterSmallLeft filterBox" style={isMenuActive ? {zIndex: '101'} : {zIndex: '1'}}>
       <div className={`${isMenuActive ? "active" : ""}`}>
         <div className="filterIcon" onClick={toggleMenu}>
           <img src={img} alt="" />

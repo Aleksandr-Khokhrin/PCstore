@@ -52,7 +52,7 @@ const Assembly = (props) => {
               data={props.data}
               discount={item?.discount}
               top={item?.hot}
-              newProd={newProd}
+              newProd={item?.is_new}
             />
           </div>
         ) : null}
@@ -64,18 +64,18 @@ const Assembly = (props) => {
         {prodTehno ? (
           <div className="productTehno">
             <div className="cpuInfo">
-              <p>{item?.char[0].title}:</p>
-              <p>{item?.char[0].value}</p>
+              <p>{item?.char[0]?.title}:</p>
+              <p>{item?.char[0]?.value}</p>
             </div>
             <hr />
             <div className="cpuInfo">
-              <p>{item?.char[1].title}:</p>
-              <p>{item?.char[1].value}</p>
+              <p>{item?.char[1]?.title}:</p>
+              <p>{item?.char[1]?.value}</p>
             </div>
             <hr />
             <div className="cpuInfo">
-              <p>{item?.char[2].title}:</p>
-              <p>{item?.char[2].value}</p>
+              <p>{item?.char[2]?.title}:</p>
+              <p>{item?.char[2]?.value}</p>
             </div>
           </div>
         ) : null}

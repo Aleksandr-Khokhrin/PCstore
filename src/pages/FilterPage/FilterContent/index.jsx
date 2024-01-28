@@ -44,7 +44,7 @@ const FilterContent = (props) => {
   const renderBoxes = myArray
     ?.slice(pagesCount * boxCount, pagesCount * boxCount + boxCount)
     .map((item, index) =>
-      item.category === "Игровые сборки" ? (
+      item.category === category.productName ? (
         <Assembly key={index} item={item} prodTehno={true} />
       ) : null
     );

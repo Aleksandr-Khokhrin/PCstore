@@ -3,14 +3,14 @@
   flex-direction: column;
   padding: 0 calc(6.4vw - 3px);
   background: var(--bg);
-  padding-top: calc(3.8vw + 166px);
-  padding-bottom: calc(5.13vw + 54px);
-  @media (max-width: 1400px) {
-    padding-top: calc(3.75vw + 237.5px);
-  }
-  @media (max-width: 600px) {
-    padding-top: calc(8.3vw + 100px);
-  }
+  // padding-top: calc(3.8vw + 166px);
+  // padding-bottom: calc(5.13vw + 54px);
+  // @media (max-width: 1400px) {
+  //   padding-top: calc(3.75vw + 237.5px);
+  // }
+  // @media (max-width: 600px) {
+  //   padding-top: calc(8.3vw + 100px);
+  // }
   .LinkForProduct {
     display: flex;
     text-decoration: none;

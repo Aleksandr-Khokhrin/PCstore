@@ -5,7 +5,35 @@
   font-family: "Manrope", sans-serif;
 }
 
-span, p, h1, h2, h3, h4, h5, h6, div {
+.mainContainer {
+  position: relative;
+}
+
+.mainBody {
+  background: var(--bg);
+  padding-top: calc(3.8vw + 166px);
+  padding-bottom: calc(5.13vw + 54px);
+}
+@media (max-width: 1400px) {
+  .mainBody {
+    padding-top: calc(3.75vw + 237.5px);
+  }
+}
+@media (max-width: 600px) {
+  .mainBody {
+    padding-top: calc(8.3vw + 100px);
+  }
+}
+
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -54,6 +82,5 @@ input:focus {
 }
 
 .paddingTop {
-  padding-top: calc(-4vw + 74px);
-  background-color: var(--bg);
+  padding-top: 0;
 }/*# sourceMappingURL=style.css.map */

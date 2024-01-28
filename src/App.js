@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import './mainStyles/style.css'
-import './mainStyles/colors.css'
+
 import Header from "./Header/index";
 import Footer from "./Footer/index";
+import MobileMenu from "./mobileMenu";
 import MainPage from "./pages/MainPage";
 import CategoryPage from './pages/FilterPage';
 import BestPage from './pages/BestProductsPage';
@@ -13,6 +13,9 @@ import OneNews from "./pages/NewsPage/OneNews";
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
 import TokenRefresh from "./UI/Auth/tokenRefresh";
+
+import './mainStyles/style.css'
+import './mainStyles/colors.css'
 function App() {
   const [isAuth, setIsAuth] = useState(false)
   const [category, setCategory] = useState('')
@@ -38,7 +41,7 @@ function App() {
     setIsAuth(elem)
   }
   return (
-    <div>
+    <div className="mainContainer" style={{position: 'relative'}}>
       <TokenRefresh />
       <Header isAuth={isAuth} isAuthDelete={isAuthHandler} />
       <div className="mainBody">
@@ -53,6 +56,7 @@ function App() {
           <Route path={`/news/:id`} element={<OneNews windowWidth={windowWidth} />} />
         </Routes>
       </div>
+      <MobileMenu/>
       <Footer />
     </div>
   );

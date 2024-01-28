@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAuth, selectIsAuth } from "../../../redux/slices/auth";
+import { fetchAuth, selectIsAuth, fetchAuthMe } from "../../../redux/slices/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "../style.css";
 import PrimaryBtn from "../../../elements/btns/primary";
@@ -28,18 +28,20 @@ const Log = (props) => {
   const onSubmit = async (values) => {
     try {
       const data = await dispatch(fetchAuth(values));
-  
+      
       if (!data || !data.payload) {
         props.isAuth(false); 
         return alert('failedLog');
       }
-  
+      
       if ('refresh' in data.payload) {
         window.localStorage.setItem('refresh', data.payload.refresh);
       }
       if ('access' in data.payload) {
         window.localStorage.setItem('token', data.payload.access);
         props.isAuth(true); 
+        const user = await dispatch(fetchAuthMe());
+        console.log(user)
         navigate('/');
       }
     } catch (error) {

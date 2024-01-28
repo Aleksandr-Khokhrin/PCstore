@@ -5,6 +5,7 @@ import { selectIsAuth } from "../redux/slices/auth";
 import { useSelector } from "react-redux";
 import "./style.css";
 
+import CountProd from "../elements/countProd/index";
 import FooterHeader from "./footerheader";
 import label from "./img/logo.svg";
 import search from "./img/search.svg";
@@ -78,6 +79,14 @@ const Header = (props) => {
             <div key={index} className="headerRightChild">
               <img src={item.img} alt={item.text} />
               <p>{item.text}</p>
+
+              {item.text === "Сравнение" ? (
+                <CountProd sum={0} />
+              ) : item.text === "Избранное" ? (
+                <CountProd sum={2} />
+              ) : item.text === "Корзина" ? (
+                <CountProd sum={11} />
+              ) : null}
             </div>
           ))}
           <div className="headerRightChild person">
