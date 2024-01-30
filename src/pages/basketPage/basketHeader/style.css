@@ -1,0 +1,90 @@
+@charset "UTF-8";
+.basketHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bgSearchImg);
+  padding-bottom: calc(0.9vw + 15px);
+  padding-top: calc(0.8vw + 19px);
+}
+@media (max-width: 600px) {
+  .basketHeader {
+    flex-direction: column;
+    gap: calc(0.8vw + 19px);
+  }
+}
+.basketHeader h2 {
+  font-size: calc(1.15vw + 12px);
+  font-weight: 600;
+  line-height: 120%;
+}
+.basketHeader .anctions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(1.4vw + 5px);
+}
+.basketHeader .anctions .anctionsChild {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(0.26vw + 7px);
+}
+.basketHeader .anctions .anctionsChild p {
+  font-size: calc(0.4vw + 13px);
+  font-weight: 500;
+  line-height: 100%;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+.basketHeader .anctions .anctionsChild p:hover {
+  color: var(--bgSearchImg);
+}
+.basketHeader .anctions .anctionsChild p:active {
+  color: var(--bgActiveImg);
+}
+.basketHeader .anctions .anctionsChild svg {
+  width: calc(0.6vw + 11px);
+  cursor: pointer;
+}
+.basketHeader .anctions .anctionsChild svg path {
+  stroke: white;
+  transition: stroke 0.5s;
+}
+.basketHeader .anctions .anctionsChild svg:hover path {
+  stroke: var(--bgSearchImg);
+  transition: stroke 0.5s;
+}
+.basketHeader .anctions .anctionsChild svg:active path {
+  stroke: var(--bgActiveImg);
+  transition: stroke 0.5s;
+}
+.basketHeader .anctions .anctionsChild input {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--borderInput); /* Цвет границы */
+  background-color: var(--bgInput); /* Фон чекбокса */
+  border-radius: 4px; /* Скругление углов */
+  cursor: pointer;
+  transition: border 0.5s, background-color 0.5s;
+}
+.basketHeader .anctions .anctionsChild input:checked {
+  background-color: var(--bgSearchImg); /* Цвет фона при выборе */
+  border-color: var(--bgSearchImg); /* Цвет границы при выборе */
+  margin-bottom: -4px;
+}
+.basketHeader .anctions .anctionsChild input:hover {
+  border-color: var(--bgActiveImg); /* Цвет границы при выборе */
+}
+.basketHeader .anctions .anctionsChild input:checked::before {
+  content: url("./icon.svg"); /* Галочка */
+  color: #fff; /* Цвет галочки */
+  width: 12px;
+  height: 8px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}/*# sourceMappingURL=style.css.map */

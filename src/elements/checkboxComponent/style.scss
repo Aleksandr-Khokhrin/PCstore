@@ -26,10 +26,14 @@
         border-radius: 4px; /* Скругление углов */
         margin-right: 12px;
         margin-bottom: -4px;
+        transition: border 0.5s, background-color 0.5s;
         &:checked {
           background-color: var(--bgSearchImg); /* Цвет фона при выборе */
           border-color: var(--bgSearchImg); /* Цвет границы при выборе */
           margin-bottom: -4px;
+        }
+        &:hover {
+            border-color: var(--bgActiveImg); /* Цвет границы при выборе */
         }
 
         &:checked::before {

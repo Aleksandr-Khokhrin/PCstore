@@ -10,6 +10,10 @@ import BestPage from './pages/BestProductsPage';
 import ProductPage from "./pages/ProductPage";
 import NewsPage from './pages/NewsPage/index';
 import OneNews from "./pages/NewsPage/OneNews";
+import BasketPage from "./pages/basketPage";
+import FavouritesPage from "./pages/favouritePage";
+import ComparePage from "./pages/comparePage";
+import ConfiguratorPage from "./pages/сonfiguratorPage";
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
 import TokenRefresh from "./UI/Auth/tokenRefresh";
@@ -54,6 +58,10 @@ function App() {
           <Route path={`/product/:id`} element={<ProductPage windowWidth={windowWidth} />} />
           <Route path={`/news`} element={<NewsPage windowWidth={windowWidth} />} />
           <Route path={`/news/:id`} element={<OneNews windowWidth={windowWidth} />} />
+          <Route path={`/basket`} element={<BasketPage windowWidth={windowWidth} />} />
+          <Route path={`/favourites`} element={<FavouritesPage windowWidth={windowWidth} />} />
+          <Route path={`/compare`} element={<ComparePage windowWidth={windowWidth} />} />
+          <Route path={`/configurator`} element={<ConfiguratorPage windowWidth={windowWidth} />} />
         </Routes>
       </div>
       <MobileMenu/>

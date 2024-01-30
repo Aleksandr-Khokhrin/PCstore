@@ -1,0 +1,13 @@
+.LinkForProduct {
+  display: flex;
+  text-decoration: none;
+  gap: 12px;
+}
+.LinkForProduct p {
+  opacity: 0.5;
+}
+
+.linkBox {
+  display: flex;
+  gap: 12px;
+}/*# sourceMappingURL=style.css.map */

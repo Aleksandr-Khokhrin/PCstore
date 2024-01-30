@@ -57,9 +57,9 @@ const FooterHeader = () => {
         </div>
         <div
           className={`mainChildForHeadFooter arrow ${
-              isCategoryListVisible ? "rotate" : ""
-            }`}
-            >
+            isCategoryListVisible ? "rotate" : ""
+          }`}
+        >
           <p>Каталог товаров</p>
           <img
             onClick={toggleCategoryList}
@@ -88,7 +88,9 @@ const FooterHeader = () => {
         </div>
         <div className="childForHeadFooter">
           <img src={settings} alt="Settings" />
-          <p>Конфигуратор</p>
+          <Link style={{ textDecoration: "none" }} to="/configurator">
+            <p>Конфигуратор</p>
+          </Link>
         </div>
         <div className="justcategory">
           <p>Услуги</p>
@@ -104,7 +106,7 @@ const FooterHeader = () => {
         </div>
         <div className="justcategory">
           <Link style={{ textDecoration: "none" }} to="/news">
-           <p>Новости</p>
+            <p>Новости</p>
           </Link>
         </div>
         <div className="lastCategory">

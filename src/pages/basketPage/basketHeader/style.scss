@@ -1,0 +1,93 @@
+.basketHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bgSearchImg);
+  padding-bottom: calc(0.9vw + 15px);
+  padding-top: calc(0.8vw + 19px);
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: calc(0.8vw + 19px);
+  }
+  h2 {
+    font-size: calc(1.15vw + 12px);
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .anctions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(1.4vw + 5px);
+    .anctionsChild {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: calc(0.26vw + 7px);
+      p {
+        font-size: calc(0.4vw + 13px);
+        font-weight: 500;
+        line-height: 100%;
+        transition: color 0.5s;
+        cursor: pointer;
+        &:hover {
+          color: var(--bgSearchImg);
+        }
+        &:active {
+          color: var(--bgActiveImg);
+        }
+      }
+      svg {
+        width: calc(0.6vw + 11px);
+        path {
+          stroke: white; // Исходный цвет обводки
+          transition: stroke 0.5s;
+        }
+        &:hover {
+          path {
+            stroke: var(--bgSearchImg); // Исходный цвет обводки
+            transition: stroke 0.5s;
+          }
+        }
+        &:active {
+          path {
+            stroke: var(--bgActiveImg); // Исходный цвет обводки
+            transition: stroke 0.5s;
+          }
+        }
+        cursor: pointer;
+      }
+      input {
+        position: relative;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border: 1px solid var(--borderInput); /* Цвет границы */
+        background-color: var(--bgInput); /* Фон чекбокса */
+        border-radius: 4px; /* Скругление углов */
+        cursor: pointer;
+        transition: border 0.5s, background-color 0.5s;
+        &:checked {
+          background-color: var(--bgSearchImg); /* Цвет фона при выборе */
+          border-color: var(--bgSearchImg); /* Цвет границы при выборе */
+          margin-bottom: -4px;
+        }
+        &:hover {
+          border-color: var(--bgActiveImg); /* Цвет границы при выборе */
+        }
+
+        &:checked::before {
+          content: url("./icon.svg"); /* Галочка */
+          //   content: "✔"; /* Галочка */
+          color: #fff; /* Цвет галочки */
+          //   font-size: 20px; /* Размер галочки */
+          width: 12px;
+          height: 8px;
+          position: absolute;
+          top: 10%;
+          left: 20%;
+          //   transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

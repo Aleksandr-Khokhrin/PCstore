@@ -76,18 +76,32 @@ const Header = (props) => {
         </div>
         <div className="headerRight">
           {headerRightItems.map((item, index) => (
-            <div key={index} className="headerRightChild">
-              <img src={item.img} alt={item.text} />
-              <p>{item.text}</p>
+            <Link
+              key={index}
+              style={{ textDecoration: "none" }}
+              to={
+                item.text === "Корзина"
+                  ? "/basket"
+                  : item.text === "Избранное"
+                  ? "/favourites"
+                  : item.text === "Сравнение"
+                  ? "/compare"
+                  : "#"
+              }
+            >
+              <div className="headerRightChild">
+                <img src={item.img} alt={item.text} />
+                <p>{item.text}</p>
 
-              {item.text === "Сравнение" ? (
-                <CountProd sum={0} />
-              ) : item.text === "Избранное" ? (
-                <CountProd sum={2} />
-              ) : item.text === "Корзина" ? (
-                <CountProd sum={11} />
-              ) : null}
-            </div>
+                {item.text === "Сравнение" ? (
+                  <CountProd sum={0} />
+                ) : item.text === "Избранное" ? (
+                  <CountProd sum={2} />
+                ) : item.text === "Корзина" ? (
+                  <CountProd sum={11} />
+                ) : null}
+              </div>
+            </Link>
           ))}
           <div className="headerRightChild person">
             {props.isAuth ? (

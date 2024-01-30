@@ -9,6 +9,7 @@ import PrimaryBtn from "../btns/primary/index";
 import "./style.css";
 import img from "./img/img 1.png";
 import equalizer from "./img/equalizer.svg";
+import eqTrue from './img/eqTrue.svg'
 const Assembly = (props) => {
   const [like, setLike] = useState(false);
   const [discount, setDiscount] = useState(8);
@@ -27,7 +28,9 @@ const Assembly = (props) => {
 
   const onClickFromChildHandler = (data) => {
     setLike(data);
+    console.log(data, item?.id)
   };
+  // console.log(item)
   return (
     <div className="product">
       <div className="productImg">
@@ -41,7 +44,7 @@ const Assembly = (props) => {
             <div className="likeElem">
               <LikeElem onClickFromChild={onClickFromChildHandler} />
               <div className="equalaizer">
-                <img src={equalizer} alt="" />
+                <img src={eqTrue} alt="" />
               </div>
             </div>
           </>
