@@ -114,6 +114,12 @@
   cursor: pointer;
   transition: transform 7.5s ease;
 }
+.basketList .baksetProd .basketProdInfoBox .likeAndDelete svg path {
+  transition: fill 1s;
+}
 .basketList .baksetProd .basketProdInfoBox .likeAndDelete svg:hover {
   transform: rotate(360deg);
+}
+.basketList .baksetProd .basketProdInfoBox .likeAndDelete svg:hover path {
+  fill: var(--bgSearchImg);
 }/*# sourceMappingURL=style.css.map */

@@ -60,6 +60,8 @@
     }
     .pers {
       background-color: var(--bgSearchImg);
+      display: flex;
+      align-items: center;
     }
     .persSum {
       background-color: #009d52;

@@ -111,9 +111,15 @@
         svg {
           cursor: pointer;
           transition: transform 7.5s ease;
+          path {
+            transition: fill 1s;
+          }
 
           &:hover {
             transform: rotate(360deg);
+            path {
+              fill: var(--bgSearchImg);
+            }
           }
         }
       }

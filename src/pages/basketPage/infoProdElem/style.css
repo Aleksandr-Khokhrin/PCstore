@@ -68,6 +68,8 @@
 }
 .basketProdInfo .benefitBox .pers {
   background-color: var(--bgSearchImg);
+  display: flex;
+  align-items: center;
 }
 .basketProdInfo .benefitBox .persSum {
   background-color: #009d52;
