@@ -2,4 +2,19 @@
   display: flex;
   flex-direction: column;
   padding: 0 calc(6.4vw - 3px);
+
+  .basketBody {
+    padding-top: calc(0.9vw + 15px);
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    .basketBodyLeft {
+      display: flex;
+      flex-direction: column;
+      width: 73%;
+    }
+    .basketBodyRight {
+      width: 25%;
+    }
+  }
 }

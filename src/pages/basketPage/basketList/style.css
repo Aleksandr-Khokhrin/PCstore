@@ -1,0 +1,119 @@
+@charset "UTF-8";
+.basketList {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.9vw + 5px);
+  width: 100%;
+}
+.basketList .baksetProd {
+  display: flex;
+  border: 2px solid var(--borderInput);
+  background: var(--bgInput);
+  padding: calc(1.3vw + 15.4px);
+}
+.basketList .baksetProd .basketProdMain {
+  display: flex;
+  gap: 1em;
+}
+.basketList .baksetProd .basketProdMain .basketProdImg {
+  position: relative;
+}
+.basketList .baksetProd .basketProdMain .basketProdImg img {
+  width: 200px;
+}
+.basketList .baksetProd .basketProdMain .basketProdImg input {
+  position: absolute;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  top: 10%;
+  left: 10%;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--borderInput); /* Цвет границы */
+  background-color: var(--bgInput); /* Фон чекбокса */
+  border-radius: 4px; /* Скругление углов */
+  cursor: pointer;
+  transition: border 0.5s, background-color 0.5s;
+}
+.basketList .baksetProd .basketProdMain .basketProdImg input:checked {
+  background-color: var(--bgSearchImg); /* Цвет фона при выборе */
+  border-color: var(--bgSearchImg); /* Цвет границы при выборе */
+  margin-bottom: -4px;
+}
+.basketList .baksetProd .basketProdMain .basketProdImg input:hover {
+  border-color: var(--bgActiveImg); /* Цвет границы при выборе */
+}
+.basketList .baksetProd .basketProdMain .basketProdImg input:checked::before {
+  content: url("./../basketHeader/icon.svg"); /* Галочка */
+  color: #fff; /* Цвет галочки */
+  width: 12px;
+  height: 8px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .basketProdName {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .basketProdName p {
+  font-size: calc(0.4vw + 13px);
+  width: 80%;
+  font-weight: 400;
+  line-height: 140%;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .productCountBox {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4vw + 11px);
+  font-size: calc(0.4vw + 13px);
+  font-weight: 400;
+  line-height: 100%;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .productCountBox .productCountBtnBox {
+  display: flex;
+  gap: 8px;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .productCountBox .productCountBtnBox .productCountBtn {
+  padding: 15px 18px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  background-color: var(--bgSearchImg);
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .productCountBox .productCountBtnBox .productCountBtn:hover {
+  box-shadow: 5px 5px 0px 0px #5d0a3a;
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .productCountBox .productCountBtnBox .productCountBtn:active {
+  background-color: var(--bgActiveImg);
+  box-shadow: 5px 5px 0px 0px var(--bgActiveImg);
+}
+.basketList .baksetProd .basketProdMain .basketProdNameBox .productCountBox .productCountBtnBox .productCountBtnSum {
+  padding: 15px 27px;
+  border: 1px solid var(--borderInput);
+}
+.basketList .baksetProd .basketProdInfoBox {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  gap: 2em;
+}
+.basketList .baksetProd .basketProdInfoBox .likeAndDelete {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.basketList .baksetProd .basketProdInfoBox .likeAndDelete svg {
+  cursor: pointer;
+  transition: transform 7.5s ease;
+}
+.basketList .baksetProd .basketProdInfoBox .likeAndDelete svg:hover {
+  transform: rotate(360deg);
+}/*# sourceMappingURL=style.css.map */

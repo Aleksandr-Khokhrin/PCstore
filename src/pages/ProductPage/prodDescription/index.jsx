@@ -59,18 +59,18 @@ const ProdDescription = (props) => {
                 ) : (
                   <p className="priceTitle">Цена:</p>
                 )}
-                <p className="priceWithDiscount">{data.price_discount} сум</p>
+                <p className="priceWithDiscount">{Math.floor(data.price_discount)} сум</p>
               </div>
               {data.discount ? (
                 <div>
-                  <p className="price">{data.price} сум</p>
+                  <p className="price">{Math.floor(data.price)} сум</p>
                 </div>
               ) : null}
             </div>
             <div className="benefitBox">
               <p className="pers">{data.discount}%</p>
               <p className="persSum">
-                Экономия {data.price - data.price_discount} сум
+                Экономия {Math.floor(data.price - data.price_discount)} сум
               </p>
             </div>
           </div>

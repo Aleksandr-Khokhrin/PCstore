@@ -1,0 +1,29 @@
+.productCountBox {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4vw + 11px);
+  font-size: calc(0.4vw + 13px);
+  font-weight: 400;
+  line-height: 100%;
+}
+.productCountBox .productCountBtnBox {
+  display: flex;
+  gap: 8px;
+}
+.productCountBox .productCountBtnBox .productCountBtn {
+  padding: 15px 18px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  background-color: var(--bgSearchImg);
+}
+.productCountBox .productCountBtnBox .productCountBtn:hover {
+  box-shadow: 5px 5px 0px 0px #5d0a3a;
+}
+.productCountBox .productCountBtnBox .productCountBtn:active {
+  background-color: var(--bgActiveImg);
+  box-shadow: 5px 5px 0px 0px var(--bgActiveImg);
+}
+.productCountBox .productCountBtnBox .productCountBtnSum {
+  padding: 15px 27px;
+  border: 1px solid var(--borderInput);
+}/*# sourceMappingURL=style.css.map */
