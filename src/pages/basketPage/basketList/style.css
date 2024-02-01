@@ -10,10 +10,30 @@
   border: 2px solid var(--borderInput);
   background: var(--bgInput);
   padding: calc(1.3vw + 15.4px);
+  position: relative;
+}
+@media (max-width: 1340px) {
+  .basketList .baksetProd {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+  }
 }
 .basketList .baksetProd .basketProdMain {
   display: flex;
   gap: 1em;
+}
+@media (max-width: 1340px) {
+  .basketList .baksetProd .basketProdMain {
+    justify-content: space-between;
+    width: 100%;
+    gap: 1em;
+  }
+}
+@media (max-width: 1200px) {
+  .basketList .baksetProd .basketProdMain {
+    flex-wrap: wrap;
+  }
 }
 .basketList .baksetProd .basketProdMain .basketProdImg {
   position: relative;
@@ -104,11 +124,75 @@
   width: 40%;
   gap: 2em;
 }
+@media (min-width: 900px) and (max-width: 1340px) {
+  .basketList .baksetProd .basketProdInfoBox {
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo {
+    flex-direction: row;
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo .productCost {
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo .benefitBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 50%;
+  }
+}
+@media (max-width: 1200px) {
+  .basketList .baksetProd .basketProdInfoBox {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .basketList .baksetProd .basketProdInfoBox {
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo {
+    flex-direction: row;
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo .productCost {
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo .benefitBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+@media (max-width: 470px) {
+  .basketList .baksetProd .basketProdInfoBox {
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo {
+    flex-direction: column;
+    width: 100%;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo .productCost {
+    width: 100%;
+    flex-direction: column;
+  }
+  .basketList .baksetProd .basketProdInfoBox .basketProdInfo .benefitBox {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+  }
+}
 .basketList .baksetProd .basketProdInfoBox .likeAndDelete {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 1340px) {
+  .basketList .baksetProd .basketProdInfoBox .likeAndDelete {
+    display: none;
+  }
 }
 .basketList .baksetProd .basketProdInfoBox .likeAndDelete svg {
   cursor: pointer;
@@ -122,4 +206,27 @@
 }
 .basketList .baksetProd .basketProdInfoBox .likeAndDelete svg:hover path {
   fill: var(--bgSearchImg);
+}
+.basketList .baksetProd .deletProdElem {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+.basketList .baksetProd .deletProdElem svg {
+  cursor: pointer;
+  transition: transform 7.5s ease;
+}
+.basketList .baksetProd .deletProdElem svg path {
+  transition: fill 1s;
+}
+.basketList .baksetProd .deletProdElem svg:hover {
+  transform: rotate(360deg);
+}
+.basketList .baksetProd .deletProdElem svg:hover path {
+  fill: var(--bgSearchImg);
+}
+@media (min-width: 1340px) {
+  .basketList .baksetProd .deletProdElem {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

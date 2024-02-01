@@ -9,14 +9,14 @@ const PrimaryInput = (props) => {
     setSearchInput(event.target.value);
   };
   return (
-    <>
+    <div className="primaryInput">
       <input
         type={type}
         placeholder={placeholder}
         onChange={handleSearchChange}
         disabled={disabled}
       />
-    </>
+    </div>
   );
 };
 

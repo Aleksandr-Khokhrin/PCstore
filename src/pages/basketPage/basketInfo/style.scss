@@ -12,6 +12,9 @@
   .basketInfoChild {
     display: flex;
     gap: calc(0.5vw + 14px);
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
     div {
       display: flex;
       flex-direction: column;
@@ -31,14 +34,17 @@
       }
     }
     div:nth-child(1) {
-      width: 50%;
+      width: 100%;
     }
     div:nth-child(2) {
-      width: 50%;
+      width: 100%;
     }
   }
   .basketInfoChild.Two {
     gap: 0;
+    @media (max-width: 800px) {
+        gap: 1em;
+      }
     div {
       display: flex;
       flex-direction: row;

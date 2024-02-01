@@ -13,6 +13,11 @@
   display: flex;
   gap: calc(0.5vw + 14px);
 }
+@media (max-width: 800px) {
+  .basketInfo .basketInfoChild {
+    flex-direction: column;
+  }
+}
 .basketInfo .basketInfoChild div {
   display: flex;
   flex-direction: column;
@@ -36,13 +41,18 @@
   color: var(--text);
 }
 .basketInfo .basketInfoChild div:nth-child(1) {
-  width: 50%;
+  width: 100%;
 }
 .basketInfo .basketInfoChild div:nth-child(2) {
-  width: 50%;
+  width: 100%;
 }
 .basketInfo .basketInfoChild.Two {
   gap: 0;
+}
+@media (max-width: 800px) {
+  .basketInfo .basketInfoChild.Two {
+    gap: 1em;
+  }
 }
 .basketInfo .basketInfoChild.Two div {
   display: flex;

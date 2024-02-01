@@ -9,9 +9,7 @@ const BasketList = (props) => {
   const [like, setLike] = useState(false);
   const { data } = props;
   // console.log(data);
-  useEffect(() => {
-
-  }, [data])
+  useEffect(() => {}, [data]);
 
   const prodCountHandler = (e) => {
     // console.log(e);
@@ -60,6 +58,24 @@ const BasketList = (props) => {
             </div>
             <LikeElem onClickFromChild={onClickFromChildHandler} />
           </div>
+        </div>
+        <div className="deletProdElem">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <path
+              d="M18 0.642858L0.643048 18L0.000197624 17.3571L17.3571 7.04454e-07L18 0.642858Z"
+              fill="#DCDCDC"
+            />
+            <path
+              d="M0.64285 0L17.9998 17.3571L17.357 18L0 0.642857L0.64285 0Z"
+              fill="#DCDCDC"
+            />
+          </svg>
         </div>
       </div>
     );

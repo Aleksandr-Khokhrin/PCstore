@@ -8,13 +8,34 @@
     display: flex;
     justify-content: space-between;
     gap: 2%;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
     .basketBodyLeft {
       display: flex;
       flex-direction: column;
       width: 73%;
+      @media (max-width: 1200px) {
+        width: 60%;
+      }
+      @media (max-width: 800px) {
+        width: 50%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
     .basketBodyRight {
       width: 25%;
+      @media (max-width: 1200px) {
+        width: 40%;
+      }
+      @media (max-width: 800px) {
+        width: 50%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
 }
