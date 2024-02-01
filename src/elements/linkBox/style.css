@@ -1,13 +1,19 @@
-.LinkForProduct {
+.linkField h2 {
+  padding: calc(0.8vw + 17px) 0;
+  border-bottom: 1px solid var(--bgSearchImg);
+  font-size: calc(0.8vw + 17px);
+  font-weight: 600;
+  line-height: 120%;
+}
+.linkField .LinkForProduct {
   display: flex;
   text-decoration: none;
   gap: 12px;
 }
-.LinkForProduct p {
+.linkField .LinkForProduct p {
   opacity: 0.5;
 }
-
-.linkBox {
+.linkField .linkBox {
   display: flex;
   gap: 12px;
 }/*# sourceMappingURL=style.css.map */

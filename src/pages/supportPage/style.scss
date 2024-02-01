@@ -1,0 +1,9 @@
+.compareBox {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  .compareBoxHeader {
+    padding: 0 calc(6.4vw - 3px);
+    margin-bottom: calc(6.4vw - 3px);
+  }
+}

@@ -89,13 +89,15 @@ const WindowTen = (props) => {
 
   return (
     <div className="windowTen">
-      <h3 className="titleH">Поддержка</h3>
-      <NavigationPage
-        countPage={countPageHandler}
-        pages={pagesClick}
-        elements={myArray.length}
-        maxElems={Math.ceil(myArray.length / boxCount)}
-      />
+      {props.noHeader ? null : <h3 className="titleH">Поддержка</h3>}
+      {props.noGPS ? null : (
+        <NavigationPage
+          countPage={countPageHandler}
+          pages={pagesClick}
+          elements={myArray.length}
+          maxElems={Math.ceil(myArray.length / boxCount)}
+        />
+      )}
       <div className="windowTenBody">{renderBoxes}</div>
     </div>
   );
