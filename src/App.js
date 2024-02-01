@@ -14,6 +14,7 @@ import BasketPage from "./pages/basketPage";
 import FavouritesPage from "./pages/favouritePage";
 import ComparePage from "./pages/comparePage";
 import ConfiguratorPage from "./pages/сonfiguratorPage";
+import ServesPage from "./pages/servesPage";
 import SupportPage from "./pages/supportPage";
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
@@ -64,6 +65,7 @@ function App() {
           <Route path={`/compare`} element={<ComparePage windowWidth={windowWidth} />} />
           <Route path={`/configurator`} element={<ConfiguratorPage windowWidth={windowWidth} />} />
           <Route path={`/support`} element={<SupportPage windowWidth={windowWidth} />} />
+          <Route path={`/serves`} element={<ServesPage windowWidth={windowWidth} />} />
         </Routes>
       </div>
       <MobileMenu/>

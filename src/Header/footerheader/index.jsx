@@ -93,7 +93,9 @@ const FooterHeader = () => {
           </Link>
         </div>
         <div className="justcategory">
-          <p>Услуги</p>
+          <Link style={{ textDecoration: "none" }} to="/serves">
+            <p>Услуги</p>
+          </Link>
         </div>
         <div className="justcategory">
           <Link style={{ textDecoration: "none" }} to="/support">

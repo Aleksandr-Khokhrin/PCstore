@@ -1,0 +1,27 @@
+.servesBox {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  .servesBoxChild {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.8vw + 17px);
+    h2 {
+      padding: calc(0.8vw + 17px) 0;
+      border-bottom: 1px solid var(--bgSearchImg);
+      font-size: calc(0.8vw + 17px);
+      font-weight: 600;
+      line-height: 120%;
+    }
+    .servesBoxChildContent {
+      .freshNewsBox{
+        display: flex;
+        flex-direction: row-reverse;
+        .btnServes{
+          display: flex;
+          gap: 1em;
+        }
+      }
+    }
+  }
+}
