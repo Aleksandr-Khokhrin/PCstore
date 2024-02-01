@@ -1,1 +1,63 @@
-/*# sourceMappingURL=style.css.map */
+.basketInfo {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.5vw + 14px);
+  padding: calc(1.3vw + 15.4px) 0;
+}
+.basketInfo h3 {
+  font-size: calc(0.9vw + 17px);
+  font-weight: 600;
+  padding: 0;
+}
+.basketInfo .basketInfoChild {
+  display: flex;
+  gap: calc(0.5vw + 14px);
+}
+.basketInfo .basketInfoChild div {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.5vw + 14px);
+}
+.basketInfo .basketInfoChild p {
+  font-weight: 400;
+  font-size: calc(0.4vw + 13px);
+  opacity: 0.5;
+}
+.basketInfo .basketInfoChild input::-moz-placeholder {
+  font-size: calc(0.3vw + 13px);
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--text);
+}
+.basketInfo .basketInfoChild input::placeholder {
+  font-size: calc(0.3vw + 13px);
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--text);
+}
+.basketInfo .basketInfoChild div:nth-child(1) {
+  width: 50%;
+}
+.basketInfo .basketInfoChild div:nth-child(2) {
+  width: 50%;
+}
+.basketInfo .basketInfoChild.Two {
+  gap: 0;
+}
+.basketInfo .basketInfoChild.Two div {
+  display: flex;
+  flex-direction: row;
+  gap: calc(0.5vw + 14px);
+}
+.basketInfo .basketInfoChild.Two div:nth-child(1) input:hover {
+  border: 1px solid var(--bgActiveImg);
+}
+.basketInfo .basketInfoChild.Two div:nth-child(1) input:active {
+  border: 1px solid var(--bgSearchImg);
+}
+.basketInfo .basketInfoChild.Two div:nth-child(1) input:active::-moz-placeholder {
+  color: var(--bgSearchImg);
+}
+.basketInfo .basketInfoChild.Two div:nth-child(1) input:active::placeholder {
+  color: var(--bgSearchImg);
+}/*# sourceMappingURL=style.css.map */

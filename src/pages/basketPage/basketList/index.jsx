@@ -9,6 +9,9 @@ const BasketList = (props) => {
   const [like, setLike] = useState(false);
   const { data } = props;
   // console.log(data);
+  useEffect(() => {
+
+  }, [data])
 
   const prodCountHandler = (e) => {
     // console.log(e);

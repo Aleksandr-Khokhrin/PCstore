@@ -1,5 +1,39 @@
 .countBox {
   border: 2px solid var(--borderInput);
   background: var(--bgInput);
+}
+.countBox h3 {
+  font-size: calc(0.9vw + 17px);
+  font-weight: 600;
   padding: calc(1.3vw + 15.4px);
+  border-bottom: 1px solid var(--borderInput);
+}
+.countBox .countAllSum {
+  padding: calc(1.3vw + 15.4px);
+  border-bottom: 1px solid var(--borderInput);
+}
+.countBox .productCostPrice {
+  width: 100%;
+}
+.countBox .productCostPrice .headerLeftSearch input {
+  border: 1px solid var(--borderInput);
+  text-align: center;
+}
+.countBox .productCostPrice button {
+  width: 100%;
+}
+.countBox .productCostPrice.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.countBox .productCostPrice.info div:nth-child(3) p {
+  opacity: 0.5;
+}
+.countBox .productCostPrice.info div:nth-child(4) p {
+  opacity: 0.5;
+}
+.countBox .productCostPrice.info div {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */
