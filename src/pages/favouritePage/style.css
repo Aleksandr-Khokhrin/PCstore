@@ -2,4 +2,58 @@
   display: flex;
   flex-direction: column;
   padding: 0 calc(6.4vw - 3px);
+  gap: 2em;
+}
+.favourBox .favourBoxHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.favourBox .favourBoxHeader h2 {
+  font-size: calc(1.1vw + 13px);
+  font-weight: 600;
+  line-height: 120%;
+}
+.favourBox .favourBoxHeader .anctionsChild {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(0.26vw + 7px);
+}
+.favourBox .favourBoxHeader .anctionsChild p {
+  font-size: calc(0.4vw + 13px);
+  font-weight: 500;
+  line-height: 100%;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+.favourBox .favourBoxHeader .anctionsChild p:hover {
+  color: var(--bgSearchImg);
+}
+.favourBox .favourBoxHeader .anctionsChild p:active {
+  color: var(--bgActiveImg);
+}
+.favourBox .favourBoxHeader .anctionsChild p svg {
+  width: calc(0.6vw + 11px);
+  cursor: pointer;
+}
+.favourBox .favourBoxHeader .anctionsChild p svg path {
+  stroke: white;
+  transition: stroke 0.5s;
+}
+.favourBox .favourBoxHeader .anctionsChild p svg:hover path {
+  stroke: var(--bgSearchImg);
+  transition: stroke 0.5s;
+}
+.favourBox .favourBoxHeader .anctionsChild p svg:active path {
+  stroke: var(--bgActiveImg);
+  transition: stroke 0.5s;
+}
+.favourBox .favourBoxBody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 100%;
+}
+.favourBox .favourBoxBody .starBar {
+  padding: 0 calc(1.6vw + 6px);
 }/*# sourceMappingURL=style.css.map */
