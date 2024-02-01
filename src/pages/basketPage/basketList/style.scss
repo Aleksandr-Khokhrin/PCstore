@@ -28,8 +28,16 @@
       gap: 1em;
       .basketProdImg {
         position: relative;
+        @media (max-width: 600px) {
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+        }
         img {
           width: 200px;
+          @media (max-width: 600px) {
+            width: 80%;
+          }
         }
         input {
           position: absolute;
@@ -133,7 +141,7 @@
           }
         }
       }
-      
+
       @media (max-width: 1200px) {
         flex-wrap: wrap;
       }
@@ -160,7 +168,6 @@
           width: 100%;
           .productCost {
             width: 100%;
-            flex-direction: column;
           }
           .benefitBox {
             display: flex;

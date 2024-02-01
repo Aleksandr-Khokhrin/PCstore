@@ -38,8 +38,20 @@
 .basketList .baksetProd .basketProdMain .basketProdImg {
   position: relative;
 }
+@media (max-width: 600px) {
+  .basketList .baksetProd .basketProdMain .basketProdImg {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
 .basketList .baksetProd .basketProdMain .basketProdImg img {
   width: 200px;
+}
+@media (max-width: 600px) {
+  .basketList .baksetProd .basketProdMain .basketProdImg img {
+    width: 80%;
+  }
 }
 .basketList .baksetProd .basketProdMain .basketProdImg input {
   position: absolute;
@@ -175,7 +187,6 @@
   }
   .basketList .baksetProd .basketProdInfoBox .basketProdInfo .productCost {
     width: 100%;
-    flex-direction: column;
   }
   .basketList .baksetProd .basketProdInfoBox .basketProdInfo .benefitBox {
     display: flex;
