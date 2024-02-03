@@ -75,10 +75,12 @@ const FooterHeader = () => {
             className={`categoryList ${isCategoryListVisible ? "" : "none"}`}
           >
             {myArray.map((item, index) => (
-              <div key={index} className="categoryName">
-                <p>{item.name}</p>
-                <hr />
-              </div>
+              <Link style={{ textDecoration: "none" }} to={`/category/${item.name}`}>
+                <div key={index} className="categoryName">
+                  <p>{item.name}</p>
+                  <hr />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
