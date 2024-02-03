@@ -4,19 +4,19 @@ import img from "./img.svg";
 import arrow from "../../Header/img/footer/arrow-right.svg";
 const CategoryBox = (props) => {
   return (
-    <div className="categoryBox">
-      <div className="categoryImg">
-        <img src={props.img} alt="" />
-      </div>
-      <div className="categoryFlex">
-        <div className="categoryTitle">{props.title}</div>
-        <div className="categoryArrow">
-          <Link style={{ textDecoration: "none" }} to={`/category/${props.title}`}>
+    <Link style={{ textDecoration: "none" }} to={`/category/${props.title}`}>
+      <div className="categoryBox">
+        <div className="categoryImg">
+          <img src={props.img} alt="" />
+        </div>
+        <div className="categoryFlex">
+          <div className="categoryTitle">{props.title}</div>
+          <div className="categoryArrow">
             <img src={arrow} alt="" />
-          </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
