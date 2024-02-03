@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  gap: calc(0.9vw + 15px);
+}
+.aboutUs .aboutUsBody {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.9vw + 15px);
+}
+.aboutUs .aboutUsBody .aboutUsBodyUp {
+  width: 100%;
+}
+.aboutUs .aboutUsBody .aboutUsBodyUp img {
+  width: 100%; /* Ширина изображения */
+  height: auto; /* Автоматическая высота */
+  display: block; /* Блочный элемент */
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.aboutUs .aboutUsBody .aboutUsBodyDown {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+@media (max-width: 1000px) {
+  .aboutUs .aboutUsBody .aboutUsBodyDown {
+    flex-direction: column;
+  }
+}
+.aboutUs .aboutUsBody .aboutUsBodyDown > div {
+  width: 50%;
+  flex-grow: 1;
+}
+@media (max-width: 1000px) {
+  .aboutUs .aboutUsBody .aboutUsBodyDown > div {
+    width: 100%;
+  }
+}
+.aboutUs .aboutUsBody .aboutUsBodyDown > div img {
+  width: 100%; /* Ширина изображения */
+  height: auto; /* Автоматическая высота */
+  display: block; /* Блочный элемент */
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.aboutUs .aboutUsBody .aboutUsBodyDown > div h5 {
+  font-weight: 600;
+  font-size: calc(0.4vw + 17px);
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.5em;
+}
+.aboutUs .aboutUsBody .aboutUsBodyDown > div p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: calc(0.3vw + 12px);
+  line-height: 140%;
+  color: var(--textSpan);
+}/*# sourceMappingURL=style.css.map */

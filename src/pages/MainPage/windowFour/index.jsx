@@ -1,5 +1,6 @@
 import "./style.css";
 import config from "./config.svg";
+import PrimaryBtn from "../../../elements/btns/primary";
 const WindowFour = () => {
   return (
     <div className="windowFour">
@@ -22,7 +23,7 @@ const WindowFour = () => {
           </p>
         </div>
         <div className="contentBtnForWindowOne">
-          <button className="searchPC">Конфигуратор</button>
+          <PrimaryBtn text='Конфигуратор'/>
         </div>
       </div>
       <div className="windowFourRight">

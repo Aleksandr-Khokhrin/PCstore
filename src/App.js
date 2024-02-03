@@ -16,6 +16,7 @@ import ComparePage from "./pages/comparePage";
 import ConfiguratorPage from "./pages/сonfiguratorPage";
 import ServesPage from "./pages/servesPage";
 import SupportPage from "./pages/supportPage";
+import AboutUs from "./pages/aboutUsPage";
 import Log from "./UI/Auth/log";
 import Reg from "./UI/Auth/reg";
 import TokenRefresh from "./UI/Auth/tokenRefresh";
@@ -66,6 +67,7 @@ function App() {
           <Route path={`/configurator`} element={<ConfiguratorPage windowWidth={windowWidth} />} />
           <Route path={`/support`} element={<SupportPage windowWidth={windowWidth} />} />
           <Route path={`/serves`} element={<ServesPage windowWidth={windowWidth} />} />
+          <Route path={`/aboutUs`} element={<AboutUs windowWidth={windowWidth} />} />
         </Routes>
       </div>
       <MobileMenu/>
