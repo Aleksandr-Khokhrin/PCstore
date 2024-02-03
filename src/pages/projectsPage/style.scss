@@ -1,0 +1,48 @@
+.projectsPage {
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(6.4vw - 3px);
+  gap: calc(0.9vw + 15px);
+  .projectsBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    .progectBox {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--borderInput);
+      background-color: var(--bgInput);
+      width: 32%;
+      @media (max-width: 1200px) {
+        width: 49%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+      .progectImg {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .progectDown {
+        display: flex;
+        justify-content: space-between;
+        padding: calc(1.3vw + 15px);
+        p {
+          font-weight: 600;
+          font-size: calc(0.5vw + 14px);
+          line-height: 120%;
+          letter-spacing: 0.01em;
+        }
+        .progectArrow {
+          img {
+            width: calc(0.5vw + 12px);
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
