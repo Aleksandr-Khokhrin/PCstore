@@ -58,14 +58,14 @@ const WindowFive = (props) => {
   const renderBoxes = 
     windWidth <= 800
       ? myArray.slice(pagesCount * boxCount, pagesCount * boxCount + boxCount).map((item, index) => {
-          return <CategoryBox key={index} title={item.name} img={item.picture ? item.picture : IMG} />;
+          return <CategoryBox link={true} key={index} title={item.name} img={item.picture ? item.picture : IMG} />;
         })
       : windWidth <= 1300 && windWidth > 800
       ? myArray.slice(a, b).map((item, index) => {
-          return <CategoryBox key={index} title={item.name} img={item.picture ? item.picture : IMG} />;
+          return <CategoryBox link={true} key={index} title={item.name} img={item.picture ? item.picture : IMG} />;
         })
       : myArray.slice(a, b).map((item, index) => {
-          return <CategoryBox key={index} title={item.name} img={item.picture ? item.picture : IMG} />;
+          return <CategoryBox link={true} key={index} title={item.name} img={item.picture ? item.picture : IMG} />;
         });
 
   const countPageHandler = (elem) => {
