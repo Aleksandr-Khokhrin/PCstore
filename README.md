@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# PCstore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/4bb1f1d2-b2ed-4478-a4dc-9fd11df983fe)
 
-## Available Scripts
+Ссылка на проект: http://31.129.110.46/
 
-In the project directory, you can run:
+Краткое описание: Это незаконченный проект, который я выложил для презентации своих навыков в React и работе с серверной частью. Данный объем занял у меня месяц работы. Проект дал мне достаточно большой опыт в работе на React. Тут присутствует много логики, начиная с пагинации и заканчивая рендерингом разной информации, получаемой с сервера. Данное приложение функционирует при любом размере экрана. В данном описании я могу лишь рассказать о малой части моей работы. Подробно вы можете рассмотреть проект в файлах репозитория. 
 
-### `npm start`
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/64e01555-11db-4db1-9e15-4d59e5ae18ec)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+В данном проекте функционирует:
+1. Главная страница.
+2. Категории.
+3. Корзина.
+4. Избранное.
+5. Услуги.
+6. Поддержка.
+7. О компании.
+8. Проекты.
+9. Новости.
+10. При клике на продукт вы можете перейти на страницу отдельного продукта.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Данные страницы правильно функционируют с позиции адаптированной верстки, но не на всех из них работает логика. 
+Прошу воспринимать этот проект как продукт моей (незаконченной) работы за 1 месяц. 
 
-### `npm test`
+Основные задачи: 
+- Создать платформу/интернет магазин для продажи компьютеров, комплектующих и всякого рода вспомогательных устройств.
+- Уделить внимание безопасности данных.
+- Прокачать свои Hard skills.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Функционал: 
+1. Авторизаци и регистрация пользователя. Пользователь регистрируется/авторизируется и затем с сервера приходит токен, который я пушу в localStorage. Затем, для безопасности данных токен обновляется каждые 15 минут:
 
-### `npm run build`
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/851e4f83-b06f-4127-a182-3f3f65a025f6)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. На главной странице собран весь основной контент. Тут присутствует Header, Footer и MainPage. Header и Foooter остаётся без изменений, в то время как все содержимое проекта меняется в соответствии с действиями клиента на сайте. Давайте рассмотрим один из экранов на главной странице:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/97cd628b-c481-4d6a-9b82-6f65c3a4c774)
 
-### `npm run eject`
+Тут я рендерю компоненты из моего массива myArray(информация полученная по определённому запросу по средством redux-toolkit). Также в примере у меня присутствует компонент NavigationPage. С помощью этого компонента я осуществляю пагинацию во всем приложении.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Пагинация. Эту логику я написал сам и она работает от нескольких переменных, которые дают информацию о том, сколько должно быть объектов на странице, какая длина массива элементов, как я могу переключить страницу и другие дополнительные свойства. Ниже, вагему вниманию предоставлена логика, по которой отображаются страницы в моём пагинационном ряду:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/448066eb-6e09-45e0-81f9-cc96d72bb9d7)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/cc5f3178-5d52-4a49-8ae1-bd4bda5b867b)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Все стили в моём приложении я в основном писал на SCSS и пользовался адаптивной версткой с использованием media и calc:
 
-## Learn More
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/9e629813-cd8d-4be4-bac2-9cacc000fce5)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Пример получения списка ссылок на ркламу компании:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+![image](https://github.com/Aleksandr-Khokhrin/MyStore/assets/147053338/066b376a-9e49-4be8-b98a-411736828207)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ 
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://github.com/Aleksandr-Khokhrin/MyForumApp_react-front/assets/147053338/d1421d97-c486-45f4-b34f-5faede758ca4)
